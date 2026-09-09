@@ -129,6 +129,16 @@ return ECSConfig::configure()
 
 Or enable everything at once with `->withPreparedSets(common: true)`.
 
+Standalone presets are also available: `psr12: true`, `perCs: true`, and `laravel: true` (the [Laravel Pint](https://github.com/laravel/pint/blob/main/resources/presets/laravel.php) ruleset):
+
+```php
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+
+return ECSConfig::configure()
+    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
+    ->withPreparedSets(laravel: true);
+```
+
 <br>
 
 ### Gradual Adoption with Levels

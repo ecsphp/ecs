@@ -840,6 +840,8 @@ class ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba
         'PhpCsFixer\\AbstractPhpdocToTypeDeclarationFixer' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/AbstractPhpdocToTypeDeclarationFixer.php',
         'PhpCsFixer\\AbstractPhpdocTypesFixer' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/AbstractPhpdocTypesFixer.php',
         'PhpCsFixer\\AbstractProxyFixer' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/AbstractProxyFixer.php',
+        'PhpCsFixer\\Compat\\Symfony\\Component\\Console\\Style\\SymfonyStyle' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Compat/Symfony/Component/Console/Style/SymfonyStyle.php',
+        'PhpCsFixer\\Compat\\Symfony\\Component\\Console\\Style\\SymfonyStyleCompat' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Compat/Symfony/Component/Console/Style/SymfonyStyleCompat.php',
         'PhpCsFixer\\ComposerJsonReader' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/ComposerJsonReader.php',
         'PhpCsFixer\\Config' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Config.php',
         'PhpCsFixer\\ConfigInterface' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/ConfigInterface.php',

@@ -10,6 +10,10 @@ final class SimpleParameterProvider
      * @var array<string, mixed>
      */
     private static $parameters = [];
+    public static function reset(): void
+    {
+        self::$parameters = [];
+    }
     /**
      * @param mixed $value
      */

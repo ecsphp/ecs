@@ -17,6 +17,7 @@ use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Analyzer\FunctionsAnalyzer;
+use PhpCsFixer\Tokenizer\CT;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 /**
@@ -26,6 +27,10 @@ use PhpCsFixer\Tokenizer\Tokens;
  */
 final class IsNullFixer extends AbstractFixer
 {
+    /**
+     * Name of the single parameter of `is_null()`.
+     */
+    private const PARAMETER_NAME = 'value';
     public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition('Replaces `is_null($var)` expression with `null === $var`.', [new CodeSample("<?php\n\$a = is_null(\$b);\n")], null, 'Risky when the function `is_null` is overridden.');
@@ -70,6 +75,23 @@ final class IsNullFixer extends AbstractFixer
             if ($tokens[$next]->equals(')')) {
                 continue;
             }
+            // an unpacked argument is not a value that can be compared to `null`, so leave such call as is
+            if ($tokens[$next]->isGivenKind(\T_ELLIPSIS)) {
+                continue;
+            }
+            $referenceEnd = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_PARENTHESIS, $matches[1]);
+            // `is_null()` takes a single parameter, so only the first token inside the parentheses can carry a name
+            $possibleNamedArgumentColonIndex = $tokens->getNextMeaningfulToken($next);
+            if (null !== $possibleNamedArgumentColonIndex && $tokens[$possibleNamedArgumentColonIndex]->isGivenKind(CT::T_NAMED_ARGUMENT_COLON)) {
+                // a name other than the one `is_null()` declares does not resolve to its parameter, so leave such call as is
+                if (!$tokens[$next]->equals([CT::T_NAMED_ARGUMENT_NAME, self::PARAMETER_NAME], \true)) {
+                    continue;
+                }
+                // the name is redundant for a single-parameter call, drop it to not break the transformation
+                $tokens->clearTokenAndMergeSurroundingWhitespace($possibleNamedArgumentColonIndex);
+                $tokens->clearTokenAndMergeSurroundingWhitespace($next);
+                $tokens->removeTrailingWhitespace($matches[1]);
+            }
             $prevTokenIndex = $tokens->getPrevMeaningfulToken($matches[0]);
             // handle function references with namespaces
             if ($tokens[$prevTokenIndex]->isGivenKind(\T_NS_SEPARATOR)) {
@@ -86,7 +108,6 @@ final class IsNullFixer extends AbstractFixer
                 $tokens->clearAt($prevTokenIndex);
             }
             // before getting rind of `()` around a parameter, ensure it's not assignment/ternary invariant
-            $referenceEnd = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_PARENTHESIS, $matches[1]);
             $isContainingDangerousConstructs = \false;
             for ($paramTokenIndex = $matches[1]; $paramTokenIndex <= $referenceEnd; ++$paramTokenIndex) {
                 if (\in_array($tokens[$paramTokenIndex]->getContent(), ['?', '?:', '=', '??'], \true)) {

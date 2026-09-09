@@ -666,6 +666,8 @@ return array(
     'PhpCsFixer\\AbstractPhpdocToTypeDeclarationFixer' => $vendorDir . '/friendsofphp/php-cs-fixer/src/AbstractPhpdocToTypeDeclarationFixer.php',
     'PhpCsFixer\\AbstractPhpdocTypesFixer' => $vendorDir . '/friendsofphp/php-cs-fixer/src/AbstractPhpdocTypesFixer.php',
     'PhpCsFixer\\AbstractProxyFixer' => $vendorDir . '/friendsofphp/php-cs-fixer/src/AbstractProxyFixer.php',
+    'PhpCsFixer\\Compat\\Symfony\\Component\\Console\\Style\\SymfonyStyle' => $vendorDir . '/friendsofphp/php-cs-fixer/src/Compat/Symfony/Component/Console/Style/SymfonyStyle.php',
+    'PhpCsFixer\\Compat\\Symfony\\Component\\Console\\Style\\SymfonyStyleCompat' => $vendorDir . '/friendsofphp/php-cs-fixer/src/Compat/Symfony/Component/Console/Style/SymfonyStyleCompat.php',
     'PhpCsFixer\\ComposerJsonReader' => $vendorDir . '/friendsofphp/php-cs-fixer/src/ComposerJsonReader.php',
     'PhpCsFixer\\Config' => $vendorDir . '/friendsofphp/php-cs-fixer/src/Config.php',
     'PhpCsFixer\\ConfigInterface' => $vendorDir . '/friendsofphp/php-cs-fixer/src/ConfigInterface.php',

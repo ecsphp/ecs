@@ -48,7 +48,7 @@ final class AssignNullCoalescingToCoalesceEqualFixer extends AbstractShortOperat
         }
         // make sure after '??' does not contain '? :'
         $nextIndex = $tokens->getNextTokenOfKind($index, ['?', ';', [\T_CLOSE_TAG]]);
-        return !$tokens[$nextIndex]->equals('?');
+        return null === $nextIndex || !$tokens[$nextIndex]->equals('?');
     }
     protected function getReplacementToken(Token $token): Token
     {

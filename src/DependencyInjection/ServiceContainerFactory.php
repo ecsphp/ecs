@@ -23,6 +23,7 @@ final class ServiceContainerFactory
      */
     public function create(array $configFiles = []): ECSConfig
     {
+        \Symplify\EasyCodingStandard\DependencyInjection\SimpleParameterProvider::reset();
         $this->loadPHPCodeSnifferConstants();
         $ecsConfig = new ECSConfig();
         // console
