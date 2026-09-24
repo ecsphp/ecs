@@ -79,7 +79,7 @@ PHP
      * {@inheritdoc}
      *
      * Must run before SpaceAfterSemicolonFixer.
-     * Must run after CombineConsecutiveIssetsFixer, GetClassToClassKeywordFixer, NoEmptyStatementFixer, SimplifiedIfReturnFixer, SingleImportPerStatementFixer.
+     * Must run after CombineConsecutiveIssetsFixer, GetClassToClassKeywordFixer, NoEmptyStatementFixer, SingleImportPerStatementFixer.
      */
     public function getPriority(): int
     {

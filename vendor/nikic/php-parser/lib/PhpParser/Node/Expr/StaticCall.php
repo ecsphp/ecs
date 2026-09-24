@@ -5,6 +5,7 @@ namespace ECSPrefix202609\PhpParser\Node\Expr;
 
 use ECSPrefix202609\PhpParser\Node;
 use ECSPrefix202609\PhpParser\Node\Arg;
+use ECSPrefix202609\PhpParser\Node\ArgPlaceholder;
 use ECSPrefix202609\PhpParser\Node\Expr;
 use ECSPrefix202609\PhpParser\Node\Identifier;
 use ECSPrefix202609\PhpParser\Node\VariadicPlaceholder;
@@ -14,14 +15,14 @@ class StaticCall extends CallLike
     public $class;
     /** @var Identifier|Expr Method name */
     public $name;
-    /** @var array<Arg|VariadicPlaceholder> Arguments */
+    /** @var array<Arg|VariadicPlaceholder|ArgPlaceholder> Arguments */
     public $args;
     /**
      * Constructs a static method call node.
      *
      * @param Node\Name|Expr $class Class name
      * @param string|Identifier|Expr $name Method name
-     * @param array<Arg|VariadicPlaceholder> $args Arguments
+     * @param array<Arg|VariadicPlaceholder|ArgPlaceholder> $args Arguments
      * @param array<string, mixed> $attributes Additional attributes
      */
     public function __construct(Node $class, $name, array $args = [], array $attributes = [])

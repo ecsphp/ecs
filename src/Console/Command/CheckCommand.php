@@ -12,6 +12,8 @@ use Symplify\EasyCodingStandard\Console\ExitCode;
 use Symplify\EasyCodingStandard\Console\Output\ConsoleOutputFormatter;
 use Symplify\EasyCodingStandard\MemoryLimitter;
 use Symplify\EasyCodingStandard\Reporter\ProcessedFileReporter;
+use Symplify\EasyCodingStandard\Turbo\TurboConfigDumper;
+use Symplify\EasyCodingStandard\Turbo\TurboRunner;
 final class CheckCommand implements CommandInterface, DefaultCommandInterface
 {
     /**
@@ -39,13 +41,25 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
      * @var \Symplify\EasyCodingStandard\Configuration\ConfigurationFactory
      */
     private $configurationFactory;
-    public function __construct(ProcessedFileReporter $processedFileReporter, MemoryLimitter $memoryLimitter, ConfigInitializer $configInitializer, EasyCodingStandardApplication $easyCodingStandardApplication, ConfigurationFactory $configurationFactory)
+    /**
+     * @readonly
+     * @var \Symplify\EasyCodingStandard\Turbo\TurboRunner
+     */
+    private $turboRunner;
+    /**
+     * @readonly
+     * @var \Symplify\EasyCodingStandard\Turbo\TurboConfigDumper
+     */
+    private $turboConfigDumper;
+    public function __construct(ProcessedFileReporter $processedFileReporter, MemoryLimitter $memoryLimitter, ConfigInitializer $configInitializer, EasyCodingStandardApplication $easyCodingStandardApplication, ConfigurationFactory $configurationFactory, TurboRunner $turboRunner, TurboConfigDumper $turboConfigDumper)
     {
         $this->processedFileReporter = $processedFileReporter;
         $this->memoryLimitter = $memoryLimitter;
         $this->configInitializer = $configInitializer;
         $this->easyCodingStandardApplication = $easyCodingStandardApplication;
         $this->configurationFactory = $configurationFactory;
+        $this->turboRunner = $turboRunner;
+        $this->turboConfigDumper = $turboConfigDumper;
     }
     public function getName(): string
     {
@@ -56,6 +70,7 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
         return 'Check coding standard in one or more directories';
     }
     /**
+     * @param bool   $turbo        [EXPERIMENTAL] run the ecs-go Go binary instead of the PHP engine
      * @param string $config       Path to config file
      * @param string $outputFormat Select output format
      * @param string $memoryLimit  Memory limit for check
@@ -73,7 +88,7 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
      *
      * @return ExitCode::*
      */
-    public function run(bool $fix = \false, bool $clearCache = \false, bool $noProgressBar = \false, bool $noErrorTable = \false, bool $noDiffs = \false, bool $debug = \false, string $config = '', string $outputFormat = ConsoleOutputFormatter::NAME, string $memoryLimit = '', string $port = '', string $identifier = '', string ...$paths): int
+    public function run(bool $fix = \false, bool $clearCache = \false, bool $noProgressBar = \false, bool $noErrorTable = \false, bool $noDiffs = \false, bool $debug = \false, bool $turbo = \false, string $config = '', string $outputFormat = ConsoleOutputFormatter::NAME, string $memoryLimit = '', string $port = '', string $identifier = '', string ...$paths): int
     {
         // create ecs.php config file if does not exist yet
         if (!$this->configInitializer->areSomeCheckersRegistered()) {
@@ -81,6 +96,12 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
             return ExitCode::SUCCESS;
         }
         $configuration = $this->configurationFactory->create(array_values($paths), $fix, $clearCache, $noProgressBar, $noErrorTable, $noDiffs, $outputFormat, $config !== '' ? $config : null, $port, $identifier, $memoryLimit !== '' ? $memoryLimit : null, $debug);
+        // experimental: hand the resolved config to the ecs-go Go binary and skip the PHP engine
+        if ($turbo) {
+            $configData = $this->turboConfigDumper->dump($configuration->getSources());
+            $turboExitCode = $this->turboRunner->run($configData, $fix);
+            return $turboExitCode === ExitCode::SUCCESS ? ExitCode::SUCCESS : ExitCode::CHANGED_CODE_OR_FOUND_ERRORS;
+        }
         $this->memoryLimitter->adjust($configuration);
         $errorsAndDiffs = $this->easyCodingStandardApplication->run($configuration);
         return $this->processedFileReporter->report($errorsAndDiffs, $configuration);

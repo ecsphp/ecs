@@ -127,7 +127,7 @@ PHP
                 if (!isset($providersPlaced[$providerName])) {
                     $providersPlaced[$providerName] = \true;
                     $sortedBefore = $sorted;
-                    $sorted = $this->moveMethodElement($sorted, $usageName === $sameUsageName ? $sameProviderName : $usageName, $providerName, \true);
+                    $sorted = $this->moveMethodElement($sorted, $usageName === $sameUsageName && \false !== $sameProviderName ? $sameProviderName : $usageName, $providerName, \true);
                     // honour multiple providers order for one test
                     $sameUsageName = $usageName;
                     $sameProviderName = $providerName;

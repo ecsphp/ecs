@@ -23,6 +23,8 @@ use PhpCsFixer\FixerConfiguration\FixerOptionBuilder;
 use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
+use PhpCsFixer\FixerDefinition\VersionSpecification;
+use PhpCsFixer\FixerDefinition\VersionSpecificCodeSample;
 use PhpCsFixer\Preg;
 use PhpCsFixer\Tokenizer\Analyzer\Analysis\TypeAnalysis;
 use PhpCsFixer\Tokenizer\Analyzer\AttributeAnalyzer;
@@ -209,7 +211,18 @@ class Foo extends \ECSPrefix202609\Other\BaseClass implements \ECSPrefix202609\O
 }
 
 PHP
-, ['import_symbols' => \true])]);
+, ['import_symbols' => \true]), new VersionSpecificCodeSample(<<<'PHP'
+<?php
+
+namespace ECSPrefix202609\Foo\Test;
+
+#[\ECSPrefix202609\Some\Attribute]
+class Foo
+{
+}
+
+PHP
+, new VersionSpecification(80000), ['import_symbols' => \true])]);
     }
     /**
      * {@inheritdoc}
