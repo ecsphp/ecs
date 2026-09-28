@@ -47,7 +47,7 @@ final class ParametersMerger
         if ($left === null && is_array($right)) {
             return $right;
         }
-        if (!empty($right) && (array) $left !== (array) $right) {
+        if ($right && (array) $left !== (array) $right) {
             return $this->mergeWithCombine((array) $right, (array) $left);
         }
         return $left;

@@ -99,7 +99,7 @@ final class SniffFileProcessor implements FileProcessorInterface
         $this->sniffMetadataCollector->reset();
         $errorsAndDiffs = [];
         $file = $this->fileFactory->createFromFile($filePath);
-        $this->fixFile($file, $this->fixer, $filePath, $this->tokenListeners, self::ESCALATE_WARNINGS_SNIFF);
+        $this->fixFile($file, $filePath, $this->tokenListeners, self::ESCALATE_WARNINGS_SNIFF);
         // add coding standard errors
         $codingStandardErrors = $this->sniffMetadataCollector->getCodingStandardErrors();
         if ($codingStandardErrors !== []) {
@@ -124,7 +124,7 @@ final class SniffFileProcessor implements FileProcessorInterface
     public function processFileToString(string $filePath): string
     {
         $file = $this->fileFactory->createFromFile($filePath);
-        $this->fixFile($file, $this->fixer, $filePath, $this->tokenListeners, []);
+        $this->fixFile($file, $filePath, $this->tokenListeners, []);
         return $this->fixer->getContents();
     }
     private function addSniff(Sniff $sniff): void
@@ -143,7 +143,7 @@ final class SniffFileProcessor implements FileProcessorInterface
      * @param array<int|string, Sniff[]> $tokenListeners
      * @param array<class-string<Sniff>> $reportSniffClassesWarnings
      */
-    private function fixFile(File $file, Fixer $fixer, string $filePath, array $tokenListeners, array $reportSniffClassesWarnings): void
+    private function fixFile(File $file, string $filePath, array $tokenListeners, array $reportSniffClassesWarnings): void
     {
         $previousContent = FileSystem::read($filePath);
         $this->fixer->loops = 0;
@@ -151,11 +151,11 @@ final class SniffFileProcessor implements FileProcessorInterface
             // Only needed once file content has changed.
             $content = $previousContent;
             // set property value
-            PrivatesAccessorHelper::setPropertyValue($fixer, 'inConflict', \false);
+            PrivatesAccessorHelper::setPropertyValue($this->fixer, 'inConflict', \false);
             $file->setContent($content);
             $file->processWithTokenListenersAndFilePath($tokenListeners, $filePath, $reportSniffClassesWarnings);
             // fixed content
-            $previousContent = $fixer->getContents();
+            $previousContent = $this->fixer->getContents();
             ++$this->fixer->loops;
             if ($previousContent !== $content && $this->fixer->loops >= self::MAX_FIXER_LOOPS) {
                 $diff = $this->differ->diff($previousContent, $content);

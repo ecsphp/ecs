@@ -3,6 +3,7 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Turbo;
 
+use ECSPrefix202609\Nette\Utils\FileSystem;
 use ECSPrefix202609\Nette\Utils\Json;
 /**
  * Experimental --turbo mode: hands the run over to the "ecs-go" Go binary instead
@@ -38,7 +39,7 @@ final class TurboRunner
             passthru($command, $exitCode);
             return $exitCode;
         } finally {
-            @unlink($configPath);
+            FileSystem::delete($configPath);
         }
     }
     /**
