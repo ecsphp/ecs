@@ -1439,6 +1439,7 @@ return array(
     'Symplify\\EasyCodingStandard\\Testing\\PHPUnit\\AbstractTestCase' => $baseDir . '/src/Testing/PHPUnit/AbstractTestCase.php',
     'Symplify\\EasyCodingStandard\\Testing\\PHPUnit\\FixtureFinder' => $baseDir . '/src/Testing/PHPUnit/FixtureFinder.php',
     'Symplify\\EasyCodingStandard\\Turbo\\EcsGoBinaryLocator' => $baseDir . '/src/Turbo/EcsGoBinaryLocator.php',
+    'Symplify\\EasyCodingStandard\\Turbo\\Exception\\EcsGoBinaryNotFoundException' => $baseDir . '/src/Turbo/Exception/EcsGoBinaryNotFoundException.php',
     'Symplify\\EasyCodingStandard\\Turbo\\TurboConfigDumper' => $baseDir . '/src/Turbo/TurboConfigDumper.php',
     'Symplify\\EasyCodingStandard\\Turbo\\TurboRunner' => $baseDir . '/src/Turbo/TurboRunner.php',
     'Symplify\\EasyCodingStandard\\Utils\\ParametersMerger' => $baseDir . '/src/Utils/ParametersMerger.php',

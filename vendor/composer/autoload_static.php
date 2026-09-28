@@ -1613,6 +1613,7 @@ class ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba
         'Symplify\\EasyCodingStandard\\Testing\\PHPUnit\\AbstractTestCase' => __DIR__ . '/../..' . '/src/Testing/PHPUnit/AbstractTestCase.php',
         'Symplify\\EasyCodingStandard\\Testing\\PHPUnit\\FixtureFinder' => __DIR__ . '/../..' . '/src/Testing/PHPUnit/FixtureFinder.php',
         'Symplify\\EasyCodingStandard\\Turbo\\EcsGoBinaryLocator' => __DIR__ . '/../..' . '/src/Turbo/EcsGoBinaryLocator.php',
+        'Symplify\\EasyCodingStandard\\Turbo\\Exception\\EcsGoBinaryNotFoundException' => __DIR__ . '/../..' . '/src/Turbo/Exception/EcsGoBinaryNotFoundException.php',
         'Symplify\\EasyCodingStandard\\Turbo\\TurboConfigDumper' => __DIR__ . '/../..' . '/src/Turbo/TurboConfigDumper.php',
         'Symplify\\EasyCodingStandard\\Turbo\\TurboRunner' => __DIR__ . '/../..' . '/src/Turbo/TurboRunner.php',
         'Symplify\\EasyCodingStandard\\Utils\\ParametersMerger' => __DIR__ . '/../..' . '/src/Utils/ParametersMerger.php',
