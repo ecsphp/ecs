@@ -53,7 +53,8 @@ final class EcsGoBinaryLocator
     {
         $machine = strtolower(php_uname('m'));
         $arch = in_array($machine, ['aarch64', 'arm64'], \true) ? 'arm64' : 'amd64';
-        return strtolower(\PHP_OS_FAMILY) . '-' . $arch;
+        $suffix = \PHP_OS_FAMILY === 'Windows' ? '.exe' : '';
+        return strtolower(\PHP_OS_FAMILY) . '-' . $arch . $suffix;
     }
     private function findOnPath(string $binaryName): ?string
     {
