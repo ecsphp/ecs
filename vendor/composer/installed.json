@@ -148,17 +148,17 @@
         },
         {
             "name": "composer\/semver",
-            "version": "3.4.4",
-            "version_normalized": "3.4.4.0",
+            "version": "3.5.0",
+            "version_normalized": "3.5.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/composer\/semver.git",
-                "reference": "198166618906cb2de69b95d7d47e5fa8aa1b2b95"
+                "reference": "f7a296f4c4cf8cb8bb83e35d6951a406bb11afa5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/composer\/semver\/zipball\/198166618906cb2de69b95d7d47e5fa8aa1b2b95",
-                "reference": "198166618906cb2de69b95d7d47e5fa8aa1b2b95",
+                "url": "https:\/\/api.github.com\/repos\/composer\/semver\/zipball\/f7a296f4c4cf8cb8bb83e35d6951a406bb11afa5",
+                "reference": "f7a296f4c4cf8cb8bb83e35d6951a406bb11afa5",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +168,7 @@
                 "phpstan\/phpstan": "^1.11",
                 "symfony\/phpunit-bridge": "^3 || ^7"
             },
-            "time": "2025-08-20T19:15:30+00:00",
+            "time": "2026-09-24T14:38:51+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -202,7 +202,7 @@
                     "homepage": "http:\/\/robbast.nl"
                 }
             ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "description": "Version comparison library that offers utilities, version constraint parsing and validation.",
             "keywords": [
                 "semantic",
                 "semver",
@@ -212,7 +212,7 @@
             "support": {
                 "irc": "ircs:\/\/irc.libera.chat:6697\/composer",
                 "issues": "https:\/\/github.com\/composer\/semver\/issues",
-                "source": "https:\/\/github.com\/composer\/semver\/tree\/3.4.4"
+                "source": "https:\/\/github.com\/composer\/semver\/tree\/3.5.0"
             },
             "funding": [
                 {
@@ -472,24 +472,24 @@
         },
         {
             "name": "fidry\/cpu-core-counter",
-            "version": "1.3.0",
-            "version_normalized": "1.3.0.0",
+            "version": "1.4.0",
+            "version_normalized": "1.4.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/theofidry\/cpu-core-counter.git",
-                "reference": "db9508f7b1474469d9d3c53b86f817e344732678"
+                "reference": "7cbeb03e286fa81b2bbe0e6bd6b8a27c71a3144d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/theofidry\/cpu-core-counter\/zipball\/db9508f7b1474469d9d3c53b86f817e344732678",
-                "reference": "db9508f7b1474469d9d3c53b86f817e344732678",
+                "url": "https:\/\/api.github.com\/repos\/theofidry\/cpu-core-counter\/zipball\/7cbeb03e286fa81b2bbe0e6bd6b8a27c71a3144d",
+                "reference": "7cbeb03e286fa81b2bbe0e6bd6b8a27c71a3144d",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "fidry\/makefile": "^0.2.0",
+                "fidry\/makefile": "^0.2.0 || ^1.1.2",
                 "fidry\/php-cs-fixer-config": "^1.1.2",
                 "phpstan\/extension-installer": "^1.2.0",
                 "phpstan\/phpstan": "^2.0",
@@ -497,9 +497,10 @@
                 "phpstan\/phpstan-phpunit": "^2.0",
                 "phpstan\/phpstan-strict-rules": "^2.0",
                 "phpunit\/phpunit": "^8.5.31 || ^9.5.26",
+                "symfony\/polyfill-mbstring": "^1.33",
                 "webmozarts\/strict-phpunit": "^7.5"
             },
-            "time": "2025-08-14T07:29:31+00:00",
+            "time": "2026-09-27T17:40:20+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -524,7 +525,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/theofidry\/cpu-core-counter\/issues",
-                "source": "https:\/\/github.com\/theofidry\/cpu-core-counter\/tree\/1.3.0"
+                "source": "https:\/\/github.com\/theofidry\/cpu-core-counter\/tree\/1.4.0"
             },
             "funding": [
                 {
