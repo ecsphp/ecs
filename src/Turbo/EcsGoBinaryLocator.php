@@ -39,15 +39,11 @@ final class EcsGoBinaryLocator
             }
             return $bundledBinary;
         }
-        $vendorBinary = getcwd() . '/vendor/bin/blink';
-        if (is_file($vendorBinary)) {
-            return $vendorBinary;
-        }
         $pathBinary = $this->findOnPath('blink');
         if ($pathBinary !== null) {
             return $pathBinary;
         }
-        throw new EcsGoBinaryNotFoundException(sprintf('The blink binary for --blink was not found in "%s" env, "vendor/bin/blink" or on PATH. Build it with "go build" in the blink/ directory and point "%s" to it.', self::ENV_OVERRIDE, self::ENV_OVERRIDE));
+        throw new EcsGoBinaryNotFoundException(sprintf('The blink binary for --blink was not found in "%s" env or on PATH. Build it with "go build" in the blink/ directory and point "%s" to it.', self::ENV_OVERRIDE, self::ENV_OVERRIDE));
     }
     private function resolvePlatform(): string
     {
