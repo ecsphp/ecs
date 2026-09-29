@@ -7,7 +7,7 @@ use ECSPrefix202609\Nette\Utils\FileSystem;
 use ECSPrefix202609\Nette\Utils\Json;
 use Symplify\EasyCodingStandard\Exception\ShouldNotHappenException;
 /**
- * Experimental --turbo mode: hands the run over to the "ecs-go" Go binary instead
+ * Experimental --blink mode: hands the run over to the "ecs-go" Go binary instead
  * of the PHP engine. The resolved ecs.php config (paths, rules, skips) is written
  * to a temp JSON file and passed to ecs-go via --ecs-config, so ecs-go maps the
  * ECS rules onto its own fixers. See docs/turbo.md for the current limitations.
