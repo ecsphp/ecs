@@ -15,14 +15,14 @@ final class EcsGoBinaryLocator
      * @readonly
      * @var string
      */
-    private $bundledDirectory = __DIR__ . '/../../bin/turbo';
+    private $bundledDirectory = __DIR__ . '/../../bin';
     /**
      * @var string
      */
     private const ENV_OVERRIDE = 'ECS_TURBO_BIN';
-    public function __construct(string $bundledDirectory = __DIR__ . '/../../bin/turbo')
+    public function __construct(string $bundledDirectory = __DIR__ . '/../../bin')
     {
-        // filled with per-platform binaries by the release build, see .github/workflows/buid_release.yaml
+        // filled with per-platform blink binaries by the release build, see .github/workflows/buid_release.yaml
         $this->bundledDirectory = $bundledDirectory;
     }
     public function locate(): string
@@ -31,7 +31,7 @@ final class EcsGoBinaryLocator
         if (is_string($envBinary) && $envBinary !== '' && is_file($envBinary)) {
             return $envBinary;
         }
-        $bundledBinary = $this->bundledDirectory . '/ecs-go-' . $this->resolvePlatform();
+        $bundledBinary = $this->bundledDirectory . '/blink-' . $this->resolvePlatform();
         if (is_file($bundledBinary)) {
             // archive extraction can drop the executable bit
             if (!is_executable($bundledBinary)) {
@@ -39,15 +39,15 @@ final class EcsGoBinaryLocator
             }
             return $bundledBinary;
         }
-        $vendorBinary = getcwd() . '/vendor/bin/ecs-go';
+        $vendorBinary = getcwd() . '/vendor/bin/blink';
         if (is_file($vendorBinary)) {
             return $vendorBinary;
         }
-        $pathBinary = $this->findOnPath('ecs-go');
+        $pathBinary = $this->findOnPath('blink');
         if ($pathBinary !== null) {
             return $pathBinary;
         }
-        throw new EcsGoBinaryNotFoundException(sprintf('The ecs-go binary for --blink was not found in "%s" env, "vendor/bin/ecs-go" or on PATH. Build it from https://github.com/TomasVotruba/ecs-go and point "%s" to it.', self::ENV_OVERRIDE, self::ENV_OVERRIDE));
+        throw new EcsGoBinaryNotFoundException(sprintf('The blink binary for --blink was not found in "%s" env, "vendor/bin/blink" or on PATH. Build it with "go build" in the blink/ directory and point "%s" to it.', self::ENV_OVERRIDE, self::ENV_OVERRIDE));
     }
     private function resolvePlatform(): string
     {
