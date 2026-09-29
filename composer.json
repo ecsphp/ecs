@@ -4,7 +4,8 @@
     "license": "MIT",
     "keywords": ["static analysis", "code style", "automation", "fixer"],
     "bin": [
-        "bin/ecs"
+        "bin/ecs",
+        "bin/blink"
     ],
     "require": {
         "php": ">=7.2"
