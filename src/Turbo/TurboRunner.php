@@ -5,6 +5,7 @@ namespace Symplify\EasyCodingStandard\Turbo;
 
 use ECSPrefix202609\Nette\Utils\FileSystem;
 use ECSPrefix202609\Nette\Utils\Json;
+use Symplify\EasyCodingStandard\Exception\ShouldNotHappenException;
 /**
  * Experimental --turbo mode: hands the run over to the "ecs-go" Go binary instead
  * of the PHP engine. The resolved ecs.php config (paths, rules, skips) is written
@@ -33,11 +34,14 @@ final class TurboRunner
         $configPath = $this->writeConfig($configData);
         try {
             $arguments = $this->createArguments($binary, $configPath, $isFixMode);
-            // symfony/process is in "replace"; passthru streams ecs-go's output straight through
+            // string command, as the array form needs PHP 7.4 and the release is downgraded to 7.2
             $command = implode(' ', array_map(\Closure::fromCallable('escapeshellarg'), $arguments));
-            $exitCode = 0;
-            passthru($command, $exitCode);
-            return $exitCode;
+            // inherit the terminal, so ecs-go detects a TTY and colors its output
+            $process = proc_open($command, [\STDIN, \STDOUT, \STDERR], $pipes);
+            if (!is_resource($process)) {
+                throw new ShouldNotHappenException(sprintf('Unable to start "%s"', $binary));
+            }
+            return proc_close($process);
         } finally {
             FileSystem::delete($configPath);
         }
