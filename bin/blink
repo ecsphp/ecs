@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+# Composer bin wrapper for blink, the Go coding-standard tool under blink/.
+# Builds the binary on first run (Go required) and execs it, so it works as
+# vendor/bin/blink after installation without a build step at install time.
+set -e
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+SRC="$ROOT/blink"
+BINARY="$SRC/blink"
+
+if [ ! -x "$BINARY" ]; then
+    if ! command -v go >/dev/null 2>&1; then
+        echo "blink: Go toolchain required to build the binary (https://go.dev/dl)" >&2
+        exit 1
+    fi
+    (cd "$SRC" && go build -o "$BINARY" .)
+fi
+
+exec "$BINARY" "$@"
