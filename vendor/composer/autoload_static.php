@@ -1564,6 +1564,7 @@ class ComposerStaticInit5a48741193ae459b39f9cbb12ec46190
         'Symplify\\EasyCodingStandard\\Exception\\ShouldNotHappenException' => __DIR__ . '/../..' . '/src/Exception/ShouldNotHappenException.php',
         'Symplify\\EasyCodingStandard\\Exception\\VersionException' => __DIR__ . '/../..' . '/src/Exception/VersionException.php',
         'Symplify\\EasyCodingStandard\\FileSystem\\FileFilter' => __DIR__ . '/../..' . '/src/FileSystem/FileFilter.php',
+        'Symplify\\EasyCodingStandard\\FileSystem\\GitDirtyFilesResolver' => __DIR__ . '/../..' . '/src/FileSystem/GitDirtyFilesResolver.php',
         'Symplify\\EasyCodingStandard\\FileSystem\\PathNormalizer' => __DIR__ . '/../..' . '/src/FileSystem/PathNormalizer.php',
         'Symplify\\EasyCodingStandard\\FileSystem\\StaticRelativeFilePathHelper' => __DIR__ . '/../..' . '/src/FileSystem/StaticRelativeFilePathHelper.php',
         'Symplify\\EasyCodingStandard\\Finder\\SourceFinder' => __DIR__ . '/../..' . '/src/Finder/SourceFinder.php',

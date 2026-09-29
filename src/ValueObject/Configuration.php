@@ -67,9 +67,14 @@ final class Configuration
      */
     private $showDiffs = \true;
     /**
+     * @readonly
+     * @var bool
+     */
+    private $isDirty = \false;
+    /**
      * @param string[] $sources
      */
-    public function __construct(bool $isFixer = \false, bool $shouldClearCache = \false, bool $showProgressBar = \true, bool $showErrorTable = \true, array $sources = [], string $outputFormat = ConsoleOutputFormatter::NAME, bool $isParallel = \false, ?string $config = null, ?string $parallelPort = null, ?string $parallelIdentifier = null, ?string $memoryLimit = null, bool $showDiffs = \true)
+    public function __construct(bool $isFixer = \false, bool $shouldClearCache = \false, bool $showProgressBar = \true, bool $showErrorTable = \true, array $sources = [], string $outputFormat = ConsoleOutputFormatter::NAME, bool $isParallel = \false, ?string $config = null, ?string $parallelPort = null, ?string $parallelIdentifier = null, ?string $memoryLimit = null, bool $showDiffs = \true, bool $isDirty = \false)
     {
         $this->isFixer = $isFixer;
         $this->shouldClearCache = $shouldClearCache;
@@ -83,6 +88,7 @@ final class Configuration
         $this->parallelIdentifier = $parallelIdentifier;
         $this->memoryLimit = $memoryLimit;
         $this->showDiffs = $showDiffs;
+        $this->isDirty = $isDirty;
     }
     public function isFixer(): bool
     {
@@ -103,6 +109,10 @@ final class Configuration
     public function shouldShowDiffs(): bool
     {
         return $this->showDiffs;
+    }
+    public function isDirty(): bool
+    {
+        return $this->isDirty;
     }
     /**
      * @return string[]

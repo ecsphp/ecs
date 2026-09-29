@@ -50,7 +50,7 @@ final class DumpConfigCommand implements CommandInterface
      */
     public function run(string $config = '', string ...$paths): int
     {
-        $configuration = $this->configurationFactory->create(array_values($paths), \false, \false, \false, \false, \false, ConsoleOutputFormatter::NAME, $config !== '' ? $config : null, '', '', null, \false);
+        $configuration = $this->configurationFactory->create(array_values($paths), \false, \false, \false, \false, \false, ConsoleOutputFormatter::NAME, $config !== '' ? $config : null, '', '', null, \false, \false);
         $data = $this->turboConfigDumper->dump($configuration->getSources());
         echo Json::encode($data, Json::PRETTY) . \PHP_EOL;
         return ExitCode::SUCCESS;

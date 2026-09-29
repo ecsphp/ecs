@@ -70,6 +70,7 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
         return 'Check coding standard in one or more directories';
     }
     /**
+     * @param bool   $dirty        Check only files with uncommitted git changes
      * @param bool   $blink        [EXPERIMENTAL] run the ecs-go Go binary instead of the PHP engine
      * @param string $config       Path to config file
      * @param string $outputFormat Select output format
@@ -88,14 +89,14 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
      *
      * @return ExitCode::*
      */
-    public function run(bool $fix = \false, bool $clearCache = \false, bool $noProgressBar = \false, bool $noErrorTable = \false, bool $noDiffs = \false, bool $debug = \false, bool $blink = \false, string $config = '', string $outputFormat = ConsoleOutputFormatter::NAME, string $memoryLimit = '', string $port = '', string $identifier = '', string ...$paths): int
+    public function run(bool $fix = \false, bool $clearCache = \false, bool $noProgressBar = \false, bool $noErrorTable = \false, bool $noDiffs = \false, bool $debug = \false, bool $dirty = \false, bool $blink = \false, string $config = '', string $outputFormat = ConsoleOutputFormatter::NAME, string $memoryLimit = '', string $port = '', string $identifier = '', string ...$paths): int
     {
         // create ecs.php config file if does not exist yet
         if (!$this->configInitializer->areSomeCheckersRegistered()) {
             $this->configInitializer->createConfig((string) getcwd());
             return ExitCode::SUCCESS;
         }
-        $configuration = $this->configurationFactory->create(array_values($paths), $fix, $clearCache, $noProgressBar, $noErrorTable, $noDiffs, $outputFormat, $config !== '' ? $config : null, $port, $identifier, $memoryLimit !== '' ? $memoryLimit : null, $debug);
+        $configuration = $this->configurationFactory->create(array_values($paths), $fix, $clearCache, $noProgressBar, $noErrorTable, $noDiffs, $outputFormat, $config !== '' ? $config : null, $port, $identifier, $memoryLimit !== '' ? $memoryLimit : null, $debug, $dirty);
         // experimental: hand the resolved config to the ecs-go Go binary and skip the PHP engine
         if ($blink) {
             $configData = $this->turboConfigDumper->dump($configuration->getSources());

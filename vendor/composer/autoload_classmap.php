@@ -1390,6 +1390,7 @@ return array(
     'Symplify\\EasyCodingStandard\\Exception\\ShouldNotHappenException' => $baseDir . '/src/Exception/ShouldNotHappenException.php',
     'Symplify\\EasyCodingStandard\\Exception\\VersionException' => $baseDir . '/src/Exception/VersionException.php',
     'Symplify\\EasyCodingStandard\\FileSystem\\FileFilter' => $baseDir . '/src/FileSystem/FileFilter.php',
+    'Symplify\\EasyCodingStandard\\FileSystem\\GitDirtyFilesResolver' => $baseDir . '/src/FileSystem/GitDirtyFilesResolver.php',
     'Symplify\\EasyCodingStandard\\FileSystem\\PathNormalizer' => $baseDir . '/src/FileSystem/PathNormalizer.php',
     'Symplify\\EasyCodingStandard\\FileSystem\\StaticRelativeFilePathHelper' => $baseDir . '/src/FileSystem/StaticRelativeFilePathHelper.php',
     'Symplify\\EasyCodingStandard\\Finder\\SourceFinder' => $baseDir . '/src/Finder/SourceFinder.php',

@@ -9,6 +9,7 @@ use Symplify\EasyCodingStandard\Console\Style\EasyCodingStandardStyle;
 use Symplify\EasyCodingStandard\DependencyInjection\SimpleParameterProvider;
 use Symplify\EasyCodingStandard\Exception\ShouldNotHappenException;
 use Symplify\EasyCodingStandard\FileSystem\FileFilter;
+use Symplify\EasyCodingStandard\FileSystem\GitDirtyFilesResolver;
 use Symplify\EasyCodingStandard\FileSystem\StaticRelativeFilePathHelper;
 use Symplify\EasyCodingStandard\Finder\SourceFinder;
 use Symplify\EasyCodingStandard\Parallel\Application\ParallelFileProcessor;
@@ -45,6 +46,11 @@ final class EasyCodingStandardApplication
     private $fileFilter;
     /**
      * @readonly
+     * @var \Symplify\EasyCodingStandard\FileSystem\GitDirtyFilesResolver
+     */
+    private $gitDirtyFilesResolver;
+    /**
+     * @readonly
      * @var \Symplify\EasyCodingStandard\Application\SingleFileProcessor
      */
     private $singleFileProcessor;
@@ -72,12 +78,13 @@ final class EasyCodingStandardApplication
      * @var string
      */
     private const ARGV = 'argv';
-    public function __construct(EasyCodingStandardStyle $easyCodingStandardStyle, SourceFinder $sourceFinder, ChangedFilesDetector $changedFilesDetector, FileFilter $fileFilter, \Symplify\EasyCodingStandard\Application\SingleFileProcessor $singleFileProcessor, ScheduleFactory $scheduleFactory, ParallelFileProcessor $parallelFileProcessor, CpuCoreCountProvider $cpuCoreCountProvider, ParametersMerger $parametersMerger)
+    public function __construct(EasyCodingStandardStyle $easyCodingStandardStyle, SourceFinder $sourceFinder, ChangedFilesDetector $changedFilesDetector, FileFilter $fileFilter, GitDirtyFilesResolver $gitDirtyFilesResolver, \Symplify\EasyCodingStandard\Application\SingleFileProcessor $singleFileProcessor, ScheduleFactory $scheduleFactory, ParallelFileProcessor $parallelFileProcessor, CpuCoreCountProvider $cpuCoreCountProvider, ParametersMerger $parametersMerger)
     {
         $this->easyCodingStandardStyle = $easyCodingStandardStyle;
         $this->sourceFinder = $sourceFinder;
         $this->changedFilesDetector = $changedFilesDetector;
         $this->fileFilter = $fileFilter;
+        $this->gitDirtyFilesResolver = $gitDirtyFilesResolver;
         $this->singleFileProcessor = $singleFileProcessor;
         $this->scheduleFactory = $scheduleFactory;
         $this->parallelFileProcessor = $parallelFileProcessor;
@@ -91,6 +98,10 @@ final class EasyCodingStandardApplication
     {
         // 1. find files in sources
         $filePaths = $this->sourceFinder->find($configuration->getSources());
+        // keep only files with uncommitted git changes
+        if ($configuration->isDirty()) {
+            $filePaths = $this->gitDirtyFilesResolver->filterDirty($filePaths);
+        }
         // 2. clear cache
         if ($configuration->shouldClearCache()) {
             $this->changedFilesDetector->clearCache();

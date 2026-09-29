@@ -24,14 +24,14 @@ final class ConfigurationFactory
      *
      * @param string[] $paths
      */
-    public function create(array $paths, bool $isFixer, bool $shouldClearCache, bool $noProgressBar, bool $noErrorTable, bool $noDiffs, string $outputFormat, ?string $config, string $parallelPort, string $parallelIdentifier, ?string $memoryLimit, bool $debug): Configuration
+    public function create(array $paths, bool $isFixer, bool $shouldClearCache, bool $noProgressBar, bool $noErrorTable, bool $noDiffs, string $outputFormat, ?string $config, string $parallelPort, string $parallelIdentifier, ?string $memoryLimit, bool $debug, bool $isDirty): Configuration
     {
         $paths = $this->resolvePaths($paths);
         $showProgressBar = $this->canShowProgressBar($debug, $outputFormat, $noProgressBar);
         $showErrorTable = !$noErrorTable;
         $showDiffs = !$noDiffs;
         $isParallel = SimpleParameterProvider::getBoolParameter(Option::PARALLEL);
-        return new Configuration($isFixer, $shouldClearCache, $showProgressBar, $showErrorTable, $paths, $outputFormat, $isParallel, $config, $parallelPort, $parallelIdentifier, $memoryLimit, $showDiffs);
+        return new Configuration($isFixer, $shouldClearCache, $showProgressBar, $showErrorTable, $paths, $outputFormat, $isParallel, $config, $parallelPort, $parallelIdentifier, $memoryLimit, $showDiffs, $isDirty);
     }
     private function canShowProgressBar(bool $debug, string $outputFormat, bool $noProgressBar): bool
     {
