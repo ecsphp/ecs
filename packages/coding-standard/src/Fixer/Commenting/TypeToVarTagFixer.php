@@ -24,10 +24,10 @@ final class TypeToVarTagFixer extends AbstractSymplifyFixer
      */
     private $tokenReverser;
     /**
-     * @see https://regex101.com/r/8tFqJp/1
+     * Matches only "@type" at the start of a doc line, not inside a description
      * @var string
      */
-    private const TYPE_TAG_REGEX = '#@type\b#';
+    private const TYPE_TAG_REGEX = '#^(\s*(?:/\*{1,2}|\*)?\s*)@type\b#m';
     /**
      * @see https://regex101.com/r/cj95e6/1
      * @var string
@@ -66,7 +66,7 @@ final class TypeToVarTagFixer extends AbstractSymplifyFixer
             if (!Regex::match($docContent, self::TYPE_TAG_REGEX)) {
                 continue;
             }
-            $newDocContent = Regex::replace($docContent, self::TYPE_TAG_REGEX, '@var');
+            $newDocContent = Regex::replace($docContent, self::TYPE_TAG_REGEX, '$1@var');
             $newDocContent = Regex::replace($newDocContent, self::SINGLE_ASTERISK_START_REGEX, '/**$1');
             $tokens[$index] = new Token([\T_DOC_COMMENT, $newDocContent]);
         }
