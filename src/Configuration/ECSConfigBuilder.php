@@ -78,7 +78,7 @@ final class ECSConfigBuilder
     /**
      * @var int
      */
-    private $parallelJobSize = 20;
+    private $parallelJobSize = 16;
     /**
      * To make sure each common set and its corresponding level are not
      * duplicated, as both contain the same rules.
