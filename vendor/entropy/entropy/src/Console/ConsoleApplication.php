@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Console;
 
-use ECSPrefix202609\Entropy\Attributes\RelatedTest;
+use ECSPrefix202609\Entropy\Attribute\RelatedTest;
 use ECSPrefix202609\Entropy\Console\Contract\CommandInterface;
 use ECSPrefix202609\Entropy\Console\Enum\ExitCode;
 use ECSPrefix202609\Entropy\Console\Input\InputParser;

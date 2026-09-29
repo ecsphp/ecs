@@ -3,8 +3,11 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Utils;
 
-use ECSPrefix202609\Entropy\Attributes\RelatedTest;
+use ECSPrefix202609\Entropy\Attribute\RelatedTest;
 use ECSPrefix202609\Entropy\Tests\Utils\FuzzyMatcherTest;
+/**
+ * @see \Entropy\Tests\Utils\FuzzyMatcherTest
+ */
 final class FuzzyMatcher
 {
     /**

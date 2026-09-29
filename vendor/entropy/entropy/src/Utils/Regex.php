@@ -3,10 +3,11 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Utils;
 
-use ECSPrefix202609\Entropy\Attributes\RelatedTest;
+use ECSPrefix202609\Entropy\Attribute\RelatedTest;
 use ECSPrefix202609\Entropy\Tests\Utils\RegexTest;
 /**
  * @api to be used
+ * @see \Entropy\Tests\Utils\RegexTest
  */
 final class Regex
 {

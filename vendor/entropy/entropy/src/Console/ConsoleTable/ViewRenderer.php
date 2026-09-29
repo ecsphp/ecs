@@ -3,11 +3,14 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Console\ConsoleTable;
 
-use ECSPrefix202609\Entropy\Attributes\RelatedTest;
+use ECSPrefix202609\Entropy\Attribute\RelatedTest;
 use ECSPrefix202609\Entropy\Console\ConsoleTable\ValueObject\TableRow;
 use ECSPrefix202609\Entropy\Console\ConsoleTable\ValueObject\TableView;
 use ECSPrefix202609\Entropy\Console\Output\OutputPrinter;
 use ECSPrefix202609\Entropy\Tests\Console\ConsoleTable\ViewRendererTest;
+/**
+ * @see \Entropy\Tests\Console\ConsoleTable\ViewRendererTest
+ */
 final class ViewRenderer
 {
     /**

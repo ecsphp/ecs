@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Console\Mapper;
 
-use ECSPrefix202609\Entropy\Attributes\RelatedTest;
+use ECSPrefix202609\Entropy\Attribute\RelatedTest;
 use ECSPrefix202609\Entropy\Console\Contract\CommandInterface;
 use ECSPrefix202609\Entropy\Console\Exception\ConsoleInputMappingException;
 use ECSPrefix202609\Entropy\Console\ValueObject\CLIRequest;
@@ -14,6 +14,9 @@ use ReflectionNamedType;
 use ReflectionParameter;
 use ReflectionType;
 use ECSPrefix202609\Webmozart\Assert\Assert;
+/**
+ * @see \Entropy\Tests\Console\Mapper\CLIRequestMapperTest
+ */
 final class CLIRequestMapper
 {
     /**
@@ -93,7 +96,8 @@ final class CLIRequestMapper
             }
             // 4) Single positional
             if (!$isBool && isset($positionals[$positionIndex])) {
-                $value = $positionals[$positionIndex++];
+                $value = $positionals[$positionIndex];
+                ++$positionIndex;
                 $args[] = $this->castValueByParameterType($value, $type);
                 continue;
             }
@@ -148,7 +152,7 @@ final class CLIRequestMapper
             return $value;
         }
         // fallback to default value if empty
-        if ($defaultValue !== 'unknown' && empty($value)) {
+        if ($defaultValue !== 'unknown' && in_array($value, [null, \false, '', '0', 0, 0.0, []], \true)) {
             return $defaultValue;
         }
         // special case, use single value if param type is scalar

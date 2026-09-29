@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba
+class ComposerStaticInit5a48741193ae459b39f9cbb12ec46190
 {
     public static $files = array (
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
@@ -219,7 +219,7 @@ class ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba
         'ECSPrefix202609\\Composer\\XdebugHandler\\Process' => __DIR__ . '/..' . '/composer/xdebug-handler/src/Process.php',
         'ECSPrefix202609\\Composer\\XdebugHandler\\Status' => __DIR__ . '/..' . '/composer/xdebug-handler/src/Status.php',
         'ECSPrefix202609\\Composer\\XdebugHandler\\XdebugHandler' => __DIR__ . '/..' . '/composer/xdebug-handler/src/XdebugHandler.php',
-        'ECSPrefix202609\\Entropy\\Attributes\\RelatedTest' => __DIR__ . '/..' . '/entropy/entropy/src/Attributes/RelatedTest.php',
+        'ECSPrefix202609\\Entropy\\Attribute\\RelatedTest' => __DIR__ . '/..' . '/entropy/entropy/src/Attribute/RelatedTest.php',
         'ECSPrefix202609\\Entropy\\Console\\CommandRegistry' => __DIR__ . '/..' . '/entropy/entropy/src/Console/CommandRegistry.php',
         'ECSPrefix202609\\Entropy\\Console\\ConsoleApplication' => __DIR__ . '/..' . '/entropy/entropy/src/Console/ConsoleApplication.php',
         'ECSPrefix202609\\Entropy\\Console\\ConsoleTable\\ConsoleTable' => __DIR__ . '/..' . '/entropy/entropy/src/Console/ConsoleTable/ConsoleTable.php',
@@ -258,6 +258,7 @@ class ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba
         'ECSPrefix202609\\Entropy\\Reflection\\ParameterOptionMarkerResolver' => __DIR__ . '/..' . '/entropy/entropy/src/Reflection/ParameterOptionMarkerResolver.php',
         'ECSPrefix202609\\Entropy\\Reflection\\ParameterTypesResolver' => __DIR__ . '/..' . '/entropy/entropy/src/Reflection/ParameterTypesResolver.php',
         'ECSPrefix202609\\Entropy\\Reflection\\UseStatementsResolver' => __DIR__ . '/..' . '/entropy/entropy/src/Reflection/UseStatementsResolver.php',
+        'ECSPrefix202609\\Entropy\\Reflection\\ValueOptionNameResolver' => __DIR__ . '/..' . '/entropy/entropy/src/Reflection/ValueOptionNameResolver.php',
         'ECSPrefix202609\\Entropy\\Utils\\FileSystem' => __DIR__ . '/..' . '/entropy/entropy/src/Utils/FileSystem.php',
         'ECSPrefix202609\\Entropy\\Utils\\FuzzyMatcher' => __DIR__ . '/..' . '/entropy/entropy/src/Utils/FuzzyMatcher.php',
         'ECSPrefix202609\\Entropy\\Utils\\Json' => __DIR__ . '/..' . '/entropy/entropy/src/Utils/Json.php',
@@ -1631,9 +1632,9 @@ class ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit9164a1d2f3f167f38915f8a57b56faba::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5a48741193ae459b39f9cbb12ec46190::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5a48741193ae459b39f9cbb12ec46190::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5a48741193ae459b39f9cbb12ec46190::$classMap;
 
         }, null, ClassLoader::class);
     }

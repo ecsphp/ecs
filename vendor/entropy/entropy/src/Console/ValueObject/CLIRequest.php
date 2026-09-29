@@ -4,6 +4,9 @@ declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Console\ValueObject;
 
 use ECSPrefix202609\Webmozart\Assert\Assert;
+/**
+ * @see \Entropy\Tests\Console\ValueObject\CLIRequestTest
+ */
 final class CLIRequest
 {
     /**

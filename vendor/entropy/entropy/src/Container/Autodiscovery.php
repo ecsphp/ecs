@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Container;
 
-use ECSPrefix202609\Entropy\Attributes\RelatedTest;
+use ECSPrefix202609\Entropy\Attribute\RelatedTest;
 use ECSPrefix202609\Entropy\FileSystem\FileFinder;
 use ECSPrefix202609\Entropy\Reflection\ClassNameResolver;
 use ECSPrefix202609\Entropy\Tests\Container\Autodiscovery\AutodiscoveryTest;

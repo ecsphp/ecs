@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Console\Mapper;
 
-use ECSPrefix202609\Entropy\Attributes\RelatedTest;
+use ECSPrefix202609\Entropy\Attribute\RelatedTest;
 use ECSPrefix202609\Entropy\Console\Contract\CommandInterface;
 use ECSPrefix202609\Entropy\Console\Exception\InvalidCommandException;
 use ECSPrefix202609\Entropy\Console\ValueObject\Argument;
@@ -14,6 +14,9 @@ use ECSPrefix202609\Entropy\Reflection\ParameterOptionMarkerResolver;
 use ECSPrefix202609\Entropy\Tests\Console\Mapper\CommandRunParametersMapperTest;
 use ReflectionMethod;
 use ReflectionNamedType;
+/**
+ * @see \Entropy\Tests\Console\Mapper\CommandRunParametersMapperTest
+ */
 final class CommandRunParametersMapper
 {
     public function map(CommandInterface $command): ArgumentsAndOptions

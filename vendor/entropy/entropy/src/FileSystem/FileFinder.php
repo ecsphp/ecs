@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\FileSystem;
 
-use ECSPrefix202609\Entropy\Attributes\RelatedTest;
+use ECSPrefix202609\Entropy\Attribute\RelatedTest;
 use ECSPrefix202609\Entropy\Tests\FileSystem\FileFinder\FileFinderTest;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
