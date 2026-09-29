@@ -1279,6 +1279,7 @@ return array(
     'Symplify\\CodingStandard\\Fixer\\Commenting\\ParamReturnAndVarTagMalformsFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/ParamReturnAndVarTagMalformsFixer.php',
     'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveDeadParamFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/RemoveDeadParamFixer.php',
     'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveDeadVarThisFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/RemoveDeadVarThisFixer.php',
+    'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveParamDescriptionDuplicateNameFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/RemoveParamDescriptionDuplicateNameFixer.php',
     'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveParamNameReferenceFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/RemoveParamNameReferenceFixer.php',
     'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveSuperfluousReturnNameFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/RemoveSuperfluousReturnNameFixer.php',
     'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveSuperfluousVarNameFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/RemoveSuperfluousVarNameFixer.php',

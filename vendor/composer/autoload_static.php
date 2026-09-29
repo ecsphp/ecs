@@ -1453,6 +1453,7 @@ class ComposerStaticInit5a48741193ae459b39f9cbb12ec46190
         'Symplify\\CodingStandard\\Fixer\\Commenting\\ParamReturnAndVarTagMalformsFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/ParamReturnAndVarTagMalformsFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveDeadParamFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveDeadParamFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveDeadVarThisFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveDeadVarThisFixer.php',
+        'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveParamDescriptionDuplicateNameFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveParamDescriptionDuplicateNameFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveParamNameReferenceFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveParamNameReferenceFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveSuperfluousReturnNameFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveSuperfluousReturnNameFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveSuperfluousVarNameFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveSuperfluousVarNameFixer.php',
