@@ -3,17 +3,15 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Console\ValueObject;
 
-use ECSPrefix202609\Webmozart\Assert\Assert;
+use ECSPrefix202609\Entropy\Validation\Assert;
 final class ArgumentsAndOptions
 {
     /**
      * @var Argument[]
-     * @readonly
      */
     private $arguments;
     /**
      * @var Option[]
-     * @readonly
      */
     private $options;
     /**

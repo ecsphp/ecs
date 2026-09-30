@@ -16,17 +16,8 @@ use ECSPrefix202609\Entropy\Tests\Console\Output\ProgressBarTest;
  */
 final class ProgressBar
 {
-    /**
-     * @var int
-     */
     private const BAR_WIDTH = 28;
-    /**
-     * @var string
-     */
     private const COMPLETE_CHAR = '▓';
-    /**
-     * @var string
-     */
     private const REMAINING_CHAR = '░';
     /**
      * @var int
@@ -37,7 +28,6 @@ final class ProgressBar
      */
     private $maxSteps = 0;
     /**
-     * @readonly
      * @var bool
      */
     private $isSilent;

@@ -16,32 +16,26 @@ use Throwable;
 final class ConsoleApplication
 {
     /**
-     * @readonly
      * @var \Entropy\Console\Output\HelpPrinter
      */
     private $helpPrinter;
     /**
-     * @readonly
      * @var \Entropy\Console\Output\OutputPrinter
      */
     private $outputPrinter;
     /**
-     * @readonly
      * @var \Entropy\Console\Output\CommandHelpFactory
      */
     private $commandHelpFactory;
     /**
-     * @readonly
      * @var \Entropy\Console\Input\InputParser
      */
     private $inputParser;
     /**
-     * @readonly
      * @var \Entropy\Console\CommandRegistry
      */
     private $commandRegistry;
     /**
-     * @readonly
      * @var \Entropy\Console\Mapper\CLIRequestMapper
      */
     private $cliRequestMapper;

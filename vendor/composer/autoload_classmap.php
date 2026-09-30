@@ -90,6 +90,7 @@ return array(
     'ECSPrefix202609\\Entropy\\Utils\\Json' => $vendorDir . '/entropy/entropy/src/Utils/Json.php',
     'ECSPrefix202609\\Entropy\\Utils\\Regex' => $vendorDir . '/entropy/entropy/src/Utils/Regex.php',
     'ECSPrefix202609\\Entropy\\Utils\\Strings' => $vendorDir . '/entropy/entropy/src/Utils/Strings.php',
+    'ECSPrefix202609\\Entropy\\Validation\\Assert' => $vendorDir . '/entropy/entropy/src/Validation/Assert.php',
     'ECSPrefix202609\\Ergebnis\\AgentDetector\\Detector' => $vendorDir . '/ergebnis/agent-detector/src/Detector.php',
     'ECSPrefix202609\\Evenement\\EventEmitter' => $vendorDir . '/evenement/evenement/src/EventEmitter.php',
     'ECSPrefix202609\\Evenement\\EventEmitterInterface' => $vendorDir . '/evenement/evenement/src/EventEmitterInterface.php',

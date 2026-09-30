@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Utils;
 
 use ECSPrefix202609\Entropy\FileSystem\Exception\FileSystemException;
-use ECSPrefix202609\Webmozart\Assert\Assert;
+use ECSPrefix202609\Entropy\Validation\Assert;
 /**
  * @api public api to use
  */

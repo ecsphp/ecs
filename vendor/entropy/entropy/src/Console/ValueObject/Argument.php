@@ -6,20 +6,17 @@ namespace ECSPrefix202609\Entropy\Console\ValueObject;
 final class Argument
 {
     /**
-     * @readonly
      * @var string
      */
     private $name;
     /**
-     * @readonly
      * @var string|null
      */
     private $description;
     /**
-     * @readonly
      * @var bool
      */
-    private $acceptsMultipleValues = \false;
+    private $acceptsMultipleValues;
     public function __construct(string $name, ?string $description = null, bool $acceptsMultipleValues = \false)
     {
         $this->name = $name;

@@ -13,7 +13,6 @@ use ECSPrefix202609\Entropy\Tests\Console\Output\CommandHelpFactory\CommandHelpF
 final class CommandHelpFactory
 {
     /**
-     * @readonly
      * @var \Entropy\Console\Mapper\CommandRunParametersMapper
      */
     private $commandRunParametersMapper;
@@ -46,7 +45,7 @@ final class CommandHelpFactory
         return implode(\PHP_EOL, $help);
     }
     /**
-     * @param \Entropy\Console\ValueObject\Argument|\Entropy\Console\ValueObject\Option $argumentOrOption
+     * @param Argument|Option $argumentOrOption
      */
     private function formatParameterLine($argumentOrOption): string
     {
@@ -56,7 +55,7 @@ final class CommandHelpFactory
         return rtrim($parameterLine);
     }
     /**
-     * @param \Entropy\Console\ValueObject\Option|\Entropy\Console\ValueObject\Argument $argumentOrOption
+     * @param Option|Argument $argumentOrOption
      */
     private function nameWithDefaultValue($argumentOrOption): string
     {

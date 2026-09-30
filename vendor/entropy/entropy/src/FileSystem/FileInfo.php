@@ -8,20 +8,18 @@ use SplFileInfo;
 final class FileInfo extends SplFileInfo
 {
     /**
-     * @readonly
      * @var string
      */
-    private $relativePath = '';
+    private $relativePath;
     /**
-     * @readonly
      * @var string
      */
-    private $relativePathname = '';
+    private $relativePathname;
     public function __construct(string $filePath, string $relativePath = '', string $relativePathname = '')
     {
+        parent::__construct($filePath);
         $this->relativePath = $relativePath;
         $this->relativePathname = $relativePathname;
-        parent::__construct($filePath);
     }
     /**
      * @api

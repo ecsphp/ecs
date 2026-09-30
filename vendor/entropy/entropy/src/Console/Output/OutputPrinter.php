@@ -5,22 +5,20 @@ namespace ECSPrefix202609\Entropy\Console\Output;
 
 use ECSPrefix202609\Entropy\Console\Enum\Color;
 use ECSPrefix202609\Entropy\Console\Terminal\Terminal;
-use ECSPrefix202609\Webmozart\Assert\Assert;
+use ECSPrefix202609\Entropy\Validation\Assert;
 /**
  * @api used in many ways
  */
 final class OutputPrinter
 {
     /**
-     * @readonly
-     * @var \Entropy\Console\Output\OutputColorizer
-     */
-    private $outputColorizer;
-    /**
-     * @readonly
      * @var bool
      */
     private $isSilent;
+    /**
+     * @var \Entropy\Console\Output\OutputColorizer
+     */
+    private $outputColorizer;
     public function __construct(OutputColorizer $outputColorizer)
     {
         $this->outputColorizer = $outputColorizer;

@@ -3,26 +3,24 @@
 declare (strict_types=1);
 namespace ECSPrefix202609\Entropy\Console\ValueObject;
 
-use ECSPrefix202609\Webmozart\Assert\Assert;
+use ECSPrefix202609\Entropy\Validation\Assert;
 /**
  * @see \Entropy\Tests\Console\ValueObject\CLIRequestTest
  */
 final class CLIRequest
 {
     /**
-     * @readonly
      * @var string|null
      */
     private $commandName;
     /**
      * @var mixed[]
-     * @readonly
      */
-    private $arguments = [];
+    private $arguments;
     /**
      * @var array<string, mixed>
      */
-    private $options = [];
+    private $options;
     /**
      * @param mixed[] $arguments
      * @param array<string, mixed> $options

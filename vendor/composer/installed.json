@@ -297,28 +297,29 @@
         },
         {
             "name": "entropy\/entropy",
-            "version": "0.4.16",
-            "version_normalized": "0.4.16.0",
+            "version": "0.4.17",
+            "version_normalized": "0.4.17.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/TomasVotruba\/entropy.git",
-                "reference": "5660910644df8fba2da96fb7f0a9279f5d3b278d"
+                "reference": "ca1ce2f8b332682e04ad6d4d2dd78154968271cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/TomasVotruba\/entropy\/zipball\/5660910644df8fba2da96fb7f0a9279f5d3b278d",
-                "reference": "5660910644df8fba2da96fb7f0a9279f5d3b278d",
+                "url": "https:\/\/api.github.com\/repos\/TomasVotruba\/entropy\/zipball\/ca1ce2f8b332682e04ad6d4d2dd78154968271cf",
+                "reference": "ca1ce2f8b332682e04ad6d4d2dd78154968271cf",
                 "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
-                "php": "^8.4",
-                "webmozart\/assert": "^2.4"
+                "php": ">=7.4",
+                "symfony\/polyfill-php80": "^1.31"
             },
             "require-dev": {
+                "php-parallel-lint\/php-parallel-lint": "^1.4",
                 "phpstan\/extension-installer": "^1.4",
                 "phpstan\/phpstan": "^2.1",
-                "phpunit\/phpunit": "^12.5",
+                "phpunit\/phpunit": "^9.6",
                 "rector\/jack": "^1.0",
                 "rector\/rector": "^2.4",
                 "rector\/swiss-knife": "^2.4",
@@ -329,7 +330,7 @@
                 "tomasvotruba\/unused-public": "^2.2",
                 "tracy\/tracy": "^2.12"
             },
-            "time": "2026-09-30T08:04:47+00:00",
+            "time": "2026-09-30T09:48:16+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -344,7 +345,7 @@
             "description": "Entropy framework",
             "support": {
                 "issues": "https:\/\/github.com\/TomasVotruba\/entropy\/issues",
-                "source": "https:\/\/github.com\/TomasVotruba\/entropy\/tree\/0.4.16"
+                "source": "https:\/\/github.com\/TomasVotruba\/entropy\/tree\/0.4.17"
             },
             "install-path": "..\/entropy\/entropy"
         },
@@ -1860,23 +1861,23 @@
         },
         {
             "name": "symfony\/polyfill-php80",
-            "version": "v1.37.0",
-            "version_normalized": "1.37.0.0",
+            "version": "v1.43.0",
+            "version_normalized": "1.43.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-php80.git",
-                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
+                "reference": "9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-php80\/zipball\/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
-                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-php80\/zipball\/9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74",
+                "reference": "9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2"
             },
-            "time": "2026-04-10T16:19:22+00:00",
+            "time": "2026-09-25T15:50:05+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -1923,7 +1924,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-php80\/tree\/v1.37.0"
+                "source": "https:\/\/github.com\/symfony\/polyfill-php80\/tree\/v1.43.0"
             },
             "funding": [
                 {
@@ -2030,23 +2031,23 @@
         },
         {
             "name": "symfony\/polyfill-php84",
-            "version": "v1.38.1",
-            "version_normalized": "1.38.1.0",
+            "version": "v1.43.0",
+            "version_normalized": "1.43.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-php84.git",
-                "reference": "f4e1dfaee5b74aba5964fe1fd4dfc7ba5e3085fa"
+                "reference": "22c6548499cbe5c5bb072fc0c42312dff062a015"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-php84\/zipball\/f4e1dfaee5b74aba5964fe1fd4dfc7ba5e3085fa",
-                "reference": "f4e1dfaee5b74aba5964fe1fd4dfc7ba5e3085fa",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-php84\/zipball\/22c6548499cbe5c5bb072fc0c42312dff062a015",
+                "reference": "22c6548499cbe5c5bb072fc0c42312dff062a015",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2"
             },
-            "time": "2026-05-26T12:51:13+00:00",
+            "time": "2026-09-23T22:01:09+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -2089,7 +2090,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-php84\/tree\/v1.38.1"
+                "source": "https:\/\/github.com\/symfony\/polyfill-php84\/tree\/v1.43.0"
             },
             "funding": [
                 {

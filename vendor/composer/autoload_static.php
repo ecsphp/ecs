@@ -264,6 +264,7 @@ class ComposerStaticInit5a48741193ae459b39f9cbb12ec46190
         'ECSPrefix202609\\Entropy\\Utils\\Json' => __DIR__ . '/..' . '/entropy/entropy/src/Utils/Json.php',
         'ECSPrefix202609\\Entropy\\Utils\\Regex' => __DIR__ . '/..' . '/entropy/entropy/src/Utils/Regex.php',
         'ECSPrefix202609\\Entropy\\Utils\\Strings' => __DIR__ . '/..' . '/entropy/entropy/src/Utils/Strings.php',
+        'ECSPrefix202609\\Entropy\\Validation\\Assert' => __DIR__ . '/..' . '/entropy/entropy/src/Validation/Assert.php',
         'ECSPrefix202609\\Ergebnis\\AgentDetector\\Detector' => __DIR__ . '/..' . '/ergebnis/agent-detector/src/Detector.php',
         'ECSPrefix202609\\Evenement\\EventEmitter' => __DIR__ . '/..' . '/evenement/evenement/src/EventEmitter.php',
         'ECSPrefix202609\\Evenement\\EventEmitterInterface' => __DIR__ . '/..' . '/evenement/evenement/src/EventEmitterInterface.php',

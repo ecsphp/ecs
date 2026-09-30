@@ -16,7 +16,6 @@ use ReflectionMethod;
 final class InputParser
 {
     /**
-     * @readonly
      * @var \Entropy\Console\CommandRegistry
      */
     private $commandRegistry;

@@ -14,19 +14,17 @@ use ECSPrefix202609\Entropy\Tests\Console\ConsoleTable\ViewRendererTest;
 final class ViewRenderer
 {
     /**
-     * @readonly
+     * @var int Tables span at least this many characters wide
+     */
+    private const MIN_WIDTH = 60;
+    /**
      * @var \Entropy\Console\Output\OutputPrinter
      */
     private $outputPrinter;
     /**
-     * @readonly
      * @var \Entropy\Console\ConsoleTable\ConsoleTable
      */
     private $consoleTable;
-    /**
-     * @var int Tables span at least this many characters wide
-     */
-    private const MIN_WIDTH = 60;
     public function __construct(OutputPrinter $outputPrinter, ConsoleTable $consoleTable)
     {
         $this->outputPrinter = $outputPrinter;

@@ -12,20 +12,15 @@ use ECSPrefix202609\Entropy\Tests\Console\ConsoleTable\ConsoleTableTest;
 final class ConsoleTable
 {
     /**
-     * @readonly
+     * @api used in tests
+     * Marks a separator line between table rows.
+     */
+    public const SEPARATOR = '__separator__';
+    private const COLUMN_PADDING = 2;
+    /**
      * @var \Entropy\Console\Output\OutputPrinter
      */
     private $outputPrinter;
-    /**
-     * @api used in tests
-     * Marks a separator line between table rows.
-     * @var string
-     */
-    public const SEPARATOR = '__separator__';
-    /**
-     * @var int
-     */
-    private const COLUMN_PADDING = 2;
     public function __construct(OutputPrinter $outputPrinter)
     {
         $this->outputPrinter = $outputPrinter;

@@ -6,30 +6,25 @@ namespace ECSPrefix202609\Entropy\Console\ValueObject;
 final class Option
 {
     /**
-     * @readonly
+     * @var string
+     */
+    private $name;
+    /**
      * @var string
      */
     private $type;
     /**
-     * @readonly
      * @var string|null
      */
     private $description;
     /**
-     * @readonly
      * @var bool
      */
-    private $acceptsMultipleValues = \false;
+    private $acceptsMultipleValues;
     /**
-     * @readonly
      * @var string|bool|int|null
      */
-    private $defaultValue = null;
-    /**
-     * @readonly
-     * @var string
-     */
-    private $name;
+    private $defaultValue;
     /**
      * @param string|bool|int|null $defaultValue
      */

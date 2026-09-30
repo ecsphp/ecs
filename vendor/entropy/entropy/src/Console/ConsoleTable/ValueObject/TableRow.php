@@ -6,22 +6,18 @@ namespace ECSPrefix202609\Entropy\Console\ConsoleTable\ValueObject;
 final class TableRow
 {
     /**
-     * @readonly
      * @var string
      */
     private $name;
     /**
-     * @readonly
      * @var string
      */
     private $count;
     /**
-     * @readonly
      * @var string|null
      */
     private $percent;
     /**
-     * @readonly
      * @var bool
      */
     private $isChild;

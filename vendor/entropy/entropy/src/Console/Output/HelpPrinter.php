@@ -6,20 +6,15 @@ namespace ECSPrefix202609\Entropy\Console\Output;
 use ECSPrefix202609\Entropy\Console\CommandRegistry;
 final class HelpPrinter
 {
+    private const MIN_WIDTH = 10;
     /**
-     * @readonly
      * @var \Entropy\Console\CommandRegistry
      */
     private $commandRegistry;
     /**
-     * @readonly
      * @var \Entropy\Console\Output\OutputPrinter
      */
     private $outputPrinter;
-    /**
-     * @var int
-     */
-    private const MIN_WIDTH = 10;
     public function __construct(CommandRegistry $commandRegistry, OutputPrinter $outputPrinter)
     {
         $this->commandRegistry = $commandRegistry;
