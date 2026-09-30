@@ -106,8 +106,6 @@ final class EasyCodingStandardStyle
      */
     private function normalizeTags(string $text): string
     {
-        // drop bold/underscore styling, keep the text
-        $text = (string) preg_replace('#<options=[^>]+>(.*?)</>#su', '$1', $text);
         // <comment> → yellow, <info> → green
         $text = (string) preg_replace('#<comment>(.*?)</comment>#su', '<fg=yellow>$1</>', $text);
         $text = (string) preg_replace('#<info>(.*?)</info>#su', '<fg=green>$1</>', $text);
