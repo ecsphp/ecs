@@ -14,7 +14,7 @@ Easy Coding Standard (ECS) is a single tool that runs [PHP_CodeSniffer](https://
 - Install on **any PHP 7.2-PHP 8.5** project with any dependencies
 - Blazing fast with parallel run out of the box
 - Use [PHP_CodeSniffer or PHP-CS-Fixer](https://tomasvotruba.com/blog/2017/05/03/combine-power-of-php-code-sniffer-and-php-cs-fixer-in-3-lines/) - anything you like
-- Use **prepared sets** and [PHP CS Fixer sets](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/ruleSets/index.rst) to save time
+- Use [**prepared sets**](#prepared-sets) to save time
 
 <br>
 
@@ -83,18 +83,6 @@ return ECSConfig::configure()
 
 <br>
 
-Do you want to check all `*.php` files in your root (`ecs.php`, `rector.php` etc.)? Instead of listing them one by one, use `->withRootFiles()` method:
-
-```php
-use Symplify\EasyCodingStandard\Config\ECSConfig;
-
-return ECSConfig::configure()
-    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
-    ->withRootFiles();
-```
-
-<br>
-
 ### Prepared Sets
 
 `->withPreparedSets()` bundles curated rule sets. Enable the whole `common` set, or pick single topics:
@@ -129,7 +117,7 @@ return ECSConfig::configure()
 
 Or enable everything at once with `->withPreparedSets(common: true)`.
 
-Standalone presets are also available: `psr12: true`, `perCs: true`, and `laravel: true` (the [Laravel Pint](https://github.com/laravel/pint/blob/main/resources/presets/laravel.php) ruleset):
+Standalone presets are also available: `psr12: true`, `perCs: true`, `cleanCode: true` (dead code, unused imports, redundant syntax), `standaloneLine: true` (each constructor param on its own line), and `laravel: true` (the [Laravel Pint](https://github.com/laravel/pint/blob/main/resources/presets/laravel.php) ruleset):
 
 ```php
 use Symplify\EasyCodingStandard\Config\ECSConfig;
@@ -137,6 +125,20 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 return ECSConfig::configure()
     ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
     ->withPreparedSets(laravel: true);
+```
+
+<br>
+
+### Check All Root Files
+
+Do you want to check all `*.php` files in your root (`ecs.php`, `rector.php` etc.)? Instead of listing them one by one, use `->withRootFiles()` method:
+
+```php
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+
+return ECSConfig::configure()
+    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
+    ->withRootFiles();
 ```
 
 <br>
