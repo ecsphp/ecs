@@ -58,30 +58,7 @@ That's it!
 
 ## Configure
 
-Most of the time, you'll be happy with the default configuration. The most relevant part is configuring paths, checkers and sets:
-
-```php
-use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
-use PhpCsFixer\Fixer\ListNotation\ListSyntaxFixer;
-use Symplify\EasyCodingStandard\Config\ECSConfig;
-
-return ECSConfig::configure()
-    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
-
-    // start slow with sole rules
-    ->withRules([
-        ListSyntaxFixer::class,
-    ])
-    ->withConfiguredRule(
-        ArraySyntaxFixer::class,
-        ['syntax' => 'long']
-    )
-
-    // apply full set
-    ->withPreparedSets(psr12: true);
-```
-
-<br>
+Most of the time, you'll be happy with the default configuration. The most relevant part is configuring paths and sets.
 
 ### Prepared Sets
 
@@ -125,6 +102,28 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 return ECSConfig::configure()
     ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
     ->withPreparedSets(laravel: true);
+```
+
+<br>
+
+### Single Rules
+
+Prefer to start slow? Pick single rules, and configure them if needed:
+
+```php
+use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
+use PhpCsFixer\Fixer\ListNotation\ListSyntaxFixer;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+
+return ECSConfig::configure()
+    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
+    ->withRules([
+        ListSyntaxFixer::class,
+    ])
+    ->withConfiguredRule(
+        ArraySyntaxFixer::class,
+        ['syntax' => 'long']
+    );
 ```
 
 <br>
