@@ -6,14 +6,14 @@ namespace Symplify\EasyCodingStandard\Console\Command;
 use ECSPrefix202609\Entropy\Console\Contract\CommandInterface;
 use ECSPrefix202609\Entropy\Console\Contract\DefaultCommandInterface;
 use Symplify\EasyCodingStandard\Application\EasyCodingStandardApplication;
+use Symplify\EasyCodingStandard\Blink\BlinkConfigDumper;
+use Symplify\EasyCodingStandard\Blink\BlinkRunner;
 use Symplify\EasyCodingStandard\Configuration\ConfigInitializer;
 use Symplify\EasyCodingStandard\Configuration\ConfigurationFactory;
 use Symplify\EasyCodingStandard\Console\ExitCode;
 use Symplify\EasyCodingStandard\Console\Output\ConsoleOutputFormatter;
 use Symplify\EasyCodingStandard\MemoryLimitter;
 use Symplify\EasyCodingStandard\Reporter\ProcessedFileReporter;
-use Symplify\EasyCodingStandard\Turbo\TurboConfigDumper;
-use Symplify\EasyCodingStandard\Turbo\TurboRunner;
 final class CheckCommand implements CommandInterface, DefaultCommandInterface
 {
     /**
@@ -43,23 +43,23 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
     private $configurationFactory;
     /**
      * @readonly
-     * @var \Symplify\EasyCodingStandard\Turbo\TurboRunner
+     * @var \Symplify\EasyCodingStandard\Blink\BlinkRunner
      */
-    private $turboRunner;
+    private $blinkRunner;
     /**
      * @readonly
-     * @var \Symplify\EasyCodingStandard\Turbo\TurboConfigDumper
+     * @var \Symplify\EasyCodingStandard\Blink\BlinkConfigDumper
      */
-    private $turboConfigDumper;
-    public function __construct(ProcessedFileReporter $processedFileReporter, MemoryLimitter $memoryLimitter, ConfigInitializer $configInitializer, EasyCodingStandardApplication $easyCodingStandardApplication, ConfigurationFactory $configurationFactory, TurboRunner $turboRunner, TurboConfigDumper $turboConfigDumper)
+    private $blinkConfigDumper;
+    public function __construct(ProcessedFileReporter $processedFileReporter, MemoryLimitter $memoryLimitter, ConfigInitializer $configInitializer, EasyCodingStandardApplication $easyCodingStandardApplication, ConfigurationFactory $configurationFactory, BlinkRunner $blinkRunner, BlinkConfigDumper $blinkConfigDumper)
     {
         $this->processedFileReporter = $processedFileReporter;
         $this->memoryLimitter = $memoryLimitter;
         $this->configInitializer = $configInitializer;
         $this->easyCodingStandardApplication = $easyCodingStandardApplication;
         $this->configurationFactory = $configurationFactory;
-        $this->turboRunner = $turboRunner;
-        $this->turboConfigDumper = $turboConfigDumper;
+        $this->blinkRunner = $blinkRunner;
+        $this->blinkConfigDumper = $blinkConfigDumper;
     }
     public function getName(): string
     {
@@ -99,9 +99,9 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
         $configuration = $this->configurationFactory->create(array_values($paths), $fix, $clearCache, $noProgressBar, $noErrorTable, $noDiffs, $outputFormat, $config !== '' ? $config : null, $port, $identifier, $memoryLimit !== '' ? $memoryLimit : null, $debug, $dirty);
         // experimental: hand the resolved config to the ecs-go Go binary and skip the PHP engine
         if ($blink) {
-            $configData = $this->turboConfigDumper->dump($configuration->getSources());
-            $turboExitCode = $this->turboRunner->run($configData, $fix);
-            return $turboExitCode === ExitCode::SUCCESS ? ExitCode::SUCCESS : ExitCode::CHANGED_CODE_OR_FOUND_ERRORS;
+            $configData = $this->blinkConfigDumper->dump($configuration->getSources());
+            $blinkExitCode = $this->blinkRunner->run($configData, $fix);
+            return $blinkExitCode === ExitCode::SUCCESS ? ExitCode::SUCCESS : ExitCode::CHANGED_CODE_OR_FOUND_ERRORS;
         }
         $this->memoryLimitter->adjust($configuration);
         $errorsAndDiffs = $this->easyCodingStandardApplication->run($configuration);
