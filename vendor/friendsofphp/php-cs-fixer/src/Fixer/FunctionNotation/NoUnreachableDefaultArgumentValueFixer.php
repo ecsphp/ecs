@@ -33,7 +33,7 @@ final class NoUnreachableDefaultArgumentValueFixer extends AbstractFixer
         return new FixerDefinition('In function arguments there must not be arguments with default values before non-default ones.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function example($foo = "two words", $bar)
 {

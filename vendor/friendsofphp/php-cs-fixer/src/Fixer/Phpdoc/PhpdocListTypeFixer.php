@@ -36,7 +36,7 @@ final class PhpdocListTypeFixer extends AbstractPhpdocTypesFixer
         return new FixerDefinition('PHPDoc `list` type must be used instead of `array` without a key.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param array<int> $x

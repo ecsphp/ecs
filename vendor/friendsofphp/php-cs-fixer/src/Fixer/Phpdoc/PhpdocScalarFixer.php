@@ -50,7 +50,7 @@ final class PhpdocScalarFixer extends AbstractPhpdocTypesFixer implements Config
         return new FixerDefinition('Scalar types should always be written in the same form. `int` not `integer`, `bool` not `boolean`, `float` not `real` or `double`.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param integer $a
@@ -68,7 +68,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param integer $a

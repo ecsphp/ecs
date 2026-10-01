@@ -3,8 +3,8 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Parallel;
 
-use ECSPrefix202609\Fidry\CpuCoreCounter\CpuCoreCounter;
-use ECSPrefix202609\Fidry\CpuCoreCounter\NumberOfCpuCoreNotFound;
+use ECSPrefix202610\Fidry\CpuCoreCounter\CpuCoreCounter;
+use ECSPrefix202610\Fidry\CpuCoreCounter\NumberOfCpuCoreNotFound;
 final class CpuCoreCountProvider
 {
     /**

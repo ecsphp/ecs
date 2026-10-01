@@ -1,12 +1,12 @@
 <?php
 
-namespace ECSPrefix202609\React\EventLoop;
+namespace ECSPrefix202610\React\EventLoop;
 
 use BadMethodCallException;
 use Event;
 use EventBase;
-use ECSPrefix202609\React\EventLoop\Tick\FutureTickQueue;
-use ECSPrefix202609\React\EventLoop\Timer\Timer;
+use ECSPrefix202610\React\EventLoop\Tick\FutureTickQueue;
+use ECSPrefix202610\React\EventLoop\Timer\Timer;
 use SplObjectStorage;
 /**
  * [Deprecated] An `ext-libevent` based event loop.
@@ -52,7 +52,7 @@ final class ExtLibeventLoop implements LoopInterface
     private $signalEvents = array();
     public function __construct()
     {
-        if (!\function_exists('event_base_new') && !\function_exists('ECSPrefix202609\event_base_new')) {
+        if (!\function_exists('event_base_new') && !\function_exists('ECSPrefix202610\event_base_new')) {
             throw new BadMethodCallException('Cannot create ExtLibeventLoop, ext-libevent extension missing');
         }
         $this->eventBase = \event_base_new();

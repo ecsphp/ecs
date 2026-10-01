@@ -12,14 +12,14 @@ declare (strict_types=1);
  */
 namespace PhpCsFixer\Compat\Symfony\Component\Console\Style;
 
-if (method_exists(\ECSPrefix202609\Symfony\Component\Console\Style\SymfonyStyle::class, 'outlineSuccess')) {
+if (method_exists(\ECSPrefix202610\Symfony\Component\Console\Style\SymfonyStyle::class, 'outlineSuccess')) {
     // @phpstan-ignore function.alreadyNarrowedType
     /**
      * @internal
      *
      * @no-named-arguments Parameter names are not covered by the backward compatibility promise.
      */
-    final class SymfonyStyle extends \ECSPrefix202609\Symfony\Component\Console\Style\SymfonyStyle
+    final class SymfonyStyle extends \ECSPrefix202610\Symfony\Component\Console\Style\SymfonyStyle
     {
     }
 } else {

@@ -36,7 +36,7 @@ final class PhpdocAnnotationWithoutDotFixer extends AbstractFixer
         return new FixerDefinition('PHPDoc annotation descriptions should not be a sentence.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param string $bar Some string.

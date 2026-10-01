@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609\Entropy\Console\Terminal;
+namespace ECSPrefix202610\Entropy\Console\Terminal;
 
 /**
  * @see \Entropy\Tests\Console\Terminal\TerminalTest

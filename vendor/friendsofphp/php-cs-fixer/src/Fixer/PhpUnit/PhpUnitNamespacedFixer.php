@@ -63,16 +63,16 @@ final class PhpUnitNamespacedFixer extends AbstractFixer implements Configurable
         $codeSample = <<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
+final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
 {
     public function testSomething()
     {
         PHPUnit_Framework_Assert::assertTrue(\true);
     }
 }
-\class_alias('ECSPrefix202609\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
 
 PHP;
         return new FixerDefinition('PHPUnit classes MUST be used in namespaced version, e.g. `\PHPUnit\Framework\TestCase` instead of `\PHPUnit_Framework_TestCase`.', [new CodeSample($codeSample), new CodeSample($codeSample, ['target' => \PhpCsFixer\Fixer\PhpUnit\PhpUnitTargetVersion::VERSION_4_8])], "PHPUnit v6 has finally fully switched to namespaces.\n" . "You could start preparing the upgrade by switching from non-namespaced TestCase to namespaced one.\n" . 'Forward compatibility layer (`\PHPUnit\Framework\TestCase` class) was backported to PHPUnit v4.8.35 and PHPUnit v5.4.0.' . "\n" . 'Extended forward compatibility layer (`PHPUnit\Framework\Assert`, `PHPUnit\Framework\BaseTestListener`, `PHPUnit\Framework\TestListener` classes) was introduced in v5.7.0.' . "\n", 'Risky when PHPUnit classes are overridden or not accessible, or when project has PHPUnit incompatibilities.');

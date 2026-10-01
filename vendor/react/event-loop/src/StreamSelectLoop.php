@@ -1,10 +1,10 @@
 <?php
 
-namespace ECSPrefix202609\React\EventLoop;
+namespace ECSPrefix202610\React\EventLoop;
 
-use ECSPrefix202609\React\EventLoop\Tick\FutureTickQueue;
-use ECSPrefix202609\React\EventLoop\Timer\Timer;
-use ECSPrefix202609\React\EventLoop\Timer\Timers;
+use ECSPrefix202610\React\EventLoop\Tick\FutureTickQueue;
+use ECSPrefix202610\React\EventLoop\Timer\Timer;
+use ECSPrefix202610\React\EventLoop\Timer\Timers;
 /**
  * A `stream_select()` based event loop.
  *

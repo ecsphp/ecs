@@ -36,7 +36,7 @@ final class PhpdocNoEmptyReturnFixer extends AbstractFixer
         return new FixerDefinition('`@return void` and `@return null` annotations must be removed from PHPDoc.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @return null
@@ -49,7 +49,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @return void

@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 // decoupled in own "*.php" file, so ECS, Rector and PHPStan works out of the box here
-use ECSPrefix202609\Composer\InstalledVersions;
-use ECSPrefix202609\Composer\XdebugHandler\XdebugHandler;
-use ECSPrefix202609\Entropy\Console\ConsoleApplication;
-use ECSPrefix202609\Entropy\Console\Output\OutputColorizer;
-use ECSPrefix202609\Entropy\Console\Output\OutputPrinter;
+use ECSPrefix202610\Composer\InstalledVersions;
+use ECSPrefix202610\Composer\XdebugHandler\XdebugHandler;
+use ECSPrefix202610\Entropy\Console\ConsoleApplication;
+use ECSPrefix202610\Entropy\Console\Output\OutputColorizer;
+use ECSPrefix202610\Entropy\Console\Output\OutputPrinter;
 use PHP_CodeSniffer\Util\Tokens;
 use Symplify\EasyCodingStandard\Application\Version\StaticVersionResolver;
 use Symplify\EasyCodingStandard\Console\ExitCode;
@@ -124,7 +124,7 @@ final class ECSAutoloadIncluder
 /**
  * Inspired by https://github.com/rectorphp/rector/pull/2373/files#diff-0fc04a2bb7928cac4ae339d5a8bf67f3
  */
-\class_alias('ECSPrefix202609\ECSAutoloadIncluder', 'ECSAutoloadIncluder', \false);
+\class_alias('ECSPrefix202610\ECSAutoloadIncluder', 'ECSAutoloadIncluder', \false);
 $rawArgv = $_SERVER['argv'] ?? [];
 // @fixes https://github.com/rectorphp/rector/issues/2205
 $isXdebugAllowed = \in_array('--xdebug', $rawArgv, \true);

@@ -3,8 +3,8 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Blink;
 
-use ECSPrefix202609\Nette\Utils\FileSystem;
-use ECSPrefix202609\Nette\Utils\Json;
+use ECSPrefix202610\Nette\Utils\FileSystem;
+use ECSPrefix202610\Nette\Utils\Json;
 use Symplify\EasyCodingStandard\Exception\ShouldNotHappenException;
 /**
  * Experimental --blink mode: hands the run over to the "ecs-go" Go binary instead

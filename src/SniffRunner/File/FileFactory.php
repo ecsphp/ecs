@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\SniffRunner\File;
 
-use ECSPrefix202609\Nette\Utils\FileSystem;
+use ECSPrefix202610\Nette\Utils\FileSystem;
 use PHP_CodeSniffer\Fixer;
 use Symplify\EasyCodingStandard\Console\Style\EasyCodingStandardStyle;
 use Symplify\EasyCodingStandard\Skipper\Skipper\Skipper;

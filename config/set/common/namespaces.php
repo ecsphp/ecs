@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 use PhpCsFixer\Fixer\Import\NoUnneededImportAliasFixer;
 use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;

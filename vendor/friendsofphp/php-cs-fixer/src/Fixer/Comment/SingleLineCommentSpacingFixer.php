@@ -29,7 +29,7 @@ final class SingleLineCommentSpacingFixer extends AbstractFixer
         return new FixerDefinition('Single-line comments must have proper spacing.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 //comment 1
 #comment 2

@@ -80,7 +80,7 @@ final class BracesFixer extends AbstractProxyFixer implements ConfigurableFixerI
         return new FixerDefinition('The body of each structure MUST be enclosed by braces. Braces should be properly placed. Body of braces should be properly indented.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -104,13 +104,13 @@ class Foo
         }
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $positive = function ($item) {
     return $item >= 0;
@@ -123,7 +123,7 @@ PHP
 , ['allow_single_line_closure' => \true]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -147,7 +147,7 @@ class Foo
         }
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , ['position_after_functions_and_oop_constructs' => self::LINE_SAME])]);

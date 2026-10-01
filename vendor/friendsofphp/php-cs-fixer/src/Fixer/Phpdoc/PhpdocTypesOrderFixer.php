@@ -52,7 +52,7 @@ final class PhpdocTypesOrderFixer extends AbstractFixer implements ConfigurableF
         return new FixerDefinition('Sorts PHPDoc types.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param string|null $bar
@@ -62,7 +62,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param null|string $bar
@@ -72,7 +72,7 @@ PHP
 , ['null_adjustment' => 'always_last']), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param null|string|int|\Foo $bar
@@ -82,7 +82,7 @@ PHP
 , ['sort_algorithm' => 'alpha']), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param null|string|int|\Foo $bar
@@ -92,7 +92,7 @@ PHP
 , ['sort_algorithm' => 'alpha', 'null_adjustment' => 'always_last']), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param null|string|int|\Foo $bar
@@ -102,7 +102,7 @@ PHP
 , ['sort_algorithm' => 'alpha', 'null_adjustment' => 'none']), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param Aaa|AA $bar

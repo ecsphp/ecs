@@ -82,7 +82,7 @@ final class SingleSpaceAroundConstructFixer extends AbstractFixer implements Con
         return new FixerDefinition('Ensures a single space after language constructs.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 throw new \Exception();
 
@@ -90,7 +90,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function foo()
 {
@@ -101,7 +101,7 @@ PHP
 , ['constructs_contain_a_single_space' => ['yield_from'], 'constructs_followed_by_a_single_space' => ['yield_from']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $foo = function &() use ($bar) {
 };
@@ -110,7 +110,7 @@ PHP
 , ['constructs_preceded_by_a_single_space' => ['use_lambda'], 'constructs_followed_by_a_single_space' => ['use_lambda']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 echo "Hello!";
 
@@ -118,7 +118,7 @@ PHP
 , ['constructs_followed_by_a_single_space' => ['echo']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 yield from baz();
 

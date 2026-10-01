@@ -38,12 +38,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ECSPrefix202609\\Ergebnis\\AgentDetector\\": "src\/"
+            "ECSPrefix202610\\Ergebnis\\AgentDetector\\": "src\/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ECSPrefix202609\\Ergebnis\\AgentDetector\\Test\\": "test\/"
+            "ECSPrefix202610\\Ergebnis\\AgentDetector\\Test\\": "test\/"
         }
     },
     "config": {

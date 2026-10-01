@@ -51,7 +51,7 @@ final class PhpUnitDataProviderNameFixer extends AbstractPhpUnitFixer implements
         return new FixerDefinition('Data provider names must match the name of the test.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class FooTest extends TestCase
 {
@@ -65,13 +65,13 @@ class FooTest extends TestCase
     {
     }
 }
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class FooTest extends TestCase
 {
@@ -85,13 +85,13 @@ class FooTest extends TestCase
     {
     }
 }
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP
 , ['prefix' => 'data_', 'suffix' => '']), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class FooTest extends TestCase
 {
@@ -133,7 +133,7 @@ class FooTest extends TestCase
     {
     }
 }
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP
 , ['prefix' => 'provides', 'suffix' => 'Data'])], null, 'Fixer could be risky if one is calling data provider by name as function.');

@@ -31,16 +31,16 @@ final class PhpUnitTestClassRequiresCoversFixer extends AbstractPhpUnitFixer imp
         return new FixerDefinition('Adds a default `@coversNothing` annotation to PHPUnit test classes that have no `@covers*` annotation.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
+final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
 {
     public function testSomeTest()
     {
         $this->assertSame(a(), b());
     }
 }
-\class_alias('ECSPrefix202609\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
 
 PHP
 )]);

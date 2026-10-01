@@ -75,7 +75,7 @@ final class NoSuperfluousPhpdocTagsFixer extends AbstractFixer implements Config
         return new FixerDefinition('Removes `@param`, `@return` and `@var` tags that don\'t provide any useful information.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -89,13 +89,13 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -107,13 +107,13 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , ['allow_mixed' => \true]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -124,13 +124,13 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , ['remove_inheritdoc' => \true]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -144,13 +144,13 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , ['allow_hidden_params' => \true]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -164,7 +164,7 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , ['allow_unused_params' => \true])]);

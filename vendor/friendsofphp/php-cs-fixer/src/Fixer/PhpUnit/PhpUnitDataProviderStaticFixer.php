@@ -48,7 +48,7 @@ final class PhpUnitDataProviderStaticFixer extends AbstractPhpUnitFixer implemen
         return new FixerDefinition('Data providers must be static.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class FooTest extends TestCase
 {
@@ -62,13 +62,13 @@ class FooTest extends TestCase
     {
     }
 }
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class FooTest extends TestCase
 {
@@ -88,13 +88,13 @@ class FooTest extends TestCase
         self::getData2();
     }
 }
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP
 , ['force' => \true]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class FooTest extends TestCase
 {
@@ -114,7 +114,7 @@ class FooTest extends TestCase
         self::getData2();
     }
 }
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP
 , ['force' => \false])], null, 'Fixer could be risky if one is calling data provider function dynamically.');

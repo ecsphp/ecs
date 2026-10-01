@@ -1,10 +1,10 @@
 <?php
 
-namespace ECSPrefix202609\React\Promise;
+namespace ECSPrefix202610\React\Promise;
 
-use ECSPrefix202609\React\Promise\Exception\CompositeException;
-use ECSPrefix202609\React\Promise\Internal\FulfilledPromise;
-use ECSPrefix202609\React\Promise\Internal\RejectedPromise;
+use ECSPrefix202610\React\Promise\Exception\CompositeException;
+use ECSPrefix202610\React\Promise\Internal\FulfilledPromise;
+use ECSPrefix202610\React\Promise\Internal\RejectedPromise;
 /**
  * Creates a promise for the supplied `$promiseOrValue`.
  *

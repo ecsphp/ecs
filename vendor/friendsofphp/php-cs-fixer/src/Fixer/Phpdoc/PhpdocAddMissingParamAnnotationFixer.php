@@ -53,7 +53,7 @@ final class PhpdocAddMissingParamAnnotationFixer extends AbstractFixer implement
         return new FixerDefinition('PHPDoc should contain `@param` for all params.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param int $bar
@@ -68,7 +68,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param int $bar
@@ -83,7 +83,7 @@ PHP
 , ['only_untyped' => \true]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param int $bar

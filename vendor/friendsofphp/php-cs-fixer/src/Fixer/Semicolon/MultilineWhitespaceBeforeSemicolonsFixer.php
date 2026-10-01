@@ -57,7 +57,7 @@ final class MultilineWhitespaceBeforeSemicolonsFixer extends AbstractFixer imple
         return new FixerDefinition('Forbid multi-line whitespace before the closing semicolon or move the semicolon to the new line for chained calls.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function foo()
 {
@@ -68,7 +68,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $object->method1()->method2()->method(3);
 

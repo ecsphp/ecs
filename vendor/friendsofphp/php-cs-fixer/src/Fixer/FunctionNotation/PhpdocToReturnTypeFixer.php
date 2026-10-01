@@ -59,7 +59,7 @@ final class PhpdocToReturnTypeFixer extends AbstractPhpdocToTypeDeclarationFixer
         return new FixerDefinition('Takes `@return` annotation of non-mixed types and adjusts accordingly the function signature.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /** @return \My\Bar */
 function f1()
@@ -78,7 +78,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /** @return Foo */
 function foo()
@@ -93,7 +93,7 @@ PHP
 , ['scalar_types' => \false]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /** @return Foo */
 function foo()
@@ -108,7 +108,7 @@ PHP
 , ['union_types' => \false]), new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 final class Foo
 {
@@ -120,7 +120,7 @@ final class Foo
         return new static($prototype);
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , new VersionSpecification(80000))], null, 'The `@return` annotation is mandatory for the fixer to make changes, signatures of methods without it (no docblock, inheritdocs) will not be fixed. Manual actions are required if inherited signatures are not properly documented.');

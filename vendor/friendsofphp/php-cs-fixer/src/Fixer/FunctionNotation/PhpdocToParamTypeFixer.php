@@ -57,7 +57,7 @@ final class PhpdocToParamTypeFixer extends AbstractPhpdocToTypeDeclarationFixer 
         return new FixerDefinition('Takes `@param` annotations of non-mixed types and adjusts accordingly the function signature.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @param string $foo
@@ -71,7 +71,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /** @param Foo $foo */
 function foo($foo)
@@ -86,7 +86,7 @@ PHP
 , ['scalar_types' => \false]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /** @param Foo $foo */
 function foo($foo)

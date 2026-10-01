@@ -1,10 +1,10 @@
 <?php
 
-namespace ECSPrefix202609\React\Socket;
+namespace ECSPrefix202610\React\Socket;
 
-use ECSPrefix202609\React\Dns\Resolver\ResolverInterface;
-use ECSPrefix202609\React\Promise;
-use ECSPrefix202609\React\Promise\PromiseInterface;
+use ECSPrefix202610\React\Dns\Resolver\ResolverInterface;
+use ECSPrefix202610\React\Promise;
+use ECSPrefix202610\React\Promise\PromiseInterface;
 final class DnsConnector implements ConnectorInterface
 {
     private $connector;

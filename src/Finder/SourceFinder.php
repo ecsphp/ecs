@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Finder;
 
-use ECSPrefix202609\Symfony\Component\Finder\Finder;
+use ECSPrefix202610\Symfony\Component\Finder\Finder;
 use Symplify\EasyCodingStandard\DependencyInjection\SimpleParameterProvider;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 /**

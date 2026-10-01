@@ -1,11 +1,11 @@
 <?php
 
-namespace ECSPrefix202609\React\Socket;
+namespace ECSPrefix202610\React\Socket;
 
-use ECSPrefix202609\React\Dns\Resolver\ResolverInterface;
-use ECSPrefix202609\React\EventLoop\Loop;
-use ECSPrefix202609\React\EventLoop\LoopInterface;
-use ECSPrefix202609\React\Promise;
+use ECSPrefix202610\React\Dns\Resolver\ResolverInterface;
+use ECSPrefix202610\React\EventLoop\Loop;
+use ECSPrefix202610\React\EventLoop\LoopInterface;
+use ECSPrefix202610\React\Promise;
 final class HappyEyeBallsConnector implements ConnectorInterface
 {
     private $loop;

@@ -37,7 +37,7 @@ final class PhpdocVarWithoutNameFixer extends AbstractFixer
         return new FixerDefinition('`@var` and `@type` annotations of classy properties should not contain the name.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 final class Foo
 {
@@ -50,7 +50,7 @@ final class Foo
     */
     public $baz;
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 )]);

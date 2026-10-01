@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\DependencyInjection;
 
-use ECSPrefix202609\Webmozart\Assert\Assert;
+use ECSPrefix202610\Webmozart\Assert\Assert;
 final class SimpleParameterProvider
 {
     /**

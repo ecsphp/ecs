@@ -9,7 +9,7 @@
         <![CDATA[
 <?php
 
-use ECSPrefix202609\Vendor\Package\ClassA as A;
+use ECSPrefix202610\Vendor\Package\ClassA as A;
 
 class FooBar extends A
 {
@@ -21,7 +21,7 @@ class FooBar extends A
         <![CDATA[
 <?php
 
-use <em>\</em>ECSPrefix202609\Vendor\Package\ClassA as A;
+use <em>\</em>ECSPrefix202610\Vendor\Package\ClassA as A;
 
 class FooBar extends A
 {

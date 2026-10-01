@@ -29,7 +29,7 @@ final class PhpdocNoPackageFixer extends AbstractProxyFixer
         return new FixerDefinition('`@package` and `@subpackage` annotations must be removed from PHPDoc.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @internal
@@ -44,7 +44,7 @@ class Baz
 * @package Foo
 * subpackage Bar
 */
-\class_alias('ECSPrefix202609\Baz', 'Baz', \false);
+\class_alias('ECSPrefix202610\Baz', 'Baz', \false);
 
 PHP
 )]);

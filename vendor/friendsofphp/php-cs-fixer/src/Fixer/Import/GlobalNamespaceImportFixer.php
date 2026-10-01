@@ -70,7 +70,7 @@ final class GlobalNamespaceImportFixer extends AbstractFixer implements Configur
         return new FixerDefinition('Imports or fully qualifies global classes/functions/constants.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609\Foo;
+namespace ECSPrefix202610\Foo;
 
 $d = new \DateTimeImmutable();
 
@@ -78,7 +78,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609\Foo;
+namespace ECSPrefix202610\Foo;
 
 if (\count($x)) {
     /** @var \DateTimeImmutable $d */
@@ -90,7 +90,7 @@ PHP
 , ['import_classes' => \true, 'import_constants' => \true, 'import_functions' => \true]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609\Foo;
+namespace ECSPrefix202610\Foo;
 
 use DateTimeImmutable;
 use function count;

@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609\Entropy\Console\Output;
+namespace ECSPrefix202610\Entropy\Console\Output;
 
-use ECSPrefix202609\Entropy\Attribute\RelatedTest;
-use ECSPrefix202609\Entropy\Tests\Console\Output\ProgressBarTest;
+use ECSPrefix202610\Entropy\Attribute\RelatedTest;
+use ECSPrefix202610\Entropy\Tests\Console\Output\ProgressBarTest;
 /**
  * Lightweight progress bar rendered on a single, re-written terminal line.
  *

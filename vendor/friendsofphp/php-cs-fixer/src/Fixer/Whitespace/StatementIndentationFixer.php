@@ -68,7 +68,7 @@ final class StatementIndentationFixer extends AbstractFixer implements Configura
         return new FixerDefinition('Each statement must be indented.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 if ($baz == \true) {
     echo "foo";
@@ -80,7 +80,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 // foo
 if ($foo) {
@@ -94,7 +94,7 @@ PHP
 , ['stick_comment_to_next_continuous_control_statement' => \false]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 // foo
 if ($foo) {

@@ -46,7 +46,7 @@ final class NoUnneededBracesFixer extends AbstractFixer implements ConfigurableF
         return new FixerDefinition('Removes unneeded braces that are superfluous and aren\'t part of a control structure\'s body.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 {
     echo 1;
@@ -62,7 +62,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609\Foo;
+namespace ECSPrefix202610\Foo;
 
 function Bar()
 {

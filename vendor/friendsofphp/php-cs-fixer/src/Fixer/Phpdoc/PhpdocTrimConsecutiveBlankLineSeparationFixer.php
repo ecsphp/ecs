@@ -34,7 +34,7 @@ final class PhpdocTrimConsecutiveBlankLineSeparationFixer extends AbstractFixer
         return new FixerDefinition('Removes extra blank lines after summary and after description in PHPDoc.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * Summary.

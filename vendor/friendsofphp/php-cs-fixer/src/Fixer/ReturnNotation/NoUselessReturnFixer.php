@@ -31,7 +31,7 @@ final class NoUselessReturnFixer extends AbstractFixer
         return new FixerDefinition('There should not be an empty `return` statement at the end of a function.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function example($b)
 {

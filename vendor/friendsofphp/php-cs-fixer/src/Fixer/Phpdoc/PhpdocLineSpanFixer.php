@@ -67,7 +67,7 @@ final class PhpdocLineSpanFixer extends AbstractFixer implements WhitespacesAwar
         return new FixerDefinition('Changes doc blocks from single to multi line, or reversed.', [new CodeSample("<?php\n\nclass Foo{\n    /** @var bool */\n    public \$var;\n}\n"), new CodeSample("<?php\n\nclass Foo{\n    /**\n    * @var bool\n    */\n    public \$var;\n}\n", ['property' => 'single']), new CodeSample("<?php\n\n/** Description of foo function. */\nfunction foo(): void {}\n", ['function' => 'multi']), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @var string

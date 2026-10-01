@@ -47,7 +47,7 @@ final class UnaryOperatorSpacesFixer extends AbstractFixer implements Configurab
         return new FixerDefinition('Unary operators should be placed adjacent to their operands.', [new CodeSample("<?php\n\$sample ++;\n-- \$sample;\n\$sample = ! ! \$a;\n\$sample = ~  \$c;\nfunction & foo(){}\n"), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function foo($a, ...$b)
 {
@@ -58,7 +58,7 @@ PHP
 , ['only_dec_inc' => \false]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function foo($a, ...$b)
 {

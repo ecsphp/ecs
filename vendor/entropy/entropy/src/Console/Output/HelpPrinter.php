@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609\Entropy\Console\Output;
+namespace ECSPrefix202610\Entropy\Console\Output;
 
-use ECSPrefix202609\Entropy\Console\CommandRegistry;
+use ECSPrefix202610\Entropy\Console\CommandRegistry;
 final class HelpPrinter
 {
     private const MIN_WIDTH = 10;

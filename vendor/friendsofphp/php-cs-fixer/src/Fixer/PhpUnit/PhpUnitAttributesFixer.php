@@ -60,7 +60,7 @@ final class PhpUnitAttributesFixer extends AbstractPhpUnitFixer implements Confi
         $codeSample = <<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @covers \VendorName\Foo
@@ -82,7 +82,7 @@ final class FooTest extends TestCase
 * @covers \VendorName\Foo
 * @internal
 */
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP;
         return new FixerDefinition('PHPUnit attributes must be used over their respective PHPDoc-based annotations.', [new VersionSpecificCodeSample($codeSample, new VersionSpecification(80000)), new VersionSpecificCodeSample($codeSample, new VersionSpecification(80000), ['keep_annotations' => \true])]);

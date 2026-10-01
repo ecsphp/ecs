@@ -51,7 +51,7 @@ final class PhpdocToPropertyTypeFixer extends AbstractPhpdocToTypeDeclarationFix
         return new FixerDefinition('Takes `@var` annotation of non-mixed types and adjusts accordingly the property signature..', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -60,13 +60,13 @@ class Foo
     /** @var \Traversable */
     private $bar;
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -75,13 +75,13 @@ class Foo
     /** @var \Traversable */
     private $bar;
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , ['scalar_types' => \false]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -90,7 +90,7 @@ class Foo
     /** @var \Traversable */
     private $bar;
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , ['union_types' => \false])], null, 'The `@var` annotation is mandatory for the fixer to make changes, signatures of properties without it (no docblock) will not be fixed. Manual actions might be required for newly typed properties that are read before initialization.');

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609\Entropy\Console\ValueObject;
+namespace ECSPrefix202610\Entropy\Console\ValueObject;
 
-use ECSPrefix202609\Entropy\Validation\Assert;
+use ECSPrefix202610\Entropy\Validation\Assert;
 /**
  * @see \Entropy\Tests\Console\ValueObject\CLIRequestTest
  */

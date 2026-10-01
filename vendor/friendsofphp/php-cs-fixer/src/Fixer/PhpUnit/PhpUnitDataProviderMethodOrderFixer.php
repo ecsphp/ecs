@@ -47,7 +47,7 @@ final class PhpUnitDataProviderMethodOrderFixer extends AbstractPhpUnitFixer imp
         return new FixerDefinition('Data provider method must be placed after/before the last/first test where used.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class FooTest extends TestCase
 {
@@ -61,13 +61,13 @@ class FooTest extends TestCase
     {
     }
 }
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class FooTest extends TestCase
 {
@@ -81,7 +81,7 @@ class FooTest extends TestCase
     {
     }
 }
-\class_alias('ECSPrefix202609\FooTest', 'FooTest', \false);
+\class_alias('ECSPrefix202610\FooTest', 'FooTest', \false);
 
 PHP
 , ['placement' => 'before'])]);

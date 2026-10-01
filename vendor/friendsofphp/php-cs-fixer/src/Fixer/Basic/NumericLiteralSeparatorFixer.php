@@ -58,7 +58,7 @@ final class NumericLiteralSeparatorFixer extends AbstractFixer implements Config
         return new FixerDefinition('Adds separators to numeric literals of any kind.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $integer = 1234567890;
 
@@ -66,7 +66,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $integer = 12345678;
 $octal = 0123456;
@@ -77,7 +77,7 @@ PHP
 , ['strategy' => self::STRATEGY_NO_SEPARATOR]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $integer = 12345678;
 $octal = 0123456;

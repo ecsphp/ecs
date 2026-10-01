@@ -3,11 +3,11 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Configuration;
 
-use ECSPrefix202609\Entropy\Console\Output\OutputColorizer;
-use ECSPrefix202609\Entropy\Console\Output\OutputPrinter;
+use ECSPrefix202610\Entropy\Console\Output\OutputColorizer;
+use ECSPrefix202610\Entropy\Console\Output\OutputPrinter;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PhpCsFixer\Fixer\FixerInterface;
-use ECSPrefix202609\Symfony\Component\Finder\Finder;
+use ECSPrefix202610\Symfony\Component\Finder\Finder;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\Config\Level\ArrayLevel;
 use Symplify\EasyCodingStandard\Config\Level\ControlStructuresLevel;

@@ -54,7 +54,7 @@ final class ControlStructureContinuationPositionFixer extends AbstractFixer impl
         return new FixerDefinition('Control structure continuation keyword must be on the configured line.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 if ($baz == \true) {
     echo "foo";
@@ -66,7 +66,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 if ($baz == \true) {
     echo "foo";

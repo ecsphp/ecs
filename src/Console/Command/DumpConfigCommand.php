@@ -3,8 +3,8 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Console\Command;
 
-use ECSPrefix202609\Entropy\Console\Contract\CommandInterface;
-use ECSPrefix202609\Nette\Utils\Json;
+use ECSPrefix202610\Entropy\Console\Contract\CommandInterface;
+use ECSPrefix202610\Nette\Utils\Json;
 use Symplify\EasyCodingStandard\Blink\BlinkConfigDumper;
 use Symplify\EasyCodingStandard\Configuration\ConfigurationFactory;
 use Symplify\EasyCodingStandard\Console\ExitCode;

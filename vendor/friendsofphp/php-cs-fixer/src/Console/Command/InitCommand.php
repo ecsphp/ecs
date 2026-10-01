@@ -26,12 +26,12 @@ use PhpCsFixer\RuleSet\Sets\PhpCsFixerSet;
 use PhpCsFixer\RuleSet\Sets\SymfonyRiskySet;
 use PhpCsFixer\RuleSet\Sets\SymfonySet;
 use PhpCsFixer\Utils;
-use ECSPrefix202609\Symfony\Component\Console\Attribute\AsCommand;
-use ECSPrefix202609\Symfony\Component\Console\Command\Command;
-use ECSPrefix202609\Symfony\Component\Console\Input\InputInterface;
-use ECSPrefix202609\Symfony\Component\Console\Output\ConsoleOutputInterface;
-use ECSPrefix202609\Symfony\Component\Console\Output\OutputInterface;
-use ECSPrefix202609\Symfony\Component\Filesystem\Exception\IOException;
+use ECSPrefix202610\Symfony\Component\Console\Attribute\AsCommand;
+use ECSPrefix202610\Symfony\Component\Console\Command\Command;
+use ECSPrefix202610\Symfony\Component\Console\Input\InputInterface;
+use ECSPrefix202610\Symfony\Component\Console\Output\ConsoleOutputInterface;
+use ECSPrefix202610\Symfony\Component\Console\Output\OutputInterface;
+use ECSPrefix202610\Symfony\Component\Filesystem\Exception\IOException;
 /**
  * @author Dariusz Rumiński <dariusz.ruminski@gmail.com>
  *

@@ -12,7 +12,7 @@ declare (strict_types=1);
  */
 namespace PhpCsFixer\Compat\Symfony\Component\Console\Style;
 
-use ECSPrefix202609\Symfony\Component\Console\Style\SymfonyStyle;
+use ECSPrefix202610\Symfony\Component\Console\Style\SymfonyStyle;
 /**
  * This file is a polyfill for SymfonyStyle @ Symfony 8.2 provide methods `outline*()` that are not available in older Symfony.
  *

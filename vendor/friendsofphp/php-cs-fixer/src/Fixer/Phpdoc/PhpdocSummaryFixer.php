@@ -33,7 +33,7 @@ final class PhpdocSummaryFixer extends AbstractFixer implements WhitespacesAware
         return new FixerDefinition('PHPDoc summary should end in either a full stop, exclamation mark, or question mark.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * Foo function is great

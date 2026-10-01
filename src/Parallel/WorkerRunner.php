@@ -3,8 +3,8 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Parallel;
 
-use ECSPrefix202609\Clue\React\NDJson\Decoder;
-use ECSPrefix202609\Clue\React\NDJson\Encoder;
+use ECSPrefix202610\Clue\React\NDJson\Decoder;
+use ECSPrefix202610\Clue\React\NDJson\Encoder;
 use Symplify\EasyCodingStandard\Application\SingleFileProcessor;
 use Symplify\EasyCodingStandard\Parallel\Enum\Action;
 use Symplify\EasyCodingStandard\Parallel\Enum\Content;

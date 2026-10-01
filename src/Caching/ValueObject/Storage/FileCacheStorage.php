@@ -3,8 +3,8 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Caching\ValueObject\Storage;
 
-use ECSPrefix202609\Nette\Utils\FileSystem as UtilsFileSystem;
-use ECSPrefix202609\Symfony\Component\Filesystem\Filesystem;
+use ECSPrefix202610\Nette\Utils\FileSystem as UtilsFileSystem;
+use ECSPrefix202610\Symfony\Component\Filesystem\Filesystem;
 use Symplify\EasyCodingStandard\Caching\ValueObject\CacheFilePaths;
 use Symplify\EasyCodingStandard\Caching\ValueObject\CacheItem;
 use Symplify\EasyCodingStandard\Exception\ShouldNotHappenException;

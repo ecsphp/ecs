@@ -51,9 +51,9 @@ final class PhpUnitMockFixer extends AbstractPhpUnitFixer implements Configurabl
         return new FixerDefinition('Usages of `->getMock` and `->getMockWithoutInvokingTheOriginalConstructor` methods MUST be replaced by `->createMock` or `->createPartialMock` methods.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
+final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
 {
     public function testFoo()
     {
@@ -64,15 +64,15 @@ final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
         // version with more than 2 params is not supported
     }
 }
-\class_alias('ECSPrefix202609\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
+final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
 {
     public function testFoo()
     {
@@ -81,7 +81,7 @@ final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
         // version with multiple params is not supported
     }
 }
-\class_alias('ECSPrefix202609\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
 
 PHP
 , ['target' => \PhpCsFixer\Fixer\PhpUnit\PhpUnitTargetVersion::VERSION_5_4])], null, 'Risky when PHPUnit classes are overridden or not accessible, or when project has PHPUnit incompatibilities.');

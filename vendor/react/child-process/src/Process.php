@@ -1,16 +1,16 @@
 <?php
 
-namespace ECSPrefix202609\React\ChildProcess;
+namespace ECSPrefix202610\React\ChildProcess;
 
-use ECSPrefix202609\Evenement\EventEmitter;
-use ECSPrefix202609\React\EventLoop\Loop;
-use ECSPrefix202609\React\EventLoop\LoopInterface;
-use ECSPrefix202609\React\Stream\ReadableResourceStream;
-use ECSPrefix202609\React\Stream\ReadableStreamInterface;
-use ECSPrefix202609\React\Stream\WritableResourceStream;
-use ECSPrefix202609\React\Stream\WritableStreamInterface;
-use ECSPrefix202609\React\Stream\DuplexResourceStream;
-use ECSPrefix202609\React\Stream\DuplexStreamInterface;
+use ECSPrefix202610\Evenement\EventEmitter;
+use ECSPrefix202610\React\EventLoop\Loop;
+use ECSPrefix202610\React\EventLoop\LoopInterface;
+use ECSPrefix202610\React\Stream\ReadableResourceStream;
+use ECSPrefix202610\React\Stream\ReadableStreamInterface;
+use ECSPrefix202610\React\Stream\WritableResourceStream;
+use ECSPrefix202610\React\Stream\WritableStreamInterface;
+use ECSPrefix202610\React\Stream\DuplexResourceStream;
+use ECSPrefix202610\React\Stream\DuplexStreamInterface;
 /**
  * Process component.
  *
@@ -113,7 +113,7 @@ class Process extends EventEmitter
             // manual type check to support legacy PHP < 7.1
             throw new \InvalidArgumentException('Argument #4 ($fds) expected null|array');
         }
-        if (!\function_exists('proc_open') && !\function_exists('ECSPrefix202609\proc_open')) {
+        if (!\function_exists('proc_open') && !\function_exists('ECSPrefix202610\proc_open')) {
             throw new \LogicException('The Process class relies on proc_open(), which is not available on your PHP installation.');
         }
         $this->cmd = $cmd;
@@ -405,7 +405,7 @@ class Process extends EventEmitter
         if (null !== self::$sigchild) {
             return self::$sigchild;
         }
-        if (!\function_exists('phpinfo') && !\function_exists('ECSPrefix202609\phpinfo')) {
+        if (!\function_exists('phpinfo') && !\function_exists('ECSPrefix202610\phpinfo')) {
             return self::$sigchild = \false;
             // @codeCoverageIgnore
         }

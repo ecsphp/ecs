@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 declare (strict_types=1);
-namespace ECSPrefix202609\Fidry\CpuCoreCounter\Finder;
+namespace ECSPrefix202610\Fidry\CpuCoreCounter\Finder;
 
 use function array_filter;
 use function count;

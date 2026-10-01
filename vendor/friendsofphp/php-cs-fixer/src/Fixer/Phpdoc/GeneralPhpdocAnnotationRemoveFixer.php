@@ -51,7 +51,7 @@ final class GeneralPhpdocAnnotationRemoveFixer extends AbstractFixer implements 
         return new FixerDefinition('Removes configured annotations from PHPDoc.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @internal
@@ -66,7 +66,7 @@ PHP
 , ['annotations' => ['author']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @internal
@@ -81,7 +81,7 @@ PHP
 , ['annotations' => ['author'], 'case_sensitive' => \false]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * @author John Doe

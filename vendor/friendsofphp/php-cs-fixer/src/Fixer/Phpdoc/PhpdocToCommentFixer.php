@@ -79,7 +79,7 @@ final class PhpdocToCommentFixer extends AbstractFixer implements ConfigurableFi
         return new FixerDefinition('Docblocks should only be used on structural elements.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $first = \true;
 // needed because by default first docblock is never fixed.
@@ -92,7 +92,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $first = \true;
 // needed because by default first docblock is never fixed.
@@ -109,7 +109,7 @@ PHP
 , ['ignored_tags' => ['todo']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $first = \true;
 // needed because by default first docblock is never fixed.

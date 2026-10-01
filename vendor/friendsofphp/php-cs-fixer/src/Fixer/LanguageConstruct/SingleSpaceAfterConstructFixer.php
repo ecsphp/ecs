@@ -66,7 +66,7 @@ final class SingleSpaceAfterConstructFixer extends AbstractProxyFixer implements
         return new FixerDefinition('Ensures a single space after language constructs.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 throw new \Exception();
 
@@ -74,7 +74,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 echo "Hello!";
 
@@ -82,7 +82,7 @@ PHP
 , ['constructs' => ['echo']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 yield from baz();
 

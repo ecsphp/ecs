@@ -55,7 +55,7 @@ final class HeredocClosingMarkerFixer extends AbstractFixer implements Configura
         return new FixerDefinition('Unify `heredoc` or `nowdoc` closing marker.', [new CodeSample(<<<'EOD'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = <<<TEST
 Foo
@@ -66,7 +66,7 @@ EOD
 ), new CodeSample(<<<'EOD'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = <<<'TEST'
 Foo
@@ -77,7 +77,7 @@ EOD
 , ['closing_marker' => 'EOF']), new CodeSample(<<<'EOD_'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = <<<EOD
 Foo

@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Testing\PHPUnit;
 
 use Iterator;
-use ECSPrefix202609\Symfony\Component\Finder\Finder;
+use ECSPrefix202610\Symfony\Component\Finder\Finder;
 /**
  * @see \Symplify\EasyCodingStandard\Tests\Testing\PHPUnit\FixtureFinderTest
  */

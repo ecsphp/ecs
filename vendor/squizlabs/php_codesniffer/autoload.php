@@ -17,7 +17,7 @@
  */
 namespace PHP_CodeSniffer;
 
-use ECSPrefix202609\Composer\Autoload\ClassLoader;
+use ECSPrefix202610\Composer\Autoload\ClassLoader;
 use Exception;
 if (class_exists('PHP_CodeSniffer\Autoload', \false) === \false) {
     class Autoload

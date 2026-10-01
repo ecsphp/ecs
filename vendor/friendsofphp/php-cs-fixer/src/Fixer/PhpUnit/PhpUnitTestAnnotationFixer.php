@@ -56,7 +56,7 @@ final class PhpUnitTestAnnotationFixer extends AbstractPhpUnitFixer implements C
         return new FixerDefinition('Adds or removes @test annotations from tests, following configuration.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Test extends \PhpUnit\FrameWork\TestCase
 {
@@ -67,12 +67,12 @@ class Test extends \PhpUnit\FrameWork\TestCase
     {
     }
 }
-\class_alias('ECSPrefix202609\Test', 'Test', \false);
+\class_alias('ECSPrefix202610\Test', 'Test', \false);
 PHP
  . $this->whitespacesConfig->getLineEnding()), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Test extends \PhpUnit\FrameWork\TestCase
 {
@@ -80,7 +80,7 @@ class Test extends \PhpUnit\FrameWork\TestCase
     {
     }
 }
-\class_alias('ECSPrefix202609\Test', 'Test', \false);
+\class_alias('ECSPrefix202610\Test', 'Test', \false);
 PHP
  . $this->whitespacesConfig->getLineEnding(), ['style' => 'annotation'])], null, 'This fixer may change the name of your tests, and could cause incompatibility with' . ' abstract classes or interfaces.');
     }

@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609\Symfony\Component\Console;
+namespace ECSPrefix202610\Symfony\Component\Console;
 
 /**
  * ECS replaces "symfony/console" with its own console, so this class is never installed.

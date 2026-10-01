@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 declare (strict_types=1);
-namespace ECSPrefix202609\Fidry\CpuCoreCounter;
+namespace ECSPrefix202610\Fidry\CpuCoreCounter;
 
-use ECSPrefix202609\Fidry\CpuCoreCounter\Finder\CpuCoreFinder;
-use ECSPrefix202609\Fidry\CpuCoreCounter\Finder\EnvVariableFinder;
-use ECSPrefix202609\Fidry\CpuCoreCounter\Finder\FinderRegistry;
+use ECSPrefix202610\Fidry\CpuCoreCounter\Finder\CpuCoreFinder;
+use ECSPrefix202610\Fidry\CpuCoreCounter\Finder\EnvVariableFinder;
+use ECSPrefix202610\Fidry\CpuCoreCounter\Finder\FinderRegistry;
 use InvalidArgumentException;
 use function function_exists;
 use function implode;

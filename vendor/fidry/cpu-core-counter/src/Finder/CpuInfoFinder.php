@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 declare (strict_types=1);
-namespace ECSPrefix202609\Fidry\CpuCoreCounter\Finder;
+namespace ECSPrefix202610\Fidry\CpuCoreCounter\Finder;
 
-use ECSPrefix202609\Fidry\CpuCoreCounter\FileReader\FileReader;
-use ECSPrefix202609\Fidry\CpuCoreCounter\FileReader\NativeFileReader;
+use ECSPrefix202610\Fidry\CpuCoreCounter\FileReader\FileReader;
+use ECSPrefix202610\Fidry\CpuCoreCounter\FileReader\NativeFileReader;
 use function preg_match_all;
 use function sprintf;
 use const PHP_EOL;

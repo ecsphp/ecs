@@ -2,8 +2,8 @@
 
 // @see https://github.com/shipmonk-rnd/composer-dependency-analyser/
 declare (strict_types=1);
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-use ECSPrefix202609\ShipMonk\ComposerDependencyAnalyser\Config\Configuration;
-use ECSPrefix202609\ShipMonk\ComposerDependencyAnalyser\Config\ErrorType;
+use ECSPrefix202610\ShipMonk\ComposerDependencyAnalyser\Config\Configuration;
+use ECSPrefix202610\ShipMonk\ComposerDependencyAnalyser\Config\ErrorType;
 return (new Configuration())->ignoreErrorsOnExtension('ext-filter', [ErrorType::SHADOW_DEPENDENCY])->ignoreErrorsOnPackage('symfony/polyfill-php80', [ErrorType::UNUSED_DEPENDENCY]);

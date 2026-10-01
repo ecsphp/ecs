@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609\Entropy\Console;
+namespace ECSPrefix202610\Entropy\Console;
 
-use ECSPrefix202609\Entropy\Console\Contract\CommandInterface;
-use ECSPrefix202609\Entropy\Console\Contract\DefaultCommandInterface;
-use ECSPrefix202609\Entropy\Console\Contract\HiddenCommandInterface;
-use ECSPrefix202609\Entropy\Console\Exception\InvalidCommandException;
-use ECSPrefix202609\Entropy\Utils\FuzzyMatcher;
-use ECSPrefix202609\Entropy\Validation\Assert;
+use ECSPrefix202610\Entropy\Console\Contract\CommandInterface;
+use ECSPrefix202610\Entropy\Console\Contract\DefaultCommandInterface;
+use ECSPrefix202610\Entropy\Console\Contract\HiddenCommandInterface;
+use ECSPrefix202610\Entropy\Console\Exception\InvalidCommandException;
+use ECSPrefix202610\Entropy\Utils\FuzzyMatcher;
+use ECSPrefix202610\Entropy\Validation\Assert;
 final class CommandRegistry
 {
     /**

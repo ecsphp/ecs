@@ -71,7 +71,7 @@ final class FunctionDeclarationFixer extends AbstractFixer implements Configurab
         return new FixerDefinition('Spaces should be properly placed in a function declaration.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -80,7 +80,7 @@ class Foo
         return \false;
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 function foo($bar, $baz)
 {
     return \false;
@@ -90,7 +90,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $f = function () {
 };
@@ -99,7 +99,7 @@ PHP
 , ['closure_function_spacing' => self::SPACING_NONE]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $f = fn() => null;
 

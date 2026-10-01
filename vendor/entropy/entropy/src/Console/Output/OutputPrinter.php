@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609\Entropy\Console\Output;
+namespace ECSPrefix202610\Entropy\Console\Output;
 
-use ECSPrefix202609\Entropy\Console\Enum\Color;
-use ECSPrefix202609\Entropy\Console\Terminal\Terminal;
-use ECSPrefix202609\Entropy\Validation\Assert;
+use ECSPrefix202610\Entropy\Console\Enum\Color;
+use ECSPrefix202610\Entropy\Console\Terminal\Terminal;
+use ECSPrefix202610\Entropy\Validation\Assert;
 /**
  * @api used in many ways
  */

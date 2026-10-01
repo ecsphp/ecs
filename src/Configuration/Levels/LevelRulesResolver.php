@@ -6,7 +6,7 @@ namespace Symplify\EasyCodingStandard\Configuration\Levels;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PhpCsFixer\Fixer\FixerInterface;
 use Symplify\EasyCodingStandard\Exception\ShouldNotHappenException;
-use ECSPrefix202609\Webmozart\Assert\Assert;
+use ECSPrefix202610\Webmozart\Assert\Assert;
 final class LevelRulesResolver
 {
     /**

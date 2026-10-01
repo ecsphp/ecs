@@ -67,27 +67,27 @@ final class SingleClassElementPerStatementFixer extends AbstractFixer implements
         return new FixerDefinition('There MUST NOT be more than one property or constant declared per statement.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 final class Example
 {
     const FOO_1 = 1, FOO_2 = 2;
     private static $bar1 = array(1, 2, 3), $bar2 = [1, 2, 3];
 }
-\class_alias('ECSPrefix202609\Example', 'Example', \false);
+\class_alias('ECSPrefix202610\Example', 'Example', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 final class Example
 {
     const FOO_1 = 1, FOO_2 = 2;
     private static $bar1 = array(1, 2, 3), $bar2 = [1, 2, 3];
 }
-\class_alias('ECSPrefix202609\Example', 'Example', \false);
+\class_alias('ECSPrefix202610\Example', 'Example', \false);
 
 PHP
 , ['elements' => ['property']])]);

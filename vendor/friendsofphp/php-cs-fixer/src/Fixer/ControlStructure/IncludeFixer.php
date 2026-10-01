@@ -33,7 +33,7 @@ final class IncludeFixer extends AbstractFixer
         return new FixerDefinition('Include/Require and file path should be divided with a single space. File path should not be placed within parentheses.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 require "sample1.php";
 require_once "sample2.php";

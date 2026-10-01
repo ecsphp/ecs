@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\DependencyInjection;
 
 use Closure;
-use ECSPrefix202609\Entropy\Container\Container;
+use ECSPrefix202610\Entropy\Container\Container;
 use PHP_CodeSniffer\Util\Tokens;
 use PhpCsFixer\Differ\DifferInterface;
 use PhpCsFixer\Differ\UnifiedDiffer;
@@ -15,7 +15,7 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\Console\Style\EasyCodingStandardStyle;
 use Symplify\EasyCodingStandard\Console\Style\EasyCodingStandardStyleFactory;
 use Symplify\EasyCodingStandard\FixerRunner\WhitespacesFixerConfigFactory;
-use ECSPrefix202609\Webmozart\Assert\Assert;
+use ECSPrefix202610\Webmozart\Assert\Assert;
 final class ServiceContainerFactory
 {
     /**

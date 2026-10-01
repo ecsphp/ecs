@@ -28,7 +28,7 @@ final class LowercaseCastFixer extends AbstractFixer
         return new FixerDefinition('Cast should be written in lower case.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = (bool) $b;
 $a = (bool) $b;

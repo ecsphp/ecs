@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 declare (strict_types=1);
-namespace ECSPrefix202609\Fidry\CpuCoreCounter\Finder;
+namespace ECSPrefix202610\Fidry\CpuCoreCounter\Finder;
 
 /**
  * Find the number of logical CPU cores for Linux and the likes.

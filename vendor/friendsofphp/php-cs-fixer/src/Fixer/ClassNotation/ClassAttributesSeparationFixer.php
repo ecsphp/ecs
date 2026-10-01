@@ -31,7 +31,7 @@ use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 use PhpCsFixer\Tokenizer\TokensAnalyzer;
 use PhpCsFixer\Utils;
-use ECSPrefix202609\Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
+use ECSPrefix202610\Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 /**
  * Make sure there is one blank line above and below class elements.
  *
@@ -78,7 +78,7 @@ final class ClassAttributesSeparationFixer extends AbstractFixer implements Conf
         return new FixerDefinition('Class, trait and interface elements must be separated with one or none blank line.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 final class Sample
 {
@@ -89,13 +89,13 @@ final class Sample
     {
     }
 }
-\class_alias('ECSPrefix202609\Sample', 'Sample', \false);
+\class_alias('ECSPrefix202610\Sample', 'Sample', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Sample
 {
@@ -104,13 +104,13 @@ class Sample
     /** second in a hour */
     private $b;
 }
-\class_alias('ECSPrefix202609\Sample', 'Sample', \false);
+\class_alias('ECSPrefix202610\Sample', 'Sample', \false);
 
 PHP
 , ['elements' => ['property' => self::SPACING_ONE]]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Sample
 {
@@ -118,13 +118,13 @@ class Sample
     /** seconds in some hours */
     const B = 3600;
 }
-\class_alias('ECSPrefix202609\Sample', 'Sample', \false);
+\class_alias('ECSPrefix202610\Sample', 'Sample', \false);
 
 PHP
 , ['elements' => ['const' => self::SPACING_ONE]]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Sample
 {
@@ -135,13 +135,13 @@ class Sample
     const HOUR = 3600;
     const DAY = 86400;
 }
-\class_alias('ECSPrefix202609\Sample', 'Sample', \false);
+\class_alias('ECSPrefix202610\Sample', 'Sample', \false);
 
 PHP
 , ['elements' => ['const' => self::SPACING_ONLY_IF_META]]), new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Sample
 {
@@ -155,7 +155,7 @@ class Sample
     public $d;
     public $e;
 }
-\class_alias('ECSPrefix202609\Sample', 'Sample', \false);
+\class_alias('ECSPrefix202610\Sample', 'Sample', \false);
 
 PHP
 , new VersionSpecification(80000), ['elements' => ['property' => self::SPACING_ONLY_IF_META]])]);

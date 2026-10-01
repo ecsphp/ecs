@@ -61,7 +61,7 @@ final class ModifierKeywordsFixer extends AbstractFixer implements ConfigurableF
         return new FixerDefinition('Classes, constants, properties, and methods MUST have visibility declared, and keyword modifiers MUST be in the following order:' . ' inheritance modifier (`abstract` or `final`),' . ' visibility modifier (`public`, `protected`, or `private`),' . ' set-visibility modifier (`public(set)`, `protected(set)`, or `private(set)`),' . ' scope modifier (`static`),' . ' mutation modifier (`readonly`),' . ' type declaration, name.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 abstract class ClassName
 {
@@ -77,13 +77,13 @@ abstract class ClassName
     {
     }
 }
-\class_alias('ECSPrefix202609\ClassName', 'ClassName', \false);
+\class_alias('ECSPrefix202610\ClassName', 'ClassName', \false);
 
 PHP
 ), new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 abstract class ClassName
 {
@@ -99,18 +99,18 @@ abstract class ClassName
     {
     }
 }
-\class_alias('ECSPrefix202609\ClassName', 'ClassName', \false);
+\class_alias('ECSPrefix202610\ClassName', 'ClassName', \false);
 final readonly class ValueObject
 {
     // ...
 }
-\class_alias('ECSPrefix202609\ValueObject', 'ValueObject', \false);
+\class_alias('ECSPrefix202610\ValueObject', 'ValueObject', \false);
 
 PHP
 , new VersionSpecification(80200)), new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 abstract class ClassName
 {
@@ -130,24 +130,24 @@ abstract class ClassName
     {
     }
 }
-\class_alias('ECSPrefix202609\ClassName', 'ClassName', \false);
+\class_alias('ECSPrefix202610\ClassName', 'ClassName', \false);
 final readonly class ValueObject
 {
     // ...
 }
-\class_alias('ECSPrefix202609\ValueObject', 'ValueObject', \false);
+\class_alias('ECSPrefix202610\ValueObject', 'ValueObject', \false);
 
 PHP
 , new VersionSpecification(80400)), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Sample
 {
     const SAMPLE = 1;
 }
-\class_alias('ECSPrefix202609\Sample', 'Sample', \false);
+\class_alias('ECSPrefix202610\Sample', 'Sample', \false);
 
 PHP
 , ['elements' => ['const']])]);

@@ -14,8 +14,8 @@ namespace PhpCsFixer\FixerConfiguration;
 
 use PhpCsFixer\Future;
 use PhpCsFixer\Preg;
-use ECSPrefix202609\Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
-use ECSPrefix202609\Symfony\Component\OptionsResolver\OptionsResolver;
+use ECSPrefix202610\Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
+use ECSPrefix202610\Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * @readonly
  *

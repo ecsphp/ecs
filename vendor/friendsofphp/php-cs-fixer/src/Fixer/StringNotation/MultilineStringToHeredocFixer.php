@@ -31,7 +31,7 @@ final class MultilineStringToHeredocFixer extends AbstractFixer
         return new FixerDefinition('Convert multiline string to `heredoc` or `nowdoc`.', [new CodeSample(<<<'EOD'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = 'line1
 line2';
@@ -39,7 +39,7 @@ EOD
  . "\n"), new CodeSample(<<<'EOD'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = "line1\n{$obj->getName()}";
 EOD

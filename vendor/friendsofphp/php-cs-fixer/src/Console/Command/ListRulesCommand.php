@@ -19,12 +19,12 @@ use PhpCsFixer\Console\Report\ListRulesReport\ReportSummary;
 use PhpCsFixer\Console\Report\ListRulesReport\TextReporter;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\Utils;
-use ECSPrefix202609\Symfony\Component\Console\Attribute\AsCommand;
-use ECSPrefix202609\Symfony\Component\Console\Command\Command;
-use ECSPrefix202609\Symfony\Component\Console\Formatter\OutputFormatter;
-use ECSPrefix202609\Symfony\Component\Console\Input\InputInterface;
-use ECSPrefix202609\Symfony\Component\Console\Input\InputOption;
-use ECSPrefix202609\Symfony\Component\Console\Output\OutputInterface;
+use ECSPrefix202610\Symfony\Component\Console\Attribute\AsCommand;
+use ECSPrefix202610\Symfony\Component\Console\Command\Command;
+use ECSPrefix202610\Symfony\Component\Console\Formatter\OutputFormatter;
+use ECSPrefix202610\Symfony\Component\Console\Input\InputInterface;
+use ECSPrefix202610\Symfony\Component\Console\Input\InputOption;
+use ECSPrefix202610\Symfony\Component\Console\Output\OutputInterface;
 /**
  * @author Dariusz Rumiński <dariusz.ruminski@gmail.com>
  *

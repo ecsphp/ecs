@@ -69,7 +69,7 @@ final class YodaStyleFixer extends AbstractFixer implements ConfigurableFixerInt
         return new FixerDefinition('Write conditions in Yoda style (`true`), non-Yoda style (`[\'equal\' => false, \'identical\' => false, \'less_and_greater\' => false]`) or ignore those conditions (`null`) based on configuration.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 if ($a === null) {
     echo "null";
@@ -79,7 +79,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $b = $c != 1;
 // equal
@@ -92,7 +92,7 @@ PHP
 , ['equal' => \true, 'identical' => \false, 'less_and_greater' => null]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 return $foo === \count($bar);
 
@@ -100,7 +100,7 @@ PHP
 , ['always_move_variable' => \true]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 // Enforce non-Yoda style.
 if (null === $a) {

@@ -49,7 +49,7 @@ final class PhpdocParamOrderFixer extends AbstractFixer
         return new FixerDefinition('Orders all `@param` annotations in DocBlocks according to method signature.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 /**
 * Annotations in wrong order

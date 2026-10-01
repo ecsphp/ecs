@@ -58,7 +58,7 @@ final class BlankLineBeforeStatementFixer extends AbstractFixer implements Confi
         return new FixerDefinition('An empty line feed must precede any configured statement.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function A()
 {
@@ -70,7 +70,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 switch ($foo) {
     case 42:
@@ -84,7 +84,7 @@ PHP
 , ['statements' => ['break']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 foreach ($foo as $bar) {
     if ($bar->isTired()) {
@@ -97,7 +97,7 @@ PHP
 , ['statements' => ['continue']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $i = 0;
 do {
@@ -108,7 +108,7 @@ PHP
 , ['statements' => ['do']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 if ($foo === \false) {
     exit(0);
@@ -121,7 +121,7 @@ PHP
 , ['statements' => ['exit']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 a:
 if ($foo === \false) {
@@ -135,7 +135,7 @@ PHP
 , ['statements' => ['goto']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = 9000;
 if (\true) {
@@ -146,7 +146,7 @@ PHP
 , ['statements' => ['if']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 if (\true) {
     $foo = $bar;
@@ -157,7 +157,7 @@ PHP
 , ['statements' => ['return']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = 9000;
 switch ($a) {
@@ -169,7 +169,7 @@ PHP
 , ['statements' => ['switch']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 if (null === $a) {
     $foo->bar();
@@ -180,7 +180,7 @@ PHP
 , ['statements' => ['throw']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $a = 9000;
 try {
@@ -193,7 +193,7 @@ PHP
 , ['statements' => ['try']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function getValues()
 {

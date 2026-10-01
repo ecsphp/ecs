@@ -52,7 +52,7 @@ final class ReturnAssignmentFixer extends AbstractFixer implements ConfigurableF
         return new FixerDefinition('Local, dynamic and directly referenced variables should not be assigned and directly returned by a function or method.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function a()
 {
@@ -76,7 +76,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function a()
 {

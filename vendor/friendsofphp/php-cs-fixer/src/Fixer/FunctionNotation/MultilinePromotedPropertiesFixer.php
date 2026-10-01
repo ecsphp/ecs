@@ -62,7 +62,7 @@ final class MultilinePromotedPropertiesFixer extends AbstractFixer implements Co
         return new FixerDefinition('Promoted properties must be on separate lines.', [new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -70,13 +70,13 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , new VersionSpecification(80000)), new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -84,20 +84,20 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 class Bar
 {
     public function __construct(private array $x)
     {
     }
 }
-\class_alias('ECSPrefix202609\Bar', 'Bar', \false);
+\class_alias('ECSPrefix202610\Bar', 'Bar', \false);
 
 PHP
 , new VersionSpecification(80000), ['minimum_number_of_parameters' => 3]), new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -105,7 +105,7 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 , new VersionSpecification(80000), ['minimum_number_of_parameters' => 3])]);

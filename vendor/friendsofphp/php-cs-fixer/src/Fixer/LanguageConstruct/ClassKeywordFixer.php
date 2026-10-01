@@ -30,7 +30,7 @@ final class ClassKeywordFixer extends AbstractFixer implements ExperimentalFixer
         return new FixerDefinition('Converts FQCN strings to `*::class` keywords.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $foo = 'PhpCsFixer\Tokenizer\Tokens';
 $bar = "\\PhpCsFixer\\Tokenizer\\Tokens";

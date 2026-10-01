@@ -74,7 +74,7 @@ final class NoExtraBlankLinesFixer extends AbstractFixer implements Configurable
         return new FixerDefinition('Removes extra blank lines and/or blank lines following configuration.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $foo = array("foo");
 $bar = "bar";
@@ -83,7 +83,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 switch ($foo) {
     case 41:
@@ -97,7 +97,7 @@ PHP
 , ['tokens' => ['break']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 for ($i = 0; $i < 9000; ++$i) {
     if (\true) {
@@ -109,7 +109,7 @@ PHP
 , ['tokens' => ['continue']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 for ($i = 0; $i < 9000; ++$i) {
     echo $i;
@@ -119,7 +119,7 @@ PHP
 , ['tokens' => ['curly_brace_block']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $foo = array("foo");
 $bar = "bar";
@@ -128,7 +128,7 @@ PHP
 , ['tokens' => ['extra']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $foo = array("foo");
 
@@ -136,7 +136,7 @@ PHP
 , ['tokens' => ['parenthesis_brace_block']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function foo($bar)
 {
@@ -147,7 +147,7 @@ PHP
 , ['tokens' => ['return']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 $foo = ["foo"];
 
@@ -155,7 +155,7 @@ PHP
 , ['tokens' => ['square_brace_block']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 function foo($bar)
 {
@@ -166,10 +166,10 @@ PHP
 , ['tokens' => ['throw']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609\Foo;
+namespace ECSPrefix202610\Foo;
 
-use ECSPrefix202609\Bar\Baz;
-use ECSPrefix202609\Baz\Bar;
+use ECSPrefix202610\Bar\Baz;
+use ECSPrefix202610\Baz\Bar;
 class Bar
 {
 }
@@ -178,7 +178,7 @@ PHP
 , ['tokens' => ['use']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 switch ($a) {
     case 1:

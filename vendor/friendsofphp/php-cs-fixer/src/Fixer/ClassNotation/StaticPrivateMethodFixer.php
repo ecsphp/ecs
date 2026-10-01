@@ -35,7 +35,7 @@ final class StaticPrivateMethodFixer extends AbstractFixer
         return new FixerDefinition('Converts private methods to `static` where possible.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -48,7 +48,7 @@ class Foo
         return 1;
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 )], null, 'Risky when the method:' . ' contains dynamic generated calls to the instance,' . ' is dynamically referenced,' . ' is referenced inside a Trait the class uses.');

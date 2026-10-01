@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ECSPrefix202609\\Composer\\Pcre\\": "src"
+            "ECSPrefix202610\\Composer\\Pcre\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ECSPrefix202609\\Composer\\Pcre\\": "tests"
+            "ECSPrefix202610\\Composer\\Pcre\\": "tests"
         }
     },
     "extra": {

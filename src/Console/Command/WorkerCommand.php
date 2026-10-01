@@ -3,13 +3,13 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Console\Command;
 
-use ECSPrefix202609\Clue\React\NDJson\Decoder;
-use ECSPrefix202609\Clue\React\NDJson\Encoder;
-use ECSPrefix202609\Entropy\Console\Contract\CommandInterface;
-use ECSPrefix202609\Entropy\Console\Contract\HiddenCommandInterface;
-use ECSPrefix202609\React\EventLoop\StreamSelectLoop;
-use ECSPrefix202609\React\Socket\ConnectionInterface;
-use ECSPrefix202609\React\Socket\TcpConnector;
+use ECSPrefix202610\Clue\React\NDJson\Decoder;
+use ECSPrefix202610\Clue\React\NDJson\Encoder;
+use ECSPrefix202610\Entropy\Console\Contract\CommandInterface;
+use ECSPrefix202610\Entropy\Console\Contract\HiddenCommandInterface;
+use ECSPrefix202610\React\EventLoop\StreamSelectLoop;
+use ECSPrefix202610\React\Socket\ConnectionInterface;
+use ECSPrefix202610\React\Socket\TcpConnector;
 use Symplify\EasyCodingStandard\Configuration\ConfigurationFactory;
 use Symplify\EasyCodingStandard\Console\ExitCode;
 use Symplify\EasyCodingStandard\Console\Output\ConsoleOutputFormatter;

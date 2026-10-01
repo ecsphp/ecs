@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609\Entropy\Utils;
+namespace ECSPrefix202610\Entropy\Utils;
 
-use ECSPrefix202609\Entropy\Validation\Assert;
+use ECSPrefix202610\Entropy\Validation\Assert;
 /**
  * @api to be used outside
  */

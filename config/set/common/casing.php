@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 use PhpCsFixer\Fixer\Casing\ClassReferenceNameCasingFixer;
 use PhpCsFixer\Fixer\Casing\IntegerLiteralCaseFixer;

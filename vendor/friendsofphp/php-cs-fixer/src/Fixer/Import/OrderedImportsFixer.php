@@ -31,8 +31,8 @@ use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 use PhpCsFixer\Tokenizer\TokensAnalyzer;
 use PhpCsFixer\Utils;
-use ECSPrefix202609\Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
-use ECSPrefix202609\Symfony\Component\OptionsResolver\Options;
+use ECSPrefix202610\Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
+use ECSPrefix202610\Symfony\Component\OptionsResolver\Options;
 /**
  * @phpstan-type _UseImportInfo array{
  *  namespace: non-empty-string,
@@ -108,19 +108,19 @@ final class OrderedImportsFixer extends AbstractFixer implements ConfigurableFix
         return new FixerDefinition('Ordering `use` statements.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-use function ECSPrefix202609\AAC;
+use function ECSPrefix202610\AAC;
 use const AAB;
-use ECSPrefix202609\AAA;
+use ECSPrefix202610\AAA;
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-use function ECSPrefix202609\Aaa;
+use function ECSPrefix202610\Aaa;
 use const AA;
 
 PHP
@@ -135,43 +135,43 @@ PHP
 , ['sort_algorithm' => self::SORT_LENGTH]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 use const AAAA;
 use const BBB;
-use ECSPrefix202609\Bar;
-use ECSPrefix202609\AAC;
-use ECSPrefix202609\Acme;
-use function ECSPrefix202609\CCC\AA;
-use function ECSPrefix202609\DDD;
+use ECSPrefix202610\Bar;
+use ECSPrefix202610\AAC;
+use ECSPrefix202610\Acme;
+use function ECSPrefix202610\CCC\AA;
+use function ECSPrefix202610\DDD;
 
 PHP
 , ['sort_algorithm' => self::SORT_LENGTH, 'imports_order' => [self::IMPORT_TYPE_CONST, self::IMPORT_TYPE_CLASS, self::IMPORT_TYPE_FUNCTION]]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 use const BBB;
 use const AAAA;
-use ECSPrefix202609\Acme;
-use ECSPrefix202609\AAC;
-use ECSPrefix202609\Bar;
-use function ECSPrefix202609\DDD;
-use function ECSPrefix202609\CCC\AA;
+use ECSPrefix202610\Acme;
+use ECSPrefix202610\AAC;
+use ECSPrefix202610\Bar;
+use function ECSPrefix202610\DDD;
+use function ECSPrefix202610\CCC\AA;
 
 PHP
 , ['sort_algorithm' => self::SORT_ALPHA, 'imports_order' => [self::IMPORT_TYPE_CONST, self::IMPORT_TYPE_CLASS, self::IMPORT_TYPE_FUNCTION]]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 use const BBB;
 use const AAAA;
-use function ECSPrefix202609\DDD;
-use function ECSPrefix202609\CCC\AA;
-use ECSPrefix202609\Acme;
-use ECSPrefix202609\AAC;
-use ECSPrefix202609\Bar;
+use function ECSPrefix202610\DDD;
+use function ECSPrefix202610\CCC\AA;
+use ECSPrefix202610\Acme;
+use ECSPrefix202610\AAC;
+use ECSPrefix202610\Bar;
 
 PHP
 , ['sort_algorithm' => self::SORT_NONE, 'imports_order' => [self::IMPORT_TYPE_CONST, self::IMPORT_TYPE_CLASS, self::IMPORT_TYPE_FUNCTION]])]);

@@ -84,7 +84,7 @@ final class OrderedClassElementsFixer extends AbstractFixer implements Configura
         return new FixerDefinition('Orders the elements of classes/interfaces/traits/enums.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 final class Example
 {
@@ -141,13 +141,13 @@ final class Example
     {
     }
 }
-\class_alias('ECSPrefix202609\Example', 'Example', \false);
+\class_alias('ECSPrefix202610\Example', 'Example', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Example
 {
@@ -158,13 +158,13 @@ class Example
     {
     }
 }
-\class_alias('ECSPrefix202609\Example', 'Example', \false);
+\class_alias('ECSPrefix202610\Example', 'Example', \false);
 
 PHP
 , ['order' => ['method_private', 'method_public']]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Example
 {
@@ -181,13 +181,13 @@ class Example
     {
     }
 }
-\class_alias('ECSPrefix202609\Example', 'Example', \false);
+\class_alias('ECSPrefix202610\Example', 'Example', \false);
 
 PHP
 , ['order' => ['method_public'], 'sort_algorithm' => self::SORT_ALPHA]), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Example
 {
@@ -204,7 +204,7 @@ class Example
     {
     }
 }
-\class_alias('ECSPrefix202609\Example', 'Example', \false);
+\class_alias('ECSPrefix202610\Example', 'Example', \false);
 
 PHP
 , ['order' => ['method_public'], 'sort_algorithm' => self::SORT_ALPHA, 'case_sensitive' => \true])], 'Accepts a subset of pre-defined element types, special element groups, and custom patterns.

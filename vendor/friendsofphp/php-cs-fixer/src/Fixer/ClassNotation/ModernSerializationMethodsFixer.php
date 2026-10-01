@@ -32,7 +32,7 @@ final class ModernSerializationMethodsFixer extends AbstractFixer
         return new FixerDefinition('Use new serialization methods `__serialize` and `__unserialize` instead of deprecated ones `__sleep` and `__wakeup`.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -43,7 +43,7 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 )], null, 'Risky when calling the old methods directly or having logic in the `__sleep` and `__wakeup` methods.');

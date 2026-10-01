@@ -78,9 +78,9 @@ final class PhpUnitDedicateAssertFixer extends AbstractPhpUnitFixer implements C
         return new FixerDefinition('PHPUnit assertions like `assertInternalType`, `assertFileExists`, should be used over `assertTrue`.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
+final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
 {
     public function testSomeTest()
     {
@@ -88,15 +88,15 @@ final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
         $this->assertTrue(\is_nan($a));
     }
 }
-\class_alias('ECSPrefix202609\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
-final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
+final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
 {
     public function testSomeTest()
     {
@@ -105,7 +105,7 @@ final class MyTest extends \ECSPrefix202609\PHPUnit_Framework_TestCase
         $this->assertTrue(\is_readable($a));
     }
 }
-\class_alias('ECSPrefix202609\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
 
 PHP
 , ['target' => \PhpCsFixer\Fixer\PhpUnit\PhpUnitTargetVersion::VERSION_5_6])], null, 'Fixer could be risky if one is overriding PHPUnit\'s native methods.');

@@ -33,7 +33,7 @@ final class NoPhp4ConstructorFixer extends AbstractFixer
         return new FixerDefinition('Convert PHP4-style constructors to `__construct`.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202609;
+namespace ECSPrefix202610;
 
 class Foo
 {
@@ -41,7 +41,7 @@ class Foo
     {
     }
 }
-\class_alias('ECSPrefix202609\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
 
 PHP
 )], null, 'Risky when old style constructor being fixed is overridden or overrides parent one.');

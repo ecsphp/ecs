@@ -28,15 +28,15 @@ use PhpCsFixer\Future;
 use PhpCsFixer\PharChecker;
 use PhpCsFixer\Runner\Parallel\WorkerException;
 use PhpCsFixer\ToolInfo;
-use ECSPrefix202609\Symfony\Component\Console\Application as BaseApplication;
-use ECSPrefix202609\Symfony\Component\Console\Command\Command;
-use ECSPrefix202609\Symfony\Component\Console\Command\CompleteCommand;
-use ECSPrefix202609\Symfony\Component\Console\Command\DumpCompletionCommand;
-use ECSPrefix202609\Symfony\Component\Console\Command\ListCommand;
-use ECSPrefix202609\Symfony\Component\Console\Exception\CommandNotFoundException;
-use ECSPrefix202609\Symfony\Component\Console\Input\InputInterface;
-use ECSPrefix202609\Symfony\Component\Console\Output\ConsoleOutputInterface;
-use ECSPrefix202609\Symfony\Component\Console\Output\OutputInterface;
+use ECSPrefix202610\Symfony\Component\Console\Application as BaseApplication;
+use ECSPrefix202610\Symfony\Component\Console\Command\Command;
+use ECSPrefix202610\Symfony\Component\Console\Command\CompleteCommand;
+use ECSPrefix202610\Symfony\Component\Console\Command\DumpCompletionCommand;
+use ECSPrefix202610\Symfony\Component\Console\Command\ListCommand;
+use ECSPrefix202610\Symfony\Component\Console\Exception\CommandNotFoundException;
+use ECSPrefix202610\Symfony\Component\Console\Input\InputInterface;
+use ECSPrefix202610\Symfony\Component\Console\Output\ConsoleOutputInterface;
+use ECSPrefix202610\Symfony\Component\Console\Output\OutputInterface;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Dariusz Rumiński <dariusz.ruminski@gmail.com>
