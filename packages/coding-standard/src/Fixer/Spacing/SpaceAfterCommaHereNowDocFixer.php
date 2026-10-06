@@ -46,7 +46,6 @@ final class SpaceAfterCommaHereNowDocFixer extends AbstractSymplifyFixer
             if (!isset($tokens[$position + 1])) {
                 continue;
             }
-            /** @var Token $nextToken */
             $nextToken = $tokens[$position + 1];
             if (!in_array($nextToken->getContent(), [',', ']'], \true)) {
                 continue;

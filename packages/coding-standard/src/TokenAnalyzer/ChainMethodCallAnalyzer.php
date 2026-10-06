@@ -83,7 +83,6 @@ final class ChainMethodCallAnalyzer
     {
         $bracketNesting = 0;
         for ($i = $position + $step; isset($tokens[$i]); $i += $step) {
-            /** @var Token $currentToken */
             $currentToken = $tokens[$i];
             $content = $currentToken->getContent();
             // entering a nested bracket

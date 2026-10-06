@@ -81,7 +81,6 @@ final class LineLengthResolver
             if (!isset($tokens[$end])) {
                 break;
             }
-            /** @var Token $currentToken */
             $currentToken = $tokens[$end];
         }
         return $length;

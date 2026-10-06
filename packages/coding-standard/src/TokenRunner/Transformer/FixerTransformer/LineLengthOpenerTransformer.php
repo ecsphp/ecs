@@ -27,7 +27,6 @@ final class LineLengthOpenerTransformer
         if (!isset($tokens[$blockStartIndex + 1])) {
             throw new TokenNotFoundException($blockStartIndex + 1);
         }
-        /** @var Token $nextToken */
         $nextToken = $tokens[$blockStartIndex + 1];
         if ($nextToken->isGivenKind(\T_WHITESPACE)) {
             $tokens->ensureWhitespaceAtIndex($blockStartIndex + 1, 0, $newlineIndentWhitespace);
