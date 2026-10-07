@@ -23,7 +23,7 @@ final class ProcessedFileReporter
         $this->outputFormatterCollector = $outputFormatterCollector;
     }
     /**
-     * @param array{system_errors?: SystemError[]|string[], file_diffs?: FileDiff[], coding_standard_errors?: CodingStandardError[], system_errors_count?: int} $errorsAndDiffs
+     * @param array{system_errors?: SystemError[]|string[], file_diffs?: FileDiff[], coding_standard_errors?: CodingStandardError[], system_errors_count?: int, files_count?: int} $errorsAndDiffs
      * @return ExitCode::*
      */
     public function report(array $errorsAndDiffs, Configuration $configuration): int
