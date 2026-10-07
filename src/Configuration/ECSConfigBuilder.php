@@ -256,7 +256,7 @@ final class ECSConfigBuilder
     /**
      * @deprecated Loading PHP-CS-Fixer sets is deprecated. Use ->withPreparedSets() or ->withSets() with the prepared sets instead.
      */
-    public function withPhpCsFixerSets(): self
+    public function withPhpCsFixerSets(bool ...$sets): self
     {
         $outputPrinter = new OutputPrinter(new OutputColorizer());
         $outputPrinter->warning('The "withPhpCsFixerSets()" method is deprecated. Use ->withPreparedSets() or ->withSets() with prepared sets instead.');
