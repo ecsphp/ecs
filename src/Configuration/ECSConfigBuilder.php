@@ -258,8 +258,13 @@ final class ECSConfigBuilder
      */
     public function withPhpCsFixerSets(bool ...$sets): self
     {
-        $outputPrinter = new OutputPrinter(new OutputColorizer());
-        $outputPrinter->warning('The "withPhpCsFixerSets()" method is deprecated. Use ->withPreparedSets() or ->withSets() with prepared sets instead.');
+        // config file is required twice (container build + cache hash), warn only once per process
+        static $warned = \false;
+        if (!$warned) {
+            $warned = \true;
+            $outputPrinter = new OutputPrinter(new OutputColorizer());
+            $outputPrinter->warning('The "withPhpCsFixerSets()" method is deprecated. Use ->withPreparedSets() or ->withSets() with prepared sets instead.');
+        }
         return $this;
     }
     /**
