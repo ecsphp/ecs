@@ -8,8 +8,7 @@ use PhpCsFixer\Fixer\FixerInterface;
 use ReflectionProperty;
 use stdClass;
 use Symplify\EasyCodingStandard\FixerRunner\Application\FixerFileProcessor;
-use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedClassResolver;
-use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedPathsResolver;
+use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver;
 use Symplify\EasyCodingStandard\SniffRunner\Application\SniffFileProcessor;
 /**
  * Turns the resolved ecs.php configuration into the JSON shape the ecs-go blink
@@ -30,20 +29,14 @@ final class BlinkConfigDumper
     private $fixerFileProcessor;
     /**
      * @readonly
-     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedPathsResolver
+     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver
      */
-    private $skippedPathsResolver;
-    /**
-     * @readonly
-     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedClassResolver
-     */
-    private $skippedClassResolver;
-    public function __construct(SniffFileProcessor $sniffFileProcessor, FixerFileProcessor $fixerFileProcessor, SkippedPathsResolver $skippedPathsResolver, SkippedClassResolver $skippedClassResolver)
+    private $skippedCriteriaResolver;
+    public function __construct(SniffFileProcessor $sniffFileProcessor, FixerFileProcessor $fixerFileProcessor, SkippedCriteriaResolver $skippedCriteriaResolver)
     {
         $this->sniffFileProcessor = $sniffFileProcessor;
         $this->fixerFileProcessor = $fixerFileProcessor;
-        $this->skippedPathsResolver = $skippedPathsResolver;
-        $this->skippedClassResolver = $skippedClassResolver;
+        $this->skippedCriteriaResolver = $skippedCriteriaResolver;
     }
     /**
      * @param string[] $paths
@@ -77,10 +70,10 @@ final class BlinkConfigDumper
     private function dumpSkips(): array
     {
         $skips = [];
-        foreach ($this->skippedPathsResolver->resolve() as $path) {
+        foreach ($this->skippedCriteriaResolver->resolvePaths() as $path) {
             $skips[] = ['path' => $path];
         }
-        foreach ($this->skippedClassResolver->resolve() as $checkerClass => $paths) {
+        foreach ($this->skippedCriteriaResolver->resolveClasses() as $checkerClass => $paths) {
             if ($paths === null) {
                 $skips[] = ['class' => $checkerClass];
                 continue;
