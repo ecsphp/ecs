@@ -11,7 +11,7 @@ use Symplify\EasyCodingStandard\Console\ExitCode;
 use Symplify\EasyCodingStandard\Console\Output\ConsoleOutputFormatter;
 use Symplify\EasyCodingStandard\Console\Reporter\CheckerListReporter;
 use Symplify\EasyCodingStandard\FixerRunner\Application\FixerFileProcessor;
-use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedClassResolver;
+use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver;
 use Symplify\EasyCodingStandard\SniffRunner\Application\SniffFileProcessor;
 final class ListCheckersCommand implements CommandInterface
 {
@@ -32,15 +32,15 @@ final class ListCheckersCommand implements CommandInterface
     private $checkerListReporter;
     /**
      * @readonly
-     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedClassResolver
+     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver
      */
-    private $skippedClassResolver;
-    public function __construct(SniffFileProcessor $sniffFileProcessor, FixerFileProcessor $fixerFileProcessor, CheckerListReporter $checkerListReporter, SkippedClassResolver $skippedClassResolver)
+    private $skippedCriteriaResolver;
+    public function __construct(SniffFileProcessor $sniffFileProcessor, FixerFileProcessor $fixerFileProcessor, CheckerListReporter $checkerListReporter, SkippedCriteriaResolver $skippedCriteriaResolver)
     {
         $this->sniffFileProcessor = $sniffFileProcessor;
         $this->fixerFileProcessor = $fixerFileProcessor;
         $this->checkerListReporter = $checkerListReporter;
-        $this->skippedClassResolver = $skippedClassResolver;
+        $this->skippedCriteriaResolver = $skippedCriteriaResolver;
     }
     public function getName(): string
     {
@@ -110,7 +110,7 @@ final class ListCheckersCommand implements CommandInterface
     private function getSkippedCheckers(): array
     {
         $skippedCheckers = [];
-        foreach ($this->skippedClassResolver->resolve() as $checkerClass => $fileList) {
+        foreach ($this->skippedCriteriaResolver->resolveClasses() as $checkerClass => $fileList) {
             // ignore specific skips
             if ($fileList !== null) {
                 continue;
