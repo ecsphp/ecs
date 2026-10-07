@@ -4,7 +4,10 @@ declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Skipper\Skipper;
 
 use Symplify\EasyCodingStandard\Skipper\Matcher\FileInfoMatcher;
-use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver;
+use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedClassAndCodesResolver;
+use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedClassResolver;
+use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedMessagesResolver;
+use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedPathsResolver;
 /**
  * @api
  * @see \Symplify\EasyCodingStandard\Tests\Skipper\Skipper\Skipper\SkipperTest
@@ -13,9 +16,24 @@ final class Skipper
 {
     /**
      * @readonly
-     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver
+     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedClassAndCodesResolver
      */
-    private $skippedCriteriaResolver;
+    private $skippedClassAndCodesResolver;
+    /**
+     * @readonly
+     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedClassResolver
+     */
+    private $skippedClassResolver;
+    /**
+     * @readonly
+     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedMessagesResolver
+     */
+    private $skippedMessagesResolver;
+    /**
+     * @readonly
+     * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedPathsResolver
+     */
+    private $skippedPathsResolver;
     /**
      * @readonly
      * @var \Symplify\EasyCodingStandard\Skipper\Skipper\SkipSkipper
@@ -30,9 +48,12 @@ final class Skipper
      * @var string
      */
     private const FILE_ELEMENT = 'file_elements';
-    public function __construct(SkippedCriteriaResolver $skippedCriteriaResolver, \Symplify\EasyCodingStandard\Skipper\Skipper\SkipSkipper $skipSkipper, FileInfoMatcher $fileInfoMatcher)
+    public function __construct(SkippedClassAndCodesResolver $skippedClassAndCodesResolver, SkippedClassResolver $skippedClassResolver, SkippedMessagesResolver $skippedMessagesResolver, SkippedPathsResolver $skippedPathsResolver, \Symplify\EasyCodingStandard\Skipper\Skipper\SkipSkipper $skipSkipper, FileInfoMatcher $fileInfoMatcher)
     {
-        $this->skippedCriteriaResolver = $skippedCriteriaResolver;
+        $this->skippedClassAndCodesResolver = $skippedClassAndCodesResolver;
+        $this->skippedClassResolver = $skippedClassResolver;
+        $this->skippedMessagesResolver = $skippedMessagesResolver;
+        $this->skippedPathsResolver = $skippedPathsResolver;
         $this->skipSkipper = $skipSkipper;
         $this->fileInfoMatcher = $fileInfoMatcher;
     }
@@ -75,7 +96,7 @@ final class Skipper
         if (substr_count($element, '.') !== 1) {
             return \false;
         }
-        $skippedClassAndCodes = $this->skippedCriteriaResolver->resolveClassAndCodes();
+        $skippedClassAndCodes = $this->skippedClassAndCodesResolver->resolve();
         if (!array_key_exists($element, $skippedClassAndCodes)) {
             return \false;
         }
@@ -93,7 +114,7 @@ final class Skipper
         if (is_string($element) && !class_exists($element) && !interface_exists($element)) {
             return \false;
         }
-        $skippedClasses = $this->skippedCriteriaResolver->resolveClasses();
+        $skippedClasses = $this->skippedClassResolver->resolve();
         return $this->skipSkipper->doesMatchSkip($element, $filePath, $skippedClasses);
     }
     /**
@@ -107,7 +128,7 @@ final class Skipper
         if (substr_count($element, ' ') === 0) {
             return \false;
         }
-        $skippedMessages = $this->skippedCriteriaResolver->resolveMessages();
+        $skippedMessages = $this->skippedMessagesResolver->resolve();
         if (!array_key_exists($element, $skippedMessages)) {
             return \false;
         }
@@ -119,7 +140,7 @@ final class Skipper
     }
     private function shouldSkipPath(string $filePath): bool
     {
-        $skippedPaths = $this->skippedCriteriaResolver->resolvePaths();
+        $skippedPaths = $this->skippedPathsResolver->resolve();
         return $this->fileInfoMatcher->doesFileInfoMatchPatterns($filePath, $skippedPaths);
     }
 }
