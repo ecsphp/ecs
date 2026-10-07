@@ -110,26 +110,6 @@ final class FixerFileProcessor implements FileProcessorInterface
         Tokens::clearCache();
         return [Bridge::FILE_DIFFS => $fileDiffs];
     }
-    public function processFileToString(string $filePath): string
-    {
-        $tokens = $this->fileToTokensParser->parseFromFilePath($filePath);
-        $appliedFixers = [];
-        foreach ($this->fixers as $fixer) {
-            if ($this->processTokensByFixer($filePath, $tokens, $fixer)) {
-                $appliedFixers[] = get_class($fixer);
-            }
-        }
-        $contents = FileSystem::read($filePath);
-        if ($appliedFixers === []) {
-            return $contents;
-        }
-        $diff = $this->differ->diff($contents, $tokens->generateCode());
-        // some fixer with feature overlap can null each other
-        if ($diff === '') {
-            return $contents;
-        }
-        return $tokens->generateCode();
-    }
     /**
      * @param FixerInterface[] $fixers
      * @return FixerInterface[]

@@ -118,15 +118,6 @@ final class SniffFileProcessor implements FileProcessorInterface
         }
         return $errorsAndDiffs;
     }
-    /**
-     * For tests or printing contenet
-     */
-    public function processFileToString(string $filePath): string
-    {
-        $file = $this->fileFactory->createFromFile($filePath);
-        $this->fixFile($file, $filePath, $this->tokenListeners, []);
-        return $this->fixer->getContents();
-    }
     private function addSniff(Sniff $sniff): void
     {
         $this->sniffs[] = $sniff;

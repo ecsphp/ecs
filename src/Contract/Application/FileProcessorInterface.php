@@ -8,7 +8,6 @@ use Symplify\EasyCodingStandard\ValueObject\Configuration;
 use Symplify\EasyCodingStandard\ValueObject\Error\FileDiff;
 interface FileProcessorInterface
 {
-    public function processFileToString(string $filePath): string;
     /**
      * @return array{file_diffs?: FileDiff[], coding_standard_errors?: CodingStandardError[]}
      */
