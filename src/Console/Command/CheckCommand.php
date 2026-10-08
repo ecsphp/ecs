@@ -99,8 +99,8 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
      */
     public function run(bool $fix = \false, bool $clearCache = \false, bool $noProgressBar = \false, bool $noErrorTable = \false, bool $noDiffs = \false, bool $debug = \false, bool $dirty = \false, bool $blink = \false, string $config = '', string $outputFormat = ConsoleOutputFormatter::NAME, string $memoryLimit = '', string $port = '', string $identifier = '', string ...$paths): int
     {
-        // create ecs.php config file if does not exist yet
-        if (!$this->configInitializer->areSomeCheckersRegistered()) {
+        // create ecs.php config file if does not exist yet, unless an explicit --config was provided
+        if ($config === '' && !$this->configInitializer->areSomeCheckersRegistered()) {
             $this->configInitializer->createConfig((string) getcwd());
             return ExitCode::SUCCESS;
         }
