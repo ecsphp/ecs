@@ -4,21 +4,12 @@ declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Parallel;
 
 use ECSPrefix202610\Fidry\CpuCoreCounter\CpuCoreCounter;
-use ECSPrefix202610\Fidry\CpuCoreCounter\NumberOfCpuCoreNotFound;
 final class CpuCoreCountProvider
 {
-    /**
-     * @var int
-     */
-    private const DEFAULT_CORE_COUNT = 2;
     public function provide(): int
     {
-        try {
-            $coreCount = (new CpuCoreCounter())->getCount();
-        } catch (NumberOfCpuCoreNotFound $exception) {
-            return self::DEFAULT_CORE_COUNT;
-        }
-        // leave one core free, to avoid maxing out the CPU
-        return max(1, $coreCount - 1);
+        // reserve one core to avoid maxing out the CPU; getAvailableForParallelisation() also
+        // respects cgroup/CFS quota (docker --cpus, KUBERNETES_CPU_LIMIT) instead of host cores
+        return (new CpuCoreCounter())->getAvailableForParallelisation(1)->availableCpus;
     }
 }
