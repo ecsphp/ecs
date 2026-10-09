@@ -258,13 +258,7 @@ final class ECSConfigBuilder
      */
     public function withPhpCsFixerSets(bool ...$sets): self
     {
-        // config file is required twice (container build + cache hash), warn only once per process
-        static $warned = \false;
-        if (!$warned) {
-            $warned = \true;
-            $outputPrinter = new OutputPrinter(new OutputColorizer());
-            $outputPrinter->warning('The "withPhpCsFixerSets()" method is deprecated. Use ->withPreparedSets() or ->withSets() with prepared sets instead.');
-        }
+        $this->printDeprecationWarning('The "withPhpCsFixerSets()" method is deprecated. Use ->withPreparedSets() or ->withSets() with prepared sets instead.');
         return $this;
     }
     /**
@@ -302,8 +296,7 @@ final class ECSConfigBuilder
      */
     public function withEditorConfig(): self
     {
-        $outputPrinter = new OutputPrinter(new OutputColorizer());
-        $outputPrinter->warning('The "withEditorConfig()" method is deprecated, as it leaks project-wide settings into ECS. Configure the matching PHP-CS-Fixer rules explicitly instead.');
+        $this->printDeprecationWarning('The "withEditorConfig()" method is deprecated, as it leaks project-wide settings into ECS. Configure the matching PHP-CS-Fixer rules explicitly instead.');
         return $this;
     }
     /**
@@ -348,9 +341,25 @@ final class ECSConfigBuilder
      */
     public function withRealPathReporting(): self
     {
-        $outputPrinter = new OutputPrinter(new OutputColorizer());
-        $outputPrinter->warning('The "withRealPathReporting()" method is deprecated. Use the JSON output format ("--output-format json") to get absolute paths.');
+        $this->printDeprecationWarning('The "withRealPathReporting()" method is deprecated. Use the JSON output format ("--output-format json") to get absolute paths.');
         return $this;
+    }
+    /**
+     * Skips parallel worker processes, so the main command prints each deprecation once.
+     */
+    private function printDeprecationWarning(string $message): void
+    {
+        if (($_SERVER['argv'][1] ?? null) === 'worker') {
+            return;
+        }
+        // config file is loaded twice per process (container build + cache hash), warn only once
+        static $printedMessages = [];
+        if (isset($printedMessages[$message])) {
+            return;
+        }
+        $printedMessages[$message] = \true;
+        $outputPrinter = new OutputPrinter(new OutputColorizer());
+        $outputPrinter->warning($message);
     }
     /**
      * Raise your spacing coverage from the safest rules
