@@ -132,7 +132,7 @@ final class CLIRequestMapper
         $unknownOptions = array_diff_key($options, $consumedOptionNames, self::IGNORED_OPTIONS);
         if ($unknownOptions !== []) {
             throw new ConsoleInputMappingException(sprintf('Unknown option%s: %s', count($unknownOptions) > 1 ? 's' : '', implode(', ', array_map(static function (string $name): string {
-                return '"--' . $name . '"';
+                return '"' . (strncmp($name, '-', strlen('-')) === 0 ? $name : '--' . $name) . '"';
             }, array_keys($unknownOptions)))));
         }
         return $args;
