@@ -124,7 +124,6 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
     {
         $elapsedMilliseconds = (int) round((microtime(\true) - $startTime) * 1000);
         $peakMemoryMegabytes = (int) round(memory_get_peak_usage(\true) / 1024 / 1024);
-        $this->easyCodingStandardStyle->newLine();
         $this->easyCodingStandardStyle->writeln(sprintf(' // %d files · %dms · %d MB', $filesCount, $elapsedMilliseconds, $peakMemoryMegabytes));
     }
 }
