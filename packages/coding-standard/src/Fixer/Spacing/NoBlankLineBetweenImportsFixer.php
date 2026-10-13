@@ -30,10 +30,10 @@ final class NoBlankLineBetweenImportsFixer extends AbstractSymplifyFixer impleme
     {
         return new FixerDefinition(self::ERROR_MESSAGE, [new CodeSample("<?php\nuse Foo\\Bar;\n\nuse function Foo\\baz;\n")]);
     }
-    // run after OrderedImportsFixer and BlankLineBetweenImportGroupsFixer
+    // run after OrderedImportsFixer, before BlankLineBetweenImportGroupsFixer
     public function getPriority(): int
     {
-        return -50;
+        return -35;
     }
     /**
      * @param Tokens<Token> $tokens
