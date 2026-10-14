@@ -1582,17 +1582,17 @@
         },
         {
             "name": "symfony\/filesystem",
-            "version": "v8.1.6",
-            "version_normalized": "8.1.6.0",
+            "version": "v8.1.9",
+            "version_normalized": "8.1.9.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/filesystem.git",
-                "reference": "7599ebb855fede59413ddb7f15198d67bfcae7ba"
+                "reference": "43d109c803d22c00bb820ed45df250b6a8792ca2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/filesystem\/zipball\/7599ebb855fede59413ddb7f15198d67bfcae7ba",
-                "reference": "7599ebb855fede59413ddb7f15198d67bfcae7ba",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/filesystem\/zipball\/43d109c803d22c00bb820ed45df250b6a8792ca2",
+                "reference": "43d109c803d22c00bb820ed45df250b6a8792ca2",
                 "shasum": ""
             },
             "require": {
@@ -1604,7 +1604,7 @@
             "require-dev": {
                 "symfony\/process": "^7.4|^8.0"
             },
-            "time": "2026-08-23T10:06:25+00:00",
+            "time": "2026-10-06T20:05:50+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1632,7 +1632,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https:\/\/symfony.com",
             "support": {
-                "source": "https:\/\/github.com\/symfony\/filesystem\/tree\/v8.1.6"
+                "source": "https:\/\/github.com\/symfony\/filesystem\/tree\/v8.1.9"
             },
             "funding": [
                 {
