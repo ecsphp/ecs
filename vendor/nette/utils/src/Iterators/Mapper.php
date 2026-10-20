@@ -13,6 +13,7 @@ namespace ECSPrefix202610\Nette\Iterators;
 class Mapper extends \IteratorIterator
 {
     /**
+     * @readonly
      * @var \Closure
      */
     private $callback;

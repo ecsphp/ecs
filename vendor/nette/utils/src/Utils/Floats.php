@@ -8,7 +8,6 @@ declare (strict_types=1);
 namespace ECSPrefix202610\Nette\Utils;
 
 use ECSPrefix202610\Nette;
-use function abs, is_finite, is_nan, max, round;
 /**
  * Floating-point numbers comparison.
  */

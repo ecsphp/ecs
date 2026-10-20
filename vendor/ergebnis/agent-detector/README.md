@@ -9,7 +9,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/agent-detector/v/stable)](https://packagist.org/packages/ergebnis/agent-detector)
 [![Total Downloads](https://poser.pugx.org/ergebnis/agent-detector/downloads)](https://packagist.org/packages/ergebnis/agent-detector)
-[![Monthly Downloads](http://poser.pugx.org/ergebnis/agent-detector/d/monthly)](https://packagist.org/packages/ergebnis/agent-detector)
+[![Monthly Downloads](https://poser.pugx.org/ergebnis/agent-detector/d/monthly)](https://packagist.org/packages/ergebnis/agent-detector)
 
 This project provides a [`composer`](https://getcomposer.org) package with a detector for detecting the presence of an agent.
 
@@ -47,10 +47,16 @@ This package detects the presence of the following agents via environment variab
 | [Antigravity](https://antigravity.dev) | `ANTIGRAVITY_AGENT` |
 | [Augment](https://augmentcode.com) | `AUGMENT_AGENT` |
 | [Claude Code](https://github.com/anthropics/claude-code) | `CLAUDECODE`, `CLAUDE_CODE`, `CLAUDE_CODE_IS_COWORK` |
+| [Cline](https://cline.bot) | `CLINE_ACTIVE` |
 | [Codex](https://github.com/openai/codex) | `CODEX_CI`, `CODEX_SANDBOX`, `CODEX_THREAD_ID` |
 | [Cursor](https://cursor.com) | `CURSOR_AGENT`, `CURSOR_EXTENSION_HOST_ROLE`, `CURSOR_TRACE_ID` |
 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `GEMINI_CLI` |
 | [GitHub Copilot](https://github.com/features/copilot) | `COPILOT_ALLOW_ALL`, `COPILOT_CLI`, `COPILOT_GITHUB_TOKEN`, `COPILOT_MODEL |
+| [Goose](https://github.com/block/goose) | `GOOSE_TERMINAL` |
+| [Grok](https://x.ai/grok) | `GROK_AGENT` |
+| [Junie](https://www.jetbrains.com/junie) | `JUNIE_DATA`, `JUNIE_SHIM_PATH` |
+| [Kiro CLI](https://kiro.dev) | `AGENT_CONTEXT_OUT`, `AGENT_DISPLAY_OUT` |
+| [OpenClaw](https://openclaw.ai) | `OPENCLAW_SHELL` |
 | [OpenCode](https://github.com/sst/opencode) | `OPENCODE`, `OPENCODE_CLIENT` |
 | [Pi](https://pi.dev) | `PI_CODING_AGENT` |
 | [Replit](https://replit.com) | `REPL_ID` |
@@ -104,4 +110,4 @@ The agent detector is inspired by [`shipfastlabs/agent-detector`](https://github
 
 ## Social
 
-Follow [@localheinz](https://twitter.com/intent/follow?screen_name=localheinz) and [@ergebnis](https://twitter.com/intent/follow?screen_name=ergebnis) on Twitter.
+Follow [@localheinz](https://x.com/intent/follow?screen_name=localheinz) and [@ergebnis](https://x.com/intent/follow?screen_name=ergebnis) on X.

@@ -8,7 +8,7 @@ declare (strict_types=1);
 namespace ECSPrefix202610\Nette\Utils;
 
 use ECSPrefix202610\Nette;
-use function array_map, array_search, array_splice, array_values, count, explode, implode, is_a, is_resource, is_string, strcasecmp, strtolower, substr, trim;
+use function count, is_resource, is_string;
 /**
  * PHP type reflection.
  */
@@ -147,7 +147,7 @@ final class Type
             case $type->allows($this):
                 return $type;
             default:
-                return new self(array_unique(array_merge($this->isIntersection() ? [$this] : $this->types, $type->isIntersection() ? [$type] : $type->types), \SORT_REGULAR), '|');
+                return new self(array_unique(array_merge($this->isIntersection() ? [$this] : $this->types, $type->isIntersection() ? [$type] : $type->types), \SORT_REGULAR));
         }
     }
     /**

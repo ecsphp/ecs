@@ -8,7 +8,7 @@ declare (strict_types=1);
 namespace ECSPrefix202610\Nette\Utils;
 
 use ECSPrefix202610\Nette;
-use function array_splice, array_unshift, count, is_int;
+use function count, is_int;
 /**
  * Generic list with integer indices.
  * @template T
