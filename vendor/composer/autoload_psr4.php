@@ -15,6 +15,7 @@ return array(
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'PhpCsFixer\\' => array($vendorDir . '/friendsofphp/php-cs-fixer/src'),
     'ECSPrefix202610\\Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
+    'ECSPrefix202610\\Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
     'ECSPrefix202610\\Symfony\\Component\\OptionsResolver\\' => array($vendorDir . '/symfony/options-resolver'),
     'ECSPrefix202610\\Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'ECSPrefix202610\\Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),

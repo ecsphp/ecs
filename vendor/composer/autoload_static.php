@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4b92c4a7e8fcc98499b65afe1b7c7752
+class ComposerStaticInit60589c870a29305856817695639bbff8
 {
     public static $files = array (
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
@@ -34,6 +34,7 @@ class ComposerStaticInit4b92c4a7e8fcc98499b65afe1b7c7752
         'E' =>
         array (
             'ECSPrefix202610\\Webmozart\\Assert\\' => 33,
+            'ECSPrefix202610\\Symfony\\Component\\Process\\' => 42,
             'ECSPrefix202610\\Symfony\\Component\\OptionsResolver\\' => 50,
             'ECSPrefix202610\\Symfony\\Component\\Finder\\' => 41,
             'ECSPrefix202610\\Symfony\\Component\\Filesystem\\' => 45,
@@ -93,6 +94,10 @@ class ComposerStaticInit4b92c4a7e8fcc98499b65afe1b7c7752
         'ECSPrefix202610\\Webmozart\\Assert\\' =>
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'ECSPrefix202610\\Symfony\\Component\\Process\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
         ),
         'ECSPrefix202610\\Symfony\\Component\\OptionsResolver\\' =>
         array (
@@ -502,6 +507,29 @@ class ComposerStaticInit4b92c4a7e8fcc98499b65afe1b7c7752
         'ECSPrefix202610\\Symfony\\Component\\OptionsResolver\\OptionConfigurator' => __DIR__ . '/..' . '/symfony/options-resolver/OptionConfigurator.php',
         'ECSPrefix202610\\Symfony\\Component\\OptionsResolver\\Options' => __DIR__ . '/..' . '/symfony/options-resolver/Options.php',
         'ECSPrefix202610\\Symfony\\Component\\OptionsResolver\\OptionsResolver' => __DIR__ . '/..' . '/symfony/options-resolver/OptionsResolver.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/process/Exception/ExceptionInterface.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/symfony/process/Exception/InvalidArgumentException.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\LogicException' => __DIR__ . '/..' . '/symfony/process/Exception/LogicException.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\ProcessFailedException' => __DIR__ . '/..' . '/symfony/process/Exception/ProcessFailedException.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\ProcessSignaledException' => __DIR__ . '/..' . '/symfony/process/Exception/ProcessSignaledException.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\ProcessStartFailedException' => __DIR__ . '/..' . '/symfony/process/Exception/ProcessStartFailedException.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\ProcessTimedOutException' => __DIR__ . '/..' . '/symfony/process/Exception/ProcessTimedOutException.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\RunProcessFailedException' => __DIR__ . '/..' . '/symfony/process/Exception/RunProcessFailedException.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/process/Exception/RuntimeException.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\ExecutableFinder' => __DIR__ . '/..' . '/symfony/process/ExecutableFinder.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\InputStream' => __DIR__ . '/..' . '/symfony/process/InputStream.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Messenger\\RunProcessContext' => __DIR__ . '/..' . '/symfony/process/Messenger/RunProcessContext.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Messenger\\RunProcessMessage' => __DIR__ . '/..' . '/symfony/process/Messenger/RunProcessMessage.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Messenger\\RunProcessMessageHandler' => __DIR__ . '/..' . '/symfony/process/Messenger/RunProcessMessageHandler.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\PhpExecutableFinder' => __DIR__ . '/..' . '/symfony/process/PhpExecutableFinder.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\PhpProcess' => __DIR__ . '/..' . '/symfony/process/PhpProcess.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\PhpSubprocess' => __DIR__ . '/..' . '/symfony/process/PhpSubprocess.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Pipes\\AbstractPipes' => __DIR__ . '/..' . '/symfony/process/Pipes/AbstractPipes.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Pipes\\PipesInterface' => __DIR__ . '/..' . '/symfony/process/Pipes/PipesInterface.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Pipes\\UnixPipes' => __DIR__ . '/..' . '/symfony/process/Pipes/UnixPipes.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Pipes\\WindowsPipes' => __DIR__ . '/..' . '/symfony/process/Pipes/WindowsPipes.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\Process' => __DIR__ . '/..' . '/symfony/process/Process.php',
+        'ECSPrefix202610\\Symfony\\Component\\Process\\ProcessUtils' => __DIR__ . '/..' . '/symfony/process/ProcessUtils.php',
         'ECSPrefix202610\\Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'ECSPrefix202610\\Webmozart\\Assert\\HasAssert' => __DIR__ . '/..' . '/webmozart/assert/src/HasAssert.php',
         'ECSPrefix202610\\Webmozart\\Assert\\InvalidArgumentException' => __DIR__ . '/..' . '/webmozart/assert/src/InvalidArgumentException.php',
@@ -1294,9 +1322,9 @@ class ComposerStaticInit4b92c4a7e8fcc98499b65afe1b7c7752
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4b92c4a7e8fcc98499b65afe1b7c7752::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4b92c4a7e8fcc98499b65afe1b7c7752::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit4b92c4a7e8fcc98499b65afe1b7c7752::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit60589c870a29305856817695639bbff8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit60589c870a29305856817695639bbff8::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit60589c870a29305856817695639bbff8::$classMap;
 
         }, null, ClassLoader::class);
     }
