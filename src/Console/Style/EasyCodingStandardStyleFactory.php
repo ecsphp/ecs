@@ -16,9 +16,10 @@ final class EasyCodingStandardStyleFactory
      */
     public function create(): \Symplify\EasyCodingStandard\Console\Style\EasyCodingStandardStyle
     {
-        $outputPrinter = new OutputPrinter(new OutputColorizer());
+        $outputColorizer = new OutputColorizer();
+        $outputPrinter = new OutputPrinter($outputColorizer);
         $progressBar = new ProgressBar();
         $isDebug = in_array('--debug', $_SERVER['argv'] ?? [], \true);
-        return new \Symplify\EasyCodingStandard\Console\Style\EasyCodingStandardStyle($outputPrinter, $progressBar, $isDebug);
+        return new \Symplify\EasyCodingStandard\Console\Style\EasyCodingStandardStyle($outputPrinter, $progressBar, $outputColorizer, $isDebug);
     }
 }

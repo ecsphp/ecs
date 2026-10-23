@@ -3,6 +3,8 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Console\Style;
 
+use ECSPrefix202610\Entropy\Console\Enum\Color;
+use ECSPrefix202610\Entropy\Console\Output\OutputColorizer;
 use ECSPrefix202610\Entropy\Console\Output\OutputPrinter;
 use ECSPrefix202610\Entropy\Console\Output\ProgressBar;
 use Symplify\EasyCodingStandard\SniffRunner\ValueObject\Error\CodingStandardError;
@@ -20,6 +22,11 @@ final class EasyCodingStandardStyle
     private $progressBar;
     /**
      * @readonly
+     * @var \Entropy\Console\Output\OutputColorizer
+     */
+    private $outputColorizer;
+    /**
+     * @readonly
      * @var bool
      */
     private $isDebug = \false;
@@ -32,10 +39,11 @@ final class EasyCodingStandardStyle
      * @var int
      */
     private const DEFAULT_TERMINAL_WIDTH = 120;
-    public function __construct(OutputPrinter $outputPrinter, ProgressBar $progressBar, bool $isDebug = \false)
+    public function __construct(OutputPrinter $outputPrinter, ProgressBar $progressBar, OutputColorizer $outputColorizer, bool $isDebug = \false)
     {
         $this->outputPrinter = $outputPrinter;
         $this->progressBar = $progressBar;
+        $this->outputColorizer = $outputColorizer;
         $this->isDebug = $isDebug;
     }
     public function writeln(string $message): void
@@ -109,6 +117,10 @@ final class EasyCodingStandardStyle
         // <comment> → yellow, <info> → green
         $text = (string) preg_replace('#<comment>(.*?)</comment>#su', '<fg=yellow>$1</>', $text);
         $text = (string) preg_replace('#<info>(.*?)</info>#su', '<fg=green>$1</>', $text);
+        // grey is not handled by OutputColorizer::colorize(), apply it directly
+        $text = (string) preg_replace_callback('#<fg=grey>(.*?)</>#su', function (array $matches): string {
+            return $this->outputColorizer->color($matches[1], Color::GREY);
+        }, $text);
         // normalize explicit closing tags (e.g. </fg=green>) to the generic closing tag
         return (string) preg_replace('#</fg=[a-z]+>#', '</>', $text);
     }
