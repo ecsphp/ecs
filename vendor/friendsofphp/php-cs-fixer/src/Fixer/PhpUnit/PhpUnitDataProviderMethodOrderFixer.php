@@ -211,7 +211,9 @@ PHP
                     continue;
                 }
                 end($methodNameTokens);
-                $usages[key($methodNameTokens)] = [array_key_last($methodNameTokens), end($methodNameTokens)->getContent(), $usageIndex[1]];
+                end($methodNameTokens);
+                $usages[key($methodNameTokens)] = [key($methodNameTokens), end($methodNameTokens)->getContent(), $usageIndex[1]];
+                reset($methodNameTokens);
                 reset($methodNameTokens);
             }
             \assert([] !== $usages);

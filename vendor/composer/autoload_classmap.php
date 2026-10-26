@@ -983,6 +983,7 @@ return array(
     'Symplify\\CodingStandard\\Fixer\\Commenting\\SingleLineInlineVarDocBlockFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/SingleLineInlineVarDocBlockFixer.php',
     'Symplify\\CodingStandard\\Fixer\\Commenting\\SwitchedTypeAndNameFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/SwitchedTypeAndNameFixer.php',
     'Symplify\\CodingStandard\\Fixer\\Commenting\\TypeToVarTagFixer' => $baseDir . '/packages/coding-standard/src/Fixer/Commenting/TypeToVarTagFixer.php',
+    'Symplify\\CodingStandard\\Fixer\\ConstantNotation\\RemoveSlashFromNativeConstantFixer' => $baseDir . '/packages/coding-standard/src/Fixer/ConstantNotation/RemoveSlashFromNativeConstantFixer.php',
     'Symplify\\CodingStandard\\Fixer\\LineLength\\LineLengthFixer' => $baseDir . '/packages/coding-standard/src/Fixer/LineLength/LineLengthFixer.php',
     'Symplify\\CodingStandard\\Fixer\\Naming\\ClassNameResolver' => $baseDir . '/packages/coding-standard/src/Fixer/Naming/ClassNameResolver.php',
     'Symplify\\CodingStandard\\Fixer\\Naming\\MethodNameResolver' => $baseDir . '/packages/coding-standard/src/Fixer/Naming/MethodNameResolver.php',

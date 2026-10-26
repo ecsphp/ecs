@@ -593,7 +593,7 @@ class Filesystem
         } finally {
             if (file_exists($tmpFile)) {
                 if ('\\' === \DIRECTORY_SEPARATOR && !is_writable($tmpFile)) {
-                    self::box('chmod', $tmpFile, self::box('fileperms', $tmpFile));
+                    self::box('chmod', $tmpFile, self::box('fileperms', $tmpFile) | 0200);
                 }
                 self::box('unlink', $tmpFile);
             }
