@@ -102,8 +102,10 @@ class Finder implements \IteratorAggregate
     {
         return $this->addMask((array) $masks, 'dir');
     }
-    /** @param  list<string>  $masks
-     * @return static */
+    /**
+     * @param list<string> $masks
+     * @return static
+     */
     private function addMask(array $masks, string $mode)
     {
         foreach ($masks as $mask) {

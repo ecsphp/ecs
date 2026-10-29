@@ -22,7 +22,7 @@ class Arrays
      * @template T
      * @param  array<T>  $array
      * @param  array-key|array-key[]  $key
-     * @param mixed $default
+     * @param  mixed  $default
      * @return ?T
      * @throws Nette\InvalidArgumentException if item does not exist and default value is not provided
      */
@@ -339,7 +339,7 @@ class Arrays
      * or returns $default, if provided.
      * @template T
      * @param  array<T>  $array
-     * @param mixed $default
+     * @param  mixed  $default
      * @return ?T
      * @throws Nette\InvalidArgumentException if item does not exist and default value is not provided
      * @param string|int $key

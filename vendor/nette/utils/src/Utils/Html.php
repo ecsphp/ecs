@@ -241,8 +241,10 @@ class Html implements \ArrayAccess, \Countable, \IteratorAggregate, HtmlStringab
     public static $emptyElements = ['img' => 1, 'hr' => 1, 'br' => 1, 'input' => 1, 'meta' => 1, 'area' => 1, 'embed' => 1, 'keygen' => 1, 'source' => 1, 'base' => 1, 'col' => 1, 'link' => 1, 'param' => 1, 'basefont' => 1, 'frame' => 1, 'isindex' => 1, 'wbr' => 1, 'command' => 1, 'track' => 1];
     /** @var array<int, self|string> nodes */
     protected $children = [];
-    /** element's name
-     * @var string */
+    /**
+     * element's name
+     * @var string
+     */
     private $name = '';
     /**
      * @var bool

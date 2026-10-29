@@ -78,8 +78,7 @@ class Config implements \PhpCsFixer\ConfigInterface, \PhpCsFixer\ParallelAwareCo
      */
     private $phpExecutable;
     /**
-     * @TODO: 4.0 - update to
-     * @var mixed[] @PER
+     * @TODO: 4.0 - update to @PER
      *
      * @var array<string, array<string, mixed>|bool>
      */

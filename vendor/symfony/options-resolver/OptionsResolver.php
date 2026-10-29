@@ -693,7 +693,7 @@ class OptionsResolver implements Options
         }
         foreach ((array) $optionNames as $option) {
             unset($this->defined[$option], $this->defaults[$option], $this->required[$option], $this->resolved[$option]);
-            unset($this->lazy[$option], $this->normalizers[$option], $this->allowedTypes[$option], $this->allowedValues[$option], $this->info[$option], $this->deprecated[$option]);
+            unset($this->lazy[$option], $this->nested[$option], $this->normalizers[$option], $this->allowedTypes[$option], $this->allowedValues[$option], $this->info[$option], $this->deprecated[$option]);
         }
         return $this;
     }
@@ -751,7 +751,7 @@ class OptionsResolver implements Options
         $clone = clone $this;
         // Make sure that no unknown options are passed
         $diff = $this->ignoreUndefined ? [] : array_diff_key($options, $clone->defined);
-        if (\count($diff) > 0) {
+        if ($diff) {
             ksort($clone->defined);
             ksort($diff);
             throw new UndefinedOptionsException(\sprintf((\count($diff) > 1 ? 'The options "%s" do not exist.' : 'The option "%s" does not exist.') . ' Defined options are: "%s".', $this->formatOptions(array_keys($diff)), implode('", "', array_keys($clone->defined))));
@@ -767,7 +767,7 @@ class OptionsResolver implements Options
         }
         // Check whether any required option is missing
         $diff = array_diff_key($clone->required, $clone->defaults);
-        if (\count($diff) > 0) {
+        if ($diff) {
             ksort($diff);
             throw new MissingOptionsException(\sprintf(\count($diff) > 1 ? 'The required options "%s" are missing.' : 'The required option "%s" is missing.', $this->formatOptions(array_keys($diff))));
         }
@@ -838,7 +838,7 @@ class OptionsResolver implements Options
                 throw new OptionDefinitionException(\sprintf('The options "%s" have a cyclic dependency.', $this->formatOptions(array_keys($this->calling))));
             }
             if (!\is_array($value)) {
-                throw new InvalidOptionsException(\sprintf('The nested option "%s" with value %s is expected to be of type array, but is of type "%s".', $this->formatOptions([$option]), $this->formatValue($value), get_debug_type($value)));
+                throw new InvalidOptionsException(\sprintf('The nested option "%s" with value ', $this->formatOptions([$option])) . $this->formatValue($value) . \sprintf(' is expected to be of type array, but is of type "%s".', get_debug_type($value)));
             }
             $this->calling[$option] = \true;
             try {
@@ -885,13 +885,13 @@ class OptionsResolver implements Options
                 $fmtActualValue = $this->formatValue($value);
                 $fmtAllowedTypes = implode('" or "', $this->allowedTypes[$option]);
                 $fmtProvidedTypes = implode('|', array_keys($invalidTypes));
-                $allowedContainsArrayType = \count(array_filter($this->allowedTypes[$option], static function ($item) {
+                $allowedContainsArrayType = array_filter($this->allowedTypes[$option], static function ($item) {
                     return substr_compare($item, '[]', -strlen('[]')) === 0;
-                })) > 0;
+                });
                 if (\is_array($value) && $allowedContainsArrayType) {
-                    throw new InvalidOptionsException(\sprintf('The option "%s" with value %s is expected to be of type "%s", but one of the elements is of type "%s".', $this->formatOptions([$option]), $fmtActualValue, $fmtAllowedTypes, $fmtProvidedTypes));
+                    throw new InvalidOptionsException(\sprintf('The option "%s" with value ', $this->formatOptions([$option])) . $fmtActualValue . \sprintf(' is expected to be of type "%s", but one of the elements is of type "%s".', $fmtAllowedTypes, $fmtProvidedTypes));
                 }
-                throw new InvalidOptionsException(\sprintf('The option "%s" with value %s is expected to be of type "%s", but is of type "%s".', $this->formatOptions([$option]), $fmtActualValue, $fmtAllowedTypes, $fmtProvidedTypes));
+                throw new InvalidOptionsException(\sprintf('The option "%s" with value ', $this->formatOptions([$option])) . $fmtActualValue . \sprintf(' is expected to be of type "%s", but is of type "%s".', $fmtAllowedTypes, $fmtProvidedTypes));
             }
         }
         // Validate the value of the resolved option
@@ -915,7 +915,7 @@ class OptionsResolver implements Options
             }
             if (!$success) {
                 $message = \sprintf('The option "%s" with value %s is invalid.', $this->formatOptions([$option]), $this->formatValue($value));
-                if (\count($printableAllowedValues) > 0) {
+                if ($printableAllowedValues) {
                     $message .= \sprintf(' Accepted values are: %s.', $this->formatValues($printableAllowedValues));
                 }
                 if (isset($this->info[$option])) {
