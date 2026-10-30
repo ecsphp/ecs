@@ -1213,6 +1213,7 @@ class ComposerStaticInit739d3c93a22a0301d00831cb9c963967
         'Symplify\\EasyCodingStandard\\Application\\FileProcessorCollector' => __DIR__ . '/../..' . '/src/Application/FileProcessorCollector.php',
         'Symplify\\EasyCodingStandard\\Application\\SingleFileProcessor' => __DIR__ . '/../..' . '/src/Application/SingleFileProcessor.php',
         'Symplify\\EasyCodingStandard\\Application\\Version\\StaticVersionResolver' => __DIR__ . '/../..' . '/src/Application/Version/StaticVersionResolver.php',
+        'Symplify\\EasyCodingStandard\\Blink\\BlinkCommitRunner' => __DIR__ . '/../..' . '/src/Blink/BlinkCommitRunner.php',
         'Symplify\\EasyCodingStandard\\Blink\\BlinkConfigDumper' => __DIR__ . '/../..' . '/src/Blink/BlinkConfigDumper.php',
         'Symplify\\EasyCodingStandard\\Blink\\BlinkRunner' => __DIR__ . '/../..' . '/src/Blink/BlinkRunner.php',
         'Symplify\\EasyCodingStandard\\Blink\\EcsGoBinaryLocator' => __DIR__ . '/../..' . '/src/Blink/EcsGoBinaryLocator.php',

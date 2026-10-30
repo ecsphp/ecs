@@ -1037,6 +1037,7 @@ return array(
     'Symplify\\EasyCodingStandard\\Application\\FileProcessorCollector' => $baseDir . '/src/Application/FileProcessorCollector.php',
     'Symplify\\EasyCodingStandard\\Application\\SingleFileProcessor' => $baseDir . '/src/Application/SingleFileProcessor.php',
     'Symplify\\EasyCodingStandard\\Application\\Version\\StaticVersionResolver' => $baseDir . '/src/Application/Version/StaticVersionResolver.php',
+    'Symplify\\EasyCodingStandard\\Blink\\BlinkCommitRunner' => $baseDir . '/src/Blink/BlinkCommitRunner.php',
     'Symplify\\EasyCodingStandard\\Blink\\BlinkConfigDumper' => $baseDir . '/src/Blink/BlinkConfigDumper.php',
     'Symplify\\EasyCodingStandard\\Blink\\BlinkRunner' => $baseDir . '/src/Blink/BlinkRunner.php',
     'Symplify\\EasyCodingStandard\\Blink\\EcsGoBinaryLocator' => $baseDir . '/src/Blink/EcsGoBinaryLocator.php',
