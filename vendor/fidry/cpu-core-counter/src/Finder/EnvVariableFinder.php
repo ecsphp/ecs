@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 declare (strict_types=1);
-namespace ECSPrefix202610\Fidry\CpuCoreCounter\Finder;
+namespace ECSPrefix202611\Fidry\CpuCoreCounter\Finder;
 
-use ECSPrefix202610\Fidry\CpuCoreCounter\Env;
+use ECSPrefix202611\Fidry\CpuCoreCounter\Env;
 use function floor;
 use function is_string;
 use function max;

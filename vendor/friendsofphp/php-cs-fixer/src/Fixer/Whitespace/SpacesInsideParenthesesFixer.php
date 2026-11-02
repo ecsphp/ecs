@@ -50,7 +50,7 @@ final class SpacesInsideParenthesesFixer extends AbstractFixer implements Config
         return new FixerDefinition('Parentheses must be declared using the configured whitespace.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 if ($a) {
     foo();
@@ -60,7 +60,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 function foo($bar, $baz)
 {
@@ -70,7 +70,7 @@ PHP
 , ['space' => 'none']), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 if ($a) {
     foo();
@@ -80,7 +80,7 @@ PHP
 , ['space' => 'single']), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 function foo($bar, $baz)
 {

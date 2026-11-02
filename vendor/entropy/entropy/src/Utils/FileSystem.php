@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Utils;
+namespace ECSPrefix202611\Entropy\Utils;
 
-use ECSPrefix202610\Entropy\FileSystem\Exception\FileSystemException;
-use ECSPrefix202610\Entropy\Validation\Assert;
+use ECSPrefix202611\Entropy\FileSystem\Exception\FileSystemException;
+use ECSPrefix202611\Entropy\Validation\Assert;
 /**
  * @api public api to use
  */

@@ -1,17 +1,17 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Composer\Pcre\PHPStan;
+namespace ECSPrefix202611\Composer\Pcre\PHPStan;
 
-use ECSPrefix202610\Composer\Pcre\Preg;
-use ECSPrefix202610\PhpParser\Node\Expr\StaticCall;
-use ECSPrefix202610\PHPStan\Analyser\Scope;
-use ECSPrefix202610\PHPStan\Reflection\MethodReflection;
-use ECSPrefix202610\PHPStan\Reflection\ParameterReflection;
-use ECSPrefix202610\PHPStan\TrinaryLogic;
-use ECSPrefix202610\PHPStan\Type\Php\RegexArrayShapeMatcher;
-use ECSPrefix202610\PHPStan\Type\StaticMethodParameterOutTypeExtension;
-use ECSPrefix202610\PHPStan\Type\Type;
+use ECSPrefix202611\Composer\Pcre\Preg;
+use ECSPrefix202611\PhpParser\Node\Expr\StaticCall;
+use ECSPrefix202611\PHPStan\Analyser\Scope;
+use ECSPrefix202611\PHPStan\Reflection\MethodReflection;
+use ECSPrefix202611\PHPStan\Reflection\ParameterReflection;
+use ECSPrefix202611\PHPStan\TrinaryLogic;
+use ECSPrefix202611\PHPStan\Type\Php\RegexArrayShapeMatcher;
+use ECSPrefix202611\PHPStan\Type\StaticMethodParameterOutTypeExtension;
+use ECSPrefix202611\PHPStan\Type\Type;
 final class PregMatchParameterOutTypeExtension implements StaticMethodParameterOutTypeExtension
 {
     /**

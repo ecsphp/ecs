@@ -3,12 +3,12 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Parallel\ValueObject;
 
-use ECSPrefix202610\Clue\React\NDJson\Decoder;
-use ECSPrefix202610\Clue\React\NDJson\Encoder;
+use ECSPrefix202611\Clue\React\NDJson\Decoder;
+use ECSPrefix202611\Clue\React\NDJson\Encoder;
 use Exception;
-use ECSPrefix202610\React\ChildProcess\Process;
-use ECSPrefix202610\React\EventLoop\LoopInterface;
-use ECSPrefix202610\React\EventLoop\TimerInterface;
+use ECSPrefix202611\React\ChildProcess\Process;
+use ECSPrefix202611\React\EventLoop\LoopInterface;
+use ECSPrefix202611\React\EventLoop\TimerInterface;
 use Symplify\EasyCodingStandard\Parallel\Enum\Action;
 use Symplify\EasyCodingStandard\Parallel\Enum\Content;
 use Symplify\EasyCodingStandard\Parallel\Enum\ReactCommand;

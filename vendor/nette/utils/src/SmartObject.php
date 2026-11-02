@@ -5,9 +5,9 @@ declare (strict_types=1);
  * This file is part of the Nette Framework (https://nette.org)
  * Copyright (c) 2004 David Grudl (https://davidgrudl.com)
  */
-namespace ECSPrefix202610\Nette;
+namespace ECSPrefix202611\Nette;
 
-use ECSPrefix202610\Nette\Utils\ObjectHelpers;
+use ECSPrefix202611\Nette\Utils\ObjectHelpers;
 /**
  * Strict class for better experience.
  * - 'did you mean' hints

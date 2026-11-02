@@ -61,7 +61,7 @@ final class PhpUnitMethodCasingFixer extends AbstractPhpUnitFixer implements Con
         return new FixerDefinition('Enforce camel (or snake) case for PHPUnit test methods, following configuration.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 class MyTest extends \PhpUnit\FrameWork\TestCase
 {
@@ -69,13 +69,13 @@ class MyTest extends \PhpUnit\FrameWork\TestCase
     {
     }
 }
-\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202611\MyTest', 'MyTest', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 class MyTest extends \PhpUnit\FrameWork\TestCase
 {
@@ -83,13 +83,13 @@ class MyTest extends \PhpUnit\FrameWork\TestCase
     {
     }
 }
-\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202611\MyTest', 'MyTest', \false);
 
 PHP
 , ['case' => self::SNAKE_CASE]), new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 use PHPUnit\Framework\Attributes\Test;
 class MyTest extends \PhpUnit\FrameWork\TestCase
@@ -99,13 +99,13 @@ class MyTest extends \PhpUnit\FrameWork\TestCase
     {
     }
 }
-\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202611\MyTest', 'MyTest', \false);
 
 PHP
 , new VersionSpecification(80000)), new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 use PHPUnit\Framework\Attributes\Test;
 class MyTest extends \PhpUnit\FrameWork\TestCase
@@ -115,7 +115,7 @@ class MyTest extends \PhpUnit\FrameWork\TestCase
     {
     }
 }
-\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202611\MyTest', 'MyTest', \false);
 
 PHP
 , new VersionSpecification(80000), ['case' => self::SNAKE_CASE])]);

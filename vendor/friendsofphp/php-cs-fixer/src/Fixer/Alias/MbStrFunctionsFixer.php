@@ -87,7 +87,7 @@ final class MbStrFunctionsFixer extends AbstractFixer
         return new FixerDefinition('Replace non multibyte-safe functions with corresponding mb function.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 $a = \strlen($a);
 $a = \strpos($a, $b);

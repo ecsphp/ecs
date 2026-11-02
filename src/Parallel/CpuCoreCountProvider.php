@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Parallel;
 
-use ECSPrefix202610\Fidry\CpuCoreCounter\CpuCoreCounter;
+use ECSPrefix202611\Fidry\CpuCoreCounter\CpuCoreCounter;
 final class CpuCoreCountProvider
 {
     public function provide(): int

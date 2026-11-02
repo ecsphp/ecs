@@ -3,8 +3,8 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Console\Command;
 
-use ECSPrefix202610\Entropy\Console\Contract\CommandInterface;
-use ECSPrefix202610\Entropy\Console\Contract\DefaultCommandInterface;
+use ECSPrefix202611\Entropy\Console\Contract\CommandInterface;
+use ECSPrefix202611\Entropy\Console\Contract\DefaultCommandInterface;
 use Symplify\EasyCodingStandard\Application\EasyCodingStandardApplication;
 use Symplify\EasyCodingStandard\Blink\BlinkCommitRunner;
 use Symplify\EasyCodingStandard\Blink\BlinkConfigDumper;

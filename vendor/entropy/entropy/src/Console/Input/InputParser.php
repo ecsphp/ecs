@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Console\Input;
+namespace ECSPrefix202611\Entropy\Console\Input;
 
-use ECSPrefix202610\Entropy\Attribute\RelatedTest;
-use ECSPrefix202610\Entropy\Console\CommandRegistry;
-use ECSPrefix202610\Entropy\Console\Contract\CommandInterface;
-use ECSPrefix202610\Entropy\Console\ValueObject\CLIRequest;
-use ECSPrefix202610\Entropy\Reflection\ValueOptionNameResolver;
-use ECSPrefix202610\Entropy\Tests\Console\Input\InputParserTest;
+use ECSPrefix202611\Entropy\Attribute\RelatedTest;
+use ECSPrefix202611\Entropy\Console\CommandRegistry;
+use ECSPrefix202611\Entropy\Console\Contract\CommandInterface;
+use ECSPrefix202611\Entropy\Console\ValueObject\CLIRequest;
+use ECSPrefix202611\Entropy\Reflection\ValueOptionNameResolver;
+use ECSPrefix202611\Entropy\Tests\Console\Input\InputParserTest;
 use ReflectionMethod;
 /**
  * @see \Entropy\Tests\Console\Input\InputParserTest

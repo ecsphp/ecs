@@ -1,9 +1,9 @@
 <?php
 
-namespace ECSPrefix202610\React\Dns\Query;
+namespace ECSPrefix202611\React\Dns\Query;
 
-use ECSPrefix202610\React\Promise\Deferred;
-use ECSPrefix202610\React\Promise\PromiseInterface;
+use ECSPrefix202611\React\Promise\Deferred;
+use ECSPrefix202611\React\Promise\PromiseInterface;
 final class RetryExecutor implements ExecutorInterface
 {
     private $executor;

@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace ECSPrefix202610\Symfony\Component\Process\Messenger;
+namespace ECSPrefix202611\Symfony\Component\Process\Messenger;
 
-use ECSPrefix202610\Symfony\Component\Process\Process;
+use ECSPrefix202611\Symfony\Component\Process\Process;
 /**
  * @author Kevin Bond <kevinbond@gmail.com>
  */

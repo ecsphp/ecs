@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Utils;
+namespace ECSPrefix202611\Entropy\Utils;
 
-use ECSPrefix202610\Entropy\Attribute\RelatedTest;
-use ECSPrefix202610\Entropy\Tests\Utils\JsonTest;
-use ECSPrefix202610\Entropy\Validation\Assert;
+use ECSPrefix202611\Entropy\Attribute\RelatedTest;
+use ECSPrefix202611\Entropy\Tests\Utils\JsonTest;
+use ECSPrefix202611\Entropy\Validation\Assert;
 /**
  * @api to be used outside
  * @see \Entropy\Tests\Utils\JsonTest

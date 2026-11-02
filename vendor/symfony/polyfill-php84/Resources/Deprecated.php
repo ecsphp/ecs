@@ -1,6 +1,6 @@
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 /*
  * This file is part of the Symfony package.
@@ -30,5 +30,5 @@ if (\PHP_VERSION_ID < 80400) {
             $this->since = $since;
         }
     }
-    \class_alias('ECSPrefix202610\Deprecated', 'Deprecated', \false);
+    \class_alias('ECSPrefix202611\Deprecated', 'Deprecated', \false);
 }

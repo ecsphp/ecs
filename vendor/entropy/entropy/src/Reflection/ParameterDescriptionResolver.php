@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Reflection;
+namespace ECSPrefix202611\Entropy\Reflection;
 
-use ECSPrefix202610\Entropy\Attribute\RelatedTest;
-use ECSPrefix202610\Entropy\Tests\Reflection\ParameterDescriptionResolver\ParameterDescriptionResolverTest;
+use ECSPrefix202611\Entropy\Attribute\RelatedTest;
+use ECSPrefix202611\Entropy\Tests\Reflection\ParameterDescriptionResolver\ParameterDescriptionResolverTest;
 use ReflectionMethod;
 final class ParameterDescriptionResolver
 {

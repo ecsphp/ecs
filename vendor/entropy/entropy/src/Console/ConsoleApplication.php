@@ -1,18 +1,18 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Console;
+namespace ECSPrefix202611\Entropy\Console;
 
-use ECSPrefix202610\Entropy\Attribute\RelatedTest;
-use ECSPrefix202610\Entropy\Console\Contract\CommandInterface;
-use ECSPrefix202610\Entropy\Console\Enum\ExitCode;
-use ECSPrefix202610\Entropy\Console\Exception\ConsoleInputMappingException;
-use ECSPrefix202610\Entropy\Console\Input\InputParser;
-use ECSPrefix202610\Entropy\Console\Mapper\CLIRequestMapper;
-use ECSPrefix202610\Entropy\Console\Output\CommandHelpFactory;
-use ECSPrefix202610\Entropy\Console\Output\HelpPrinter;
-use ECSPrefix202610\Entropy\Console\Output\OutputPrinter;
-use ECSPrefix202610\Entropy\Tests\Console\ConsoleApplication\ConsoleApplicationTest;
+use ECSPrefix202611\Entropy\Attribute\RelatedTest;
+use ECSPrefix202611\Entropy\Console\Contract\CommandInterface;
+use ECSPrefix202611\Entropy\Console\Enum\ExitCode;
+use ECSPrefix202611\Entropy\Console\Exception\ConsoleInputMappingException;
+use ECSPrefix202611\Entropy\Console\Input\InputParser;
+use ECSPrefix202611\Entropy\Console\Mapper\CLIRequestMapper;
+use ECSPrefix202611\Entropy\Console\Output\CommandHelpFactory;
+use ECSPrefix202611\Entropy\Console\Output\HelpPrinter;
+use ECSPrefix202611\Entropy\Console\Output\OutputPrinter;
+use ECSPrefix202611\Entropy\Tests\Console\ConsoleApplication\ConsoleApplicationTest;
 use Throwable;
 final class ConsoleApplication
 {

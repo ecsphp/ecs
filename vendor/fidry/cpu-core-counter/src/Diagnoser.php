@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 declare (strict_types=1);
-namespace ECSPrefix202610\Fidry\CpuCoreCounter;
+namespace ECSPrefix202611\Fidry\CpuCoreCounter;
 
-use ECSPrefix202610\Fidry\CpuCoreCounter\Finder\CpuCoreFinder;
+use ECSPrefix202611\Fidry\CpuCoreCounter\Finder\CpuCoreFinder;
 use function array_map;
 use function explode;
 use function implode;

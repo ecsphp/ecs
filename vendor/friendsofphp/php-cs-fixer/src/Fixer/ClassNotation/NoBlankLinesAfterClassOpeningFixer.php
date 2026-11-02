@@ -35,7 +35,7 @@ final class NoBlankLinesAfterClassOpeningFixer extends AbstractFixer implements 
         return new FixerDefinition('There should be no empty lines after class opening brace.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 final class Sample
 {
@@ -43,7 +43,7 @@ final class Sample
     {
     }
 }
-\class_alias('ECSPrefix202610\Sample', 'Sample', \false);
+\class_alias('ECSPrefix202611\Sample', 'Sample', \false);
 
 PHP
 )]);

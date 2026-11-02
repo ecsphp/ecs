@@ -30,7 +30,7 @@ final class LogicalOperatorsFixer extends AbstractFixer
         return new FixerDefinition('Use `&&` and `||` logical operators instead of `and` and `or`.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 if ($a == "foo" and ($b == "bar" or $c == "baz")) {
 }

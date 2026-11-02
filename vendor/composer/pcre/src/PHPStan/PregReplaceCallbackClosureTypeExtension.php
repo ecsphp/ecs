@@ -1,23 +1,23 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Composer\Pcre\PHPStan;
+namespace ECSPrefix202611\Composer\Pcre\PHPStan;
 
-use ECSPrefix202610\Composer\Pcre\Preg;
-use ECSPrefix202610\Composer\Pcre\Regex;
-use ECSPrefix202610\PhpParser\Node\Expr\StaticCall;
-use ECSPrefix202610\PHPStan\Analyser\Scope;
-use ECSPrefix202610\PHPStan\Reflection\MethodReflection;
-use ECSPrefix202610\PHPStan\Reflection\Native\NativeParameterReflection;
-use ECSPrefix202610\PHPStan\Reflection\ParameterReflection;
-use ECSPrefix202610\PHPStan\TrinaryLogic;
-use ECSPrefix202610\PHPStan\Type\ClosureType;
-use ECSPrefix202610\PHPStan\Type\Constant\ConstantArrayType;
-use ECSPrefix202610\PHPStan\Type\Php\RegexArrayShapeMatcher;
-use ECSPrefix202610\PHPStan\Type\StaticMethodParameterClosureTypeExtension;
-use ECSPrefix202610\PHPStan\Type\StringType;
-use ECSPrefix202610\PHPStan\Type\TypeCombinator;
-use ECSPrefix202610\PHPStan\Type\Type;
+use ECSPrefix202611\Composer\Pcre\Preg;
+use ECSPrefix202611\Composer\Pcre\Regex;
+use ECSPrefix202611\PhpParser\Node\Expr\StaticCall;
+use ECSPrefix202611\PHPStan\Analyser\Scope;
+use ECSPrefix202611\PHPStan\Reflection\MethodReflection;
+use ECSPrefix202611\PHPStan\Reflection\Native\NativeParameterReflection;
+use ECSPrefix202611\PHPStan\Reflection\ParameterReflection;
+use ECSPrefix202611\PHPStan\TrinaryLogic;
+use ECSPrefix202611\PHPStan\Type\ClosureType;
+use ECSPrefix202611\PHPStan\Type\Constant\ConstantArrayType;
+use ECSPrefix202611\PHPStan\Type\Php\RegexArrayShapeMatcher;
+use ECSPrefix202611\PHPStan\Type\StaticMethodParameterClosureTypeExtension;
+use ECSPrefix202611\PHPStan\Type\StringType;
+use ECSPrefix202611\PHPStan\Type\TypeCombinator;
+use ECSPrefix202611\PHPStan\Type\Type;
 final class PregReplaceCallbackClosureTypeExtension implements StaticMethodParameterClosureTypeExtension
 {
     /**

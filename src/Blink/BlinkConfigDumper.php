@@ -84,8 +84,11 @@ final class BlinkConfigDumper
     }
     /**
      * Reads a configured fixer's options off the ConfigurableFixerTrait's
-     * `configuration` property. An unconfigured or non-configurable fixer yields
-     * an empty object, which ecs-go reads as the config-less form.
+     * `configuration` property. The property always holds the resolved defaults
+     * (AbstractFixer resolves them on construction), so options left at their
+     * default are dropped; only options that differ from a freshly built fixer
+     * are kept. An unconfigured or non-configurable fixer yields an empty object,
+     * which ecs-go reads as the config-less form.
      *
      * @return object|array<string, mixed>
      */
@@ -105,6 +108,17 @@ final class BlinkConfigDumper
         if (!is_array($configuration) || $configuration === []) {
             return new stdClass();
         }
-        return $configuration;
+        $fixerClass = get_class($fixer);
+        $defaults = $reflectionProperty->getValue(new $fixerClass());
+        $changed = [];
+        foreach ($configuration as $option => $value) {
+            if (!is_array($defaults) || !array_key_exists($option, $defaults) || $defaults[$option] !== $value) {
+                $changed[$option] = $value;
+            }
+        }
+        if ($changed === []) {
+            return new stdClass();
+        }
+        return $changed;
     }
 }

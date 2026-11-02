@@ -3,12 +3,12 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Parallel\Application;
 
-use ECSPrefix202610\Clue\React\NDJson\Decoder;
-use ECSPrefix202610\Clue\React\NDJson\Encoder;
-use ECSPrefix202610\Nette\Utils\Random;
-use ECSPrefix202610\React\EventLoop\StreamSelectLoop;
-use ECSPrefix202610\React\Socket\ConnectionInterface;
-use ECSPrefix202610\React\Socket\TcpServer;
+use ECSPrefix202611\Clue\React\NDJson\Decoder;
+use ECSPrefix202611\Clue\React\NDJson\Encoder;
+use ECSPrefix202611\Nette\Utils\Random;
+use ECSPrefix202611\React\EventLoop\StreamSelectLoop;
+use ECSPrefix202611\React\Socket\ConnectionInterface;
+use ECSPrefix202611\React\Socket\TcpServer;
 use Symplify\EasyCodingStandard\Console\ExitCode;
 use Symplify\EasyCodingStandard\DependencyInjection\SimpleParameterProvider;
 use Symplify\EasyCodingStandard\Parallel\CommandLine\WorkerCommandLineFactory;

@@ -29,7 +29,7 @@ final class PhpdocNoAccessFixer extends AbstractProxyFixer
         return new FixerDefinition('`@access` annotations must be removed from PHPDoc.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 class Foo
 {
@@ -39,7 +39,7 @@ class Foo
     */
     private $bar;
 }
-\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202611\Foo', 'Foo', \false);
 
 PHP
 )]);

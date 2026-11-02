@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Console\Output;
+namespace ECSPrefix202611\Entropy\Console\Output;
 
-use ECSPrefix202610\Entropy\Attribute\RelatedTest;
-use ECSPrefix202610\Entropy\Console\Contract\CommandInterface;
-use ECSPrefix202610\Entropy\Console\Mapper\CommandRunParametersMapper;
-use ECSPrefix202610\Entropy\Console\Terminal\Terminal;
-use ECSPrefix202610\Entropy\Console\ValueObject\Argument;
-use ECSPrefix202610\Entropy\Console\ValueObject\Option;
-use ECSPrefix202610\Entropy\Tests\Console\Output\CommandHelpFactory\CommandHelpFactoryTest;
+use ECSPrefix202611\Entropy\Attribute\RelatedTest;
+use ECSPrefix202611\Entropy\Console\Contract\CommandInterface;
+use ECSPrefix202611\Entropy\Console\Mapper\CommandRunParametersMapper;
+use ECSPrefix202611\Entropy\Console\Terminal\Terminal;
+use ECSPrefix202611\Entropy\Console\ValueObject\Argument;
+use ECSPrefix202611\Entropy\Console\ValueObject\Option;
+use ECSPrefix202611\Entropy\Tests\Console\Output\CommandHelpFactory\CommandHelpFactoryTest;
 final class CommandHelpFactory
 {
     /**

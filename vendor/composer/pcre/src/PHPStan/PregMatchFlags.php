@@ -1,19 +1,19 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Composer\Pcre\PHPStan;
+namespace ECSPrefix202611\Composer\Pcre\PHPStan;
 
-use ECSPrefix202610\PHPStan\Analyser\Scope;
-use ECSPrefix202610\PHPStan\Type\ArrayType;
-use ECSPrefix202610\PHPStan\Type\Constant\ConstantArrayType;
-use ECSPrefix202610\PHPStan\Type\Constant\ConstantIntegerType;
-use ECSPrefix202610\PHPStan\Type\IntersectionType;
-use ECSPrefix202610\PHPStan\Type\TypeCombinator;
-use ECSPrefix202610\PHPStan\Type\Type;
-use ECSPrefix202610\PhpParser\Node\Arg;
-use ECSPrefix202610\PHPStan\Type\Php\RegexArrayShapeMatcher;
-use ECSPrefix202610\PHPStan\Type\TypeTraverser;
-use ECSPrefix202610\PHPStan\Type\UnionType;
+use ECSPrefix202611\PHPStan\Analyser\Scope;
+use ECSPrefix202611\PHPStan\Type\ArrayType;
+use ECSPrefix202611\PHPStan\Type\Constant\ConstantArrayType;
+use ECSPrefix202611\PHPStan\Type\Constant\ConstantIntegerType;
+use ECSPrefix202611\PHPStan\Type\IntersectionType;
+use ECSPrefix202611\PHPStan\Type\TypeCombinator;
+use ECSPrefix202611\PHPStan\Type\Type;
+use ECSPrefix202611\PhpParser\Node\Arg;
+use ECSPrefix202611\PHPStan\Type\Php\RegexArrayShapeMatcher;
+use ECSPrefix202611\PHPStan\Type\TypeTraverser;
+use ECSPrefix202611\PHPStan\Type\UnionType;
 final class PregMatchFlags
 {
     public static function getType(?Arg $flagsArg, Scope $scope): ?Type

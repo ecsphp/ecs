@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Console\ConsoleTable\ValueObject;
+namespace ECSPrefix202611\Entropy\Console\ConsoleTable\ValueObject;
 
-use ECSPrefix202610\Entropy\Validation\Assert;
+use ECSPrefix202611\Entropy\Validation\Assert;
 final class TableView
 {
     /**

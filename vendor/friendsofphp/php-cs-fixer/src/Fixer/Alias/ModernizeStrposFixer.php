@@ -50,7 +50,7 @@ final class ModernizeStrposFixer extends AbstractFixer implements ConfigurableFi
         return new FixerDefinition('Replace `strpos()` and `stripos()` calls with `str_starts_with()` or `str_contains()` if possible.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 if (\strpos($haystack, $needle) === 0) {
 }
@@ -65,7 +65,7 @@ PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 if (\strpos($haystack, $needle) === 0) {
 }

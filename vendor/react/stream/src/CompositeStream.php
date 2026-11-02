@@ -1,8 +1,8 @@
 <?php
 
-namespace ECSPrefix202610\React\Stream;
+namespace ECSPrefix202611\React\Stream;
 
-use ECSPrefix202610\Evenement\EventEmitter;
+use ECSPrefix202611\Evenement\EventEmitter;
 final class CompositeStream extends EventEmitter implements DuplexStreamInterface
 {
     private $readable;

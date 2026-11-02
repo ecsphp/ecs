@@ -39,9 +39,9 @@ final class ClassKeywordRemoveFixer extends AbstractFixer implements DeprecatedF
         return new FixerDefinition('Converts `::class` keywords to FQCN strings.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
-use ECSPrefix202610\Foo\Bar\Baz;
+use ECSPrefix202611\Foo\Bar\Baz;
 $className = Baz::class;
 
 PHP

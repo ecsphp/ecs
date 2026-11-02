@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Caching;
 
 use Symplify\EasyCodingStandard\FileSystem\StaticRelativeFilePathHelper;
-use ECSPrefix202610\Webmozart\Assert\Assert;
+use ECSPrefix202611\Webmozart\Assert\Assert;
 /**
  * @see \Symplify\EasyCodingStandard\Tests\ChangedFilesDetector\ChangedFilesDetector\ChangedFilesDetectorTest
  */

@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 use PhpCsFixer\Fixer\CastNotation\NoShortBoolCastFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoNullPropertyInitializationFixer;

@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Container;
+namespace ECSPrefix202611\Entropy\Container;
 
-use ECSPrefix202610\Entropy\Attribute\RelatedTest;
-use ECSPrefix202610\Entropy\Console\CommandRegistry;
-use ECSPrefix202610\Entropy\Console\Contract\CommandInterface;
-use ECSPrefix202610\Entropy\Container\Exception\CreateServiceException;
-use ECSPrefix202610\Entropy\Container\Exception\RegisterServiceException;
-use ECSPrefix202610\Entropy\Reflection\ParameterTypesResolver;
-use ECSPrefix202610\Entropy\Tests\Container\Container\ContainerTest;
-use ECSPrefix202610\Entropy\Validation\Assert;
+use ECSPrefix202611\Entropy\Attribute\RelatedTest;
+use ECSPrefix202611\Entropy\Console\CommandRegistry;
+use ECSPrefix202611\Entropy\Console\Contract\CommandInterface;
+use ECSPrefix202611\Entropy\Container\Exception\CreateServiceException;
+use ECSPrefix202611\Entropy\Container\Exception\RegisterServiceException;
+use ECSPrefix202611\Entropy\Reflection\ParameterTypesResolver;
+use ECSPrefix202611\Entropy\Tests\Container\Container\ContainerTest;
+use ECSPrefix202611\Entropy\Validation\Assert;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionParameter;

@@ -58,9 +58,9 @@ final class PhpUnitNoExpectationAnnotationFixer extends AbstractPhpUnitFixer imp
         return new FixerDefinition('Usages of `@expectedException*` annotations MUST be replaced by `->setExpectedException*` methods.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
-final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
+final class MyTest extends \ECSPrefix202611\PHPUnit_Framework_TestCase
 {
     /**
     * @expectedException FooException
@@ -72,15 +72,15 @@ final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
         aaa();
     }
 }
-\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202611\MyTest', 'MyTest', \false);
 
 PHP
 ), new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
-final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
+final class MyTest extends \ECSPrefix202611\PHPUnit_Framework_TestCase
 {
     /**
     * @expectedException FooException
@@ -99,7 +99,7 @@ final class MyTest extends \ECSPrefix202610\PHPUnit_Framework_TestCase
         ccc();
     }
 }
-\class_alias('ECSPrefix202610\MyTest', 'MyTest', \false);
+\class_alias('ECSPrefix202611\MyTest', 'MyTest', \false);
 
 PHP
 , ['target' => \PhpCsFixer\Fixer\PhpUnit\PhpUnitTargetVersion::VERSION_3_2])], null, 'Risky when PHPUnit classes are overridden or not accessible, or when project has PHPUnit incompatibilities.');

@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\FixerRunner\Parser;
 
-use ECSPrefix202610\Nette\Utils\FileSystem;
+use ECSPrefix202611\Nette\Utils\FileSystem;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 final class FileToTokensParser

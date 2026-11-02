@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace ECSPrefix202610\Entropy\Console\ConsoleTable;
+namespace ECSPrefix202611\Entropy\Console\ConsoleTable;
 
-use ECSPrefix202610\Entropy\Attribute\RelatedTest;
-use ECSPrefix202610\Entropy\Console\Output\OutputPrinter;
-use ECSPrefix202610\Entropy\Tests\Console\ConsoleTable\ConsoleTableTest;
+use ECSPrefix202611\Entropy\Attribute\RelatedTest;
+use ECSPrefix202611\Entropy\Console\Output\OutputPrinter;
+use ECSPrefix202611\Entropy\Tests\Console\ConsoleTable\ConsoleTableTest;
 /**
  * @see \Entropy\Tests\Console\ConsoleTable\ConsoleTableTest
  */

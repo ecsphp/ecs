@@ -38,7 +38,7 @@ final class ProtectedToPrivateFixer extends AbstractFixer
         return new FixerDefinition('Converts `protected` variables and methods to `private` where possible.', [new CodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 final class Sample
 {
@@ -47,7 +47,7 @@ final class Sample
     {
     }
 }
-\class_alias('ECSPrefix202610\Sample', 'Sample', \false);
+\class_alias('ECSPrefix202611\Sample', 'Sample', \false);
 
 PHP
 )]);

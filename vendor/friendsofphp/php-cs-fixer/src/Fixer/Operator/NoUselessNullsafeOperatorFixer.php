@@ -29,7 +29,7 @@ final class NoUselessNullsafeOperatorFixer extends AbstractFixer
         return new FixerDefinition('There should not be useless Null-safe operator `?->` used.', [new VersionSpecificCodeSample(<<<'PHP'
 <?php
 
-namespace ECSPrefix202610;
+namespace ECSPrefix202611;
 
 class Foo extends Bar
 {
@@ -38,7 +38,7 @@ class Foo extends Bar
         echo $this?->parentMethod();
     }
 }
-\class_alias('ECSPrefix202610\Foo', 'Foo', \false);
+\class_alias('ECSPrefix202611\Foo', 'Foo', \false);
 
 PHP
 , new VersionSpecification(80000))]);

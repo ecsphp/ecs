@@ -5,9 +5,9 @@ declare (strict_types=1);
  * This file is part of the Nette Framework (https://nette.org)
  * Copyright (c) 2004 David Grudl (https://davidgrudl.com)
  */
-namespace ECSPrefix202610\Nette\Iterators;
+namespace ECSPrefix202611\Nette\Iterators;
 
-use ECSPrefix202610\Nette;
+use ECSPrefix202611\Nette;
 /**
  * Enhanced caching iterator with first/last/counter tracking.
  *

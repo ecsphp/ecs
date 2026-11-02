@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ECSPrefix202610\\Fidry\\CpuCoreCounter\\": "src\/"
+            "ECSPrefix202611\\Fidry\\CpuCoreCounter\\": "src\/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ECSPrefix202610\\Fidry\\CpuCoreCounter\\Test\\": "tests\/"
+            "ECSPrefix202611\\Fidry\\CpuCoreCounter\\Test\\": "tests\/"
         }
     },
     "config": {

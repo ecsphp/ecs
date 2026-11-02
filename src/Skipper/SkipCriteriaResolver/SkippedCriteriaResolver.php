@@ -6,7 +6,7 @@ namespace Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver;
 use Symplify\EasyCodingStandard\DependencyInjection\SimpleParameterProvider;
 use Symplify\EasyCodingStandard\FileSystem\PathNormalizer;
 use Symplify\EasyCodingStandard\ValueObject\Option;
-use ECSPrefix202610\Webmozart\Assert\Assert;
+use ECSPrefix202611\Webmozart\Assert\Assert;
 /**
  * @see \Symplify\EasyCodingStandard\Tests\Skipper\SkipCriteriaResolver\SkippedPathsResolver\SkippedPathsResolverTest
  */

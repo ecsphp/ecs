@@ -12,8 +12,8 @@ declare (strict_types=1);
  */
 namespace PhpCsFixer;
 
-use ECSPrefix202610\Composer\Semver\Semver;
-use ECSPrefix202610\Symfony\Component\Filesystem\Exception\IOException;
+use ECSPrefix202611\Composer\Semver\Semver;
+use ECSPrefix202611\Symfony\Component\Filesystem\Exception\IOException;
 /**
  * @author Dariusz Rumiński <dariusz.ruminski@gmail.com>
  *
