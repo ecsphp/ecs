@@ -275,7 +275,7 @@ class Html implements \ArrayAccess, \Countable, \IteratorAggregate, HtmlStringab
     /**
      * Creates a nameless element (fragment) containing the given children.
      * Everything except HtmlStringable is escaped; use Html::html() for raw HTML. Nulls are skipped.
-     * @param \Nette\HtmlStringable|\Stringable|string|int|null ...$children
+     * @param int|string|\Stringable|null ...$children
      * @return static
      */
     public static function fragment(...$children)
@@ -562,7 +562,7 @@ class Html implements \ArrayAccess, \Countable, \IteratorAggregate, HtmlStringab
     }
     /**
      * Appends the given children. Everything except HtmlStringable is escaped; use Html::html() for raw HTML. Nulls are skipped.
-     * @param \Nette\HtmlStringable|\Stringable|string|int|null ...$children
+     * @param int|string|\Stringable|null ...$children
      * @return static
      */
     public function add(...$children)
@@ -585,7 +585,7 @@ class Html implements \ArrayAccess, \Countable, \IteratorAggregate, HtmlStringab
     }
     /**
      * Appends plain-text string to element content.
-     * @param \Stringable|string|int|null $text
+     * @param int|string|\Stringable|null $text
      * @return static
      */
     public function addText($text)

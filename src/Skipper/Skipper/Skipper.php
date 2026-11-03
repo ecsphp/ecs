@@ -37,7 +37,7 @@ final class Skipper
         $this->fileInfoMatcher = $fileInfoMatcher;
     }
     /**
-     * @param string|object $element
+     * @param object|string $element
      */
     public function shouldSkipElement($element): bool
     {
@@ -48,7 +48,7 @@ final class Skipper
         return $this->shouldSkipElementAndFilePath(self::FILE_ELEMENT, $filePath);
     }
     /**
-     * @param string|object $element
+     * @param object|string $element
      */
     public function shouldSkipElementAndFilePath($element, string $filePath): bool
     {
@@ -64,7 +64,7 @@ final class Skipper
         return $this->shouldSkipPath($filePath);
     }
     /**
-     * @param string|object $element
+     * @param object|string $element
      */
     private function shouldSkipClassAndCode($element, string $filePath): bool
     {
@@ -86,7 +86,7 @@ final class Skipper
         return $this->fileInfoMatcher->doesFileInfoMatchPatterns($filePath, $skippedPaths);
     }
     /**
-     * @param string|object $element
+     * @param object|string $element
      */
     private function shouldSkipClass($element, string $filePath): bool
     {
@@ -97,7 +97,7 @@ final class Skipper
         return $this->skipSkipper->doesMatchSkip($element, $filePath, $skippedClasses);
     }
     /**
-     * @param string|object $element
+     * @param object|string $element
      */
     private function shouldSkipMessage($element, string $filePath): bool
     {

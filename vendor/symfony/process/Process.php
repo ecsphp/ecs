@@ -139,7 +139,7 @@ class Process implements \IteratorAggregate
      */
     private $ignoredSignals = [];
     /**
-     * @var \Symfony\Component\Process\Pipes\WindowsPipes|\Symfony\Component\Process\Pipes\UnixPipes
+     * @var \Symfony\Component\Process\Pipes\UnixPipes|\Symfony\Component\Process\Pipes\WindowsPipes
      */
     private $processPipes;
     /**
