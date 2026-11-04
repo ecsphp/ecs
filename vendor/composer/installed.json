@@ -1528,24 +1528,24 @@
         },
         {
             "name": "symfony\/deprecation-contracts",
-            "version": "v3.8.0",
-            "version_normalized": "3.8.0.0",
+            "version": "v3.8.1",
+            "version_normalized": "3.8.1.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/deprecation-contracts.git",
-                "reference": "f3202fa1b5097b0af062dc978b32ecf63404e31d"
+                "reference": "feb1edf4e546af3b85c5caebe8359a20db230ca3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/deprecation-contracts\/zipball\/f3202fa1b5097b0af062dc978b32ecf63404e31d",
-                "reference": "f3202fa1b5097b0af062dc978b32ecf63404e31d",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/deprecation-contracts\/zipball\/feb1edf4e546af3b85c5caebe8359a20db230ca3",
+                "reference": "feb1edf4e546af3b85c5caebe8359a20db230ca3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1"
             },
-            "time": "2026-06-05T06:23:12+00:00",
-            "published-time": "2026-11-04T08:53:06+00:00",
+            "time": "2026-09-16T14:15:10+00:00",
+            "published-time": "2026-11-04T11:25:34+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -1553,7 +1553,7 @@
                     "name": "symfony\/contracts"
                 },
                 "branch-alias": {
-                    "dev-main": "3.7-dev"
+                    "dev-main": "3.8-dev"
                 }
             },
             "installation-source": "dist",
@@ -1579,7 +1579,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https:\/\/symfony.com",
             "support": {
-                "source": "https:\/\/github.com\/symfony\/deprecation-contracts\/tree\/v3.8.0"
+                "source": "https:\/\/github.com\/symfony\/deprecation-contracts\/tree\/v3.8.1"
             },
             "funding": [
                 {
@@ -1603,17 +1603,17 @@
         },
         {
             "name": "symfony\/filesystem",
-            "version": "v8.1.9",
-            "version_normalized": "8.1.9.0",
+            "version": "v8.1.11",
+            "version_normalized": "8.1.11.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/filesystem.git",
-                "reference": "43d109c803d22c00bb820ed45df250b6a8792ca2"
+                "reference": "58f57b6a33e3495f7f41e01258f1ae5ef76cccd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/filesystem\/zipball\/43d109c803d22c00bb820ed45df250b6a8792ca2",
-                "reference": "43d109c803d22c00bb820ed45df250b6a8792ca2",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/filesystem\/zipball\/58f57b6a33e3495f7f41e01258f1ae5ef76cccd2",
+                "reference": "58f57b6a33e3495f7f41e01258f1ae5ef76cccd2",
                 "shasum": ""
             },
             "require": {
@@ -1625,8 +1625,8 @@
             "require-dev": {
                 "symfony\/process": "^7.4|^8.0"
             },
-            "time": "2026-10-06T20:05:50+00:00",
-            "published-time": "2026-10-14T06:48:55+00:00",
+            "time": "2026-11-04T08:39:20+00:00",
+            "published-time": "2026-11-04T11:32:01+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1654,7 +1654,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https:\/\/symfony.com",
             "support": {
-                "source": "https:\/\/github.com\/symfony\/filesystem\/tree\/v8.1.9"
+                "source": "https:\/\/github.com\/symfony\/filesystem\/tree\/v8.1.11"
             },
             "funding": [
                 {
@@ -1678,17 +1678,17 @@
         },
         {
             "name": "symfony\/finder",
-            "version": "v7.4.22",
-            "version_normalized": "7.4.22.0",
+            "version": "v7.4.23",
+            "version_normalized": "7.4.23.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/finder.git",
-                "reference": "e13420a8e0a76bdde1e7be09f923e62ad13739f2"
+                "reference": "c723f990aefe8c1053b18374faf4231eba84f518"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/finder\/zipball\/e13420a8e0a76bdde1e7be09f923e62ad13739f2",
-                "reference": "e13420a8e0a76bdde1e7be09f923e62ad13739f2",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/finder\/zipball\/c723f990aefe8c1053b18374faf4231eba84f518",
+                "reference": "c723f990aefe8c1053b18374faf4231eba84f518",
                 "shasum": ""
             },
             "require": {
@@ -1697,8 +1697,8 @@
             "require-dev": {
                 "symfony\/filesystem": "^6.4|^7.0|^8.0"
             },
-            "time": "2026-10-19T16:56:54+00:00",
-            "published-time": "2026-10-28T18:21:14+00:00",
+            "time": "2026-11-02T10:56:49+00:00",
+            "published-time": "2026-11-04T11:28:12+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1726,7 +1726,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https:\/\/symfony.com",
             "support": {
-                "source": "https:\/\/github.com\/symfony\/finder\/tree\/v7.4.22"
+                "source": "https:\/\/github.com\/symfony\/finder\/tree\/v7.4.23"
             },
             "funding": [
                 {
