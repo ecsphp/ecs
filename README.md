@@ -32,24 +32,16 @@ composer require symplify/easy-coding-standard --dev
 vendor/bin/ecs
 ```
 
-On the first run, ECS creates `ecs.php` config file with directories and first rule to kick off.
-
-Then you can run again to see the suggested diffs:
-
-```bash
-vendor/bin/ecs
-```
-
-Want to check specific paths instead of the configured ones? Pass them as arguments:
-
-```bash
-vendor/bin/ecs src tests
-```
-
-To actually **fix your code**, add `--fix`:
+The first run creates an `ecs.php` config with your directories and a first rule. Run it again to see suggested diffs - then add `--fix` to apply them:
 
 ```bash
 vendor/bin/ecs --fix
+```
+
+Check specific paths instead of the configured ones by passing them as arguments:
+
+```bash
+vendor/bin/ecs src tests
 ```
 
 That's it!
