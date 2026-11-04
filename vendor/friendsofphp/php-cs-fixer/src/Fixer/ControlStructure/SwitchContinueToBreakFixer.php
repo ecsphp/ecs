@@ -91,7 +91,7 @@ PHP
         if ($token->isGivenKind([\T_FOREACH, \T_FOR, \T_WHILE])) {
             // go to first `(`, go to its close ')', go to first of '{', ';', '? >'
             $index = $tokens->getNextTokenOfKind($index, ['(']);
-            $index = $tokens->getNextTokenOfKind($index, [')']);
+            $index = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_PARENTHESIS, $index);
             $index = $tokens->getNextTokenOfKind($index, ['{', ';', [\T_CLOSE_TAG]]);
             if (!$tokens[$index]->equals('{')) {
                 return $index;

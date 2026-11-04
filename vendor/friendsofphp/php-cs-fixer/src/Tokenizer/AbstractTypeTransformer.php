@@ -41,19 +41,33 @@ abstract class AbstractTypeTransformer extends \PhpCsFixer\Tokenizer\AbstractTra
         [\T_COMMENT],
         [\T_DOC_COMMENT],
     ];
-    abstract protected function replaceToken(\PhpCsFixer\Tokenizer\Tokens $tokens, int $index): void;
+    /**
+     * @var _PhpTokenPrototype
+     *
+     * @readonly
+     */
+    private $originalToken;
+    /**
+     * @readonly
+     * @var \PhpCsFixer\Tokenizer\Token
+     */
+    private $replacementToken;
     /**
      * @param _PhpTokenPrototype $originalToken
+     * @param _PhpTokenPrototype $replacementToken
      */
-    protected function doProcess(\PhpCsFixer\Tokenizer\Tokens $tokens, int $index, $originalToken): void
+    public function __construct($originalToken, $replacementToken)
     {
-        if (!$tokens[$index]->equals($originalToken)) {
-            return;
+        $this->originalToken = $originalToken;
+        $this->replacementToken = new \PhpCsFixer\Tokenizer\Token($replacementToken);
+    }
+    public function process(\PhpCsFixer\Tokenizer\Tokens $tokens): void
+    {
+        foreach ($tokens as $index => $token) {
+            if ($token->equals($this->originalToken) && $this->isPartOfType($tokens, $index)) {
+                $tokens[$index] = clone $this->replacementToken;
+            }
         }
-        if (!$this->isPartOfType($tokens, $index)) {
-            return;
-        }
-        $this->replaceToken($tokens, $index);
     }
     private function isPartOfType(\PhpCsFixer\Tokenizer\Tokens $tokens, int $index): bool
     {

@@ -35,14 +35,16 @@ final class NamespaceOperatorTransformer extends AbstractTransformer
     {
         return $tokens->isTokenKindFound(\T_NAMESPACE);
     }
-    public function processToken(Tokens $tokens, Token $token, int $index): void
+    public function process(Tokens $tokens): void
     {
-        if (!$token->isGivenKind(\T_NAMESPACE)) {
-            return;
-        }
-        $nextIndex = $tokens->getNextMeaningfulToken($index);
-        if ($tokens[$nextIndex]->isGivenKind(\T_NS_SEPARATOR)) {
-            $tokens[$index] = new Token([CT::T_NAMESPACE_OPERATOR, $token->getContent()]);
+        foreach ($tokens as $index => $token) {
+            if (!$token->isGivenKind(\T_NAMESPACE)) {
+                continue;
+            }
+            $nextIndex = $tokens->getNextMeaningfulToken($index);
+            if ($tokens[$nextIndex]->isGivenKind(\T_NS_SEPARATOR)) {
+                $tokens[$index] = new Token([CT::T_NAMESPACE_OPERATOR, $token->getContent()]);
+            }
         }
     }
     public function getCustomTokens(): array
