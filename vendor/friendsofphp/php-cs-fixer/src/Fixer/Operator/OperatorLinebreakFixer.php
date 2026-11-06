@@ -181,7 +181,7 @@ PHP
         /** @var int $nextIndex */
         $nextIndex = $tokens->getNextMeaningfulToken(max($operatorIndices));
         for ($i = $nextIndex - 1; $i > max($operatorIndices); --$i) {
-            if ($tokens[$i]->isWhitespace() && Preg::match('/\R/u', $tokens[$i]->getContent())) {
+            if ($tokens[$i]->isWhitespace() && Preg::match('/\R/', $tokens[$i]->getContent())) {
                 $isWhitespaceBefore = $tokens[$prevIndex]->isWhitespace();
                 $inserts = $this->getReplacementsAndClear($tokens, $operatorIndices, -1);
                 if ($isWhitespaceBefore) {
@@ -202,7 +202,7 @@ PHP
         /** @var int $nextIndex */
         $nextIndex = $tokens->getNonEmptySibling(max($operatorIndices), 1);
         for ($i = $prevIndex + 1; $i < max($operatorIndices); ++$i) {
-            if ($tokens[$i]->isWhitespace() && Preg::match('/\R/u', $tokens[$i]->getContent())) {
+            if ($tokens[$i]->isWhitespace() && Preg::match('/\R/', $tokens[$i]->getContent())) {
                 $isWhitespaceAfter = $tokens[$nextIndex]->isWhitespace();
                 $inserts = $this->getReplacementsAndClear($tokens, $operatorIndices, 1);
                 if ($isWhitespaceAfter) {

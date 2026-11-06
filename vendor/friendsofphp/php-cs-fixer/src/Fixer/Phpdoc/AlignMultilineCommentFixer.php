@@ -128,7 +128,7 @@ PHP
                 continue;
             }
             $indentation = $matches[1];
-            $lines = Preg::split('/\R/u', $token->getContent());
+            $lines = Preg::split('/\R/', $token->getContent());
             foreach ($lines as $lineNumber => $line) {
                 if (0 === $lineNumber) {
                     continue;

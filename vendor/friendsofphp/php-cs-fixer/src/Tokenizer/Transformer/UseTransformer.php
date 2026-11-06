@@ -62,8 +62,13 @@ final class UseTransformer extends AbstractTransformer
             } elseif (!$token->isGivenKind(self::CLASS_TYPES)) {
                 continue;
             }
-            $index = $tokens->getNextTokenOfKind($index, ['{']);
-            $innerLimit = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_BRACE, $index);
+            $openBraceIndex = $index;
+            $nextIndex = $tokens->getNextMeaningfulToken($index);
+            if ($tokens[$nextIndex]->equals('(')) {
+                $openBraceIndex = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_PARENTHESIS, $nextIndex);
+            }
+            $openBraceIndex = $tokens->getNextTokenOfKind($openBraceIndex, ['{']);
+            $innerLimit = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_BRACE, $openBraceIndex);
             while ($index < $innerLimit) {
                 $token = $tokens[++$index];
                 if (!$token->isGivenKind(\T_USE)) {
