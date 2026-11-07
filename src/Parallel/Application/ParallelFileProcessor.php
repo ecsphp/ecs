@@ -66,8 +66,7 @@ final class ParallelFileProcessor
         $tcpServer = new TcpServer('127.0.0.1:0', $streamSelectLoop);
         $processPool = new ProcessPool($tcpServer);
         $tcpServer->on(ReactEvent::CONNECTION, function (ConnectionInterface $connection) use (&$jobs, $processPool): void {
-            // a job's message carries the full diffs of its files, several MiB for big files
-            $inDecoder = new Decoder($connection, \true, 512, 0, 128 * 1024 * 1024);
+            $inDecoder = new Decoder($connection, \true, 512, 0, 4 * 1024 * 1024);
             $outEncoder = new Encoder($connection);
             $inDecoder->on(ReactEvent::DATA, function (array $data) use (&$jobs, $inDecoder, $outEncoder, $processPool): void {
                 $action = $data[ReactCommand::ACTION];
