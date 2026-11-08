@@ -12,7 +12,7 @@ Easy Coding Standard (ECS) is a single tool that runs [PHP_CodeSniffer](https://
 ## Killer Features
 
 - Install on **any PHP 7.2-PHP 8.5** project with any dependencies
-- Blazing fast with parallel run out of the box
+- Blazing fast - parallel PHP engine, or the bundled Go engine via [`--blink`](#blazing-fast-with---blink) for up to 100x speedup
 - Use [PHP_CodeSniffer or PHP-CS-Fixer](https://tomasvotruba.com/blog/2017/05/03/combine-power-of-php-code-sniffer-and-php-cs-fixer-in-3-lines/) - anything you like
 - Use [**prepared sets**](#prepared-sets) to save time
 
@@ -45,6 +45,33 @@ vendor/bin/ecs src tests
 ```
 
 That's it!
+
+<br>
+
+## Blazing fast with `--blink`
+
+ECS bundles a Go engine ("blink") that applies the same rules as the PHP run, across all CPU cores. Pass `--blink` to use it:
+
+```bash
+vendor/bin/ecs check --blink          # report
+vendor/bin/ecs check --blink --fix    # rewrite in place
+```
+
+When every rule in your `ecs.php` is covered by the Go engine, a plain `vendor/bin/ecs check` uses it automatically and falls back to the PHP engine otherwise.
+
+Wall-clock `--fix` over a fresh clone, each tool with a representative rule set (ECS, `--blink` and `phpcbf` run across all cores; php-cs-fixer and Pint run sequentially, as shipped):
+
+| engine | symfony `src` (13,091 files) | laravel `src` (1,749 files) |
+| --- | ---: | ---: |
+| **ECS `--blink`** (Go) | **3.1 s** | **1.1 s** |
+| ECS (PHP) | 315 s | 42 s |
+| php-cs-fixer (`@PER-CS`, `@Symfony`) | 132 s | 25 s |
+| PHP_CodeSniffer (`phpcbf`, PSR-12) | 132 s | 25 s |
+| Laravel Pint (`laravel` preset) | 1,543 s | 199 s |
+
+Different tools apply different rules, so this compares each at a representative job, not rule for rule. Numbers vary with hardware. The Go engine ships prebuilt for Linux, macOS and Windows, so no Go toolchain is needed.
+
+On `symfony/symfony` `src`, php-cs-fixer and Pint also need the rules its `@php-cs-fixer-ignore` annotations reference (`--allow-risky`) enabled, or they abort before running.
 
 <br>
 
