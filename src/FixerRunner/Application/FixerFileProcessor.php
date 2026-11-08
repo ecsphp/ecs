@@ -95,7 +95,8 @@ final class FixerFileProcessor implements FileProcessorInterface
             return [];
         }
         $fileContents = FileSystem::read($filePath);
-        $diff = $this->differ->diff($fileContents, $tokens->generateCode());
+        $tokenGeneratedCode = $tokens->generateCode();
+        $diff = $this->differ->diff($fileContents, $tokenGeneratedCode);
         // some fixer with feature overlap can null each other
         if ($diff === '') {
             return [];
@@ -103,7 +104,6 @@ final class FixerFileProcessor implements FileProcessorInterface
         $fileDiffs = [];
         // file has changed
         $fileDiffs[] = $this->fileDiffFactory->createFromDiffAndAppliedCheckers($filePath, $diff, $appliedFixers);
-        $tokenGeneratedCode = $tokens->generateCode();
         if ($configuration->isFixer()) {
             FileSystem::write($filePath, $tokenGeneratedCode, null);
         }
