@@ -9,6 +9,7 @@ use Symplify\EasyCodingStandard\Application\EasyCodingStandardApplication;
 use Symplify\EasyCodingStandard\Blink\BlinkCommitRunner;
 use Symplify\EasyCodingStandard\Blink\BlinkConfigDumper;
 use Symplify\EasyCodingStandard\Blink\BlinkRunner;
+use Symplify\EasyCodingStandard\Blink\BlinkSupportResolver;
 use Symplify\EasyCodingStandard\Configuration\ConfigInitializer;
 use Symplify\EasyCodingStandard\Configuration\ConfigurationFactory;
 use Symplify\EasyCodingStandard\Console\ExitCode;
@@ -61,10 +62,15 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
     private $blinkConfigDumper;
     /**
      * @readonly
+     * @var \Symplify\EasyCodingStandard\Blink\BlinkSupportResolver
+     */
+    private $blinkSupportResolver;
+    /**
+     * @readonly
      * @var \Symplify\EasyCodingStandard\Console\Style\EasyCodingStandardStyle
      */
     private $easyCodingStandardStyle;
-    public function __construct(ProcessedFileReporter $processedFileReporter, MemoryLimitter $memoryLimitter, ConfigInitializer $configInitializer, EasyCodingStandardApplication $easyCodingStandardApplication, ConfigurationFactory $configurationFactory, BlinkRunner $blinkRunner, BlinkCommitRunner $blinkCommitRunner, BlinkConfigDumper $blinkConfigDumper, EasyCodingStandardStyle $easyCodingStandardStyle)
+    public function __construct(ProcessedFileReporter $processedFileReporter, MemoryLimitter $memoryLimitter, ConfigInitializer $configInitializer, EasyCodingStandardApplication $easyCodingStandardApplication, ConfigurationFactory $configurationFactory, BlinkRunner $blinkRunner, BlinkCommitRunner $blinkCommitRunner, BlinkConfigDumper $blinkConfigDumper, BlinkSupportResolver $blinkSupportResolver, EasyCodingStandardStyle $easyCodingStandardStyle)
     {
         $this->processedFileReporter = $processedFileReporter;
         $this->memoryLimitter = $memoryLimitter;
@@ -74,6 +80,7 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
         $this->blinkRunner = $blinkRunner;
         $this->blinkCommitRunner = $blinkCommitRunner;
         $this->blinkConfigDumper = $blinkConfigDumper;
+        $this->blinkSupportResolver = $blinkSupportResolver;
         $this->easyCodingStandardStyle = $easyCodingStandardStyle;
     }
     public function getName(): string
@@ -123,6 +130,13 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
             if ($commit) {
                 return $this->blinkCommitRunner->run($configData);
             }
+            $blinkExitCode = $this->blinkRunner->run($configData, $fix);
+            return $blinkExitCode === ExitCode::SUCCESS ? ExitCode::SUCCESS : ExitCode::CHANGED_CODE_OR_FOUND_ERRORS;
+        }
+        // auto-blink: hand the run to ecs-go when it covers every configured rule,
+        // else fall back to the PHP engine silently
+        $configData = $this->blinkConfigDumper->dump($configuration->getSources());
+        if ($this->blinkSupportResolver->isFullySupported($configData)) {
             $blinkExitCode = $this->blinkRunner->run($configData, $fix);
             return $blinkExitCode === ExitCode::SUCCESS ? ExitCode::SUCCESS : ExitCode::CHANGED_CODE_OR_FOUND_ERRORS;
         }

@@ -1043,6 +1043,7 @@ return array(
     'Symplify\\EasyCodingStandard\\Blink\\BlinkCommitRunner' => $baseDir . '/src/Blink/BlinkCommitRunner.php',
     'Symplify\\EasyCodingStandard\\Blink\\BlinkConfigDumper' => $baseDir . '/src/Blink/BlinkConfigDumper.php',
     'Symplify\\EasyCodingStandard\\Blink\\BlinkRunner' => $baseDir . '/src/Blink/BlinkRunner.php',
+    'Symplify\\EasyCodingStandard\\Blink\\BlinkSupportResolver' => $baseDir . '/src/Blink/BlinkSupportResolver.php',
     'Symplify\\EasyCodingStandard\\Blink\\EcsGoBinaryLocator' => $baseDir . '/src/Blink/EcsGoBinaryLocator.php',
     'Symplify\\EasyCodingStandard\\Blink\\Exception\\EcsGoBinaryNotFoundException' => $baseDir . '/src/Blink/Exception/EcsGoBinaryNotFoundException.php',
     'Symplify\\EasyCodingStandard\\Caching\\Cache' => $baseDir . '/src/Caching/Cache.php',

@@ -1219,6 +1219,7 @@ class ComposerStaticInit739d3c93a22a0301d00831cb9c963967
         'Symplify\\EasyCodingStandard\\Blink\\BlinkCommitRunner' => __DIR__ . '/../..' . '/src/Blink/BlinkCommitRunner.php',
         'Symplify\\EasyCodingStandard\\Blink\\BlinkConfigDumper' => __DIR__ . '/../..' . '/src/Blink/BlinkConfigDumper.php',
         'Symplify\\EasyCodingStandard\\Blink\\BlinkRunner' => __DIR__ . '/../..' . '/src/Blink/BlinkRunner.php',
+        'Symplify\\EasyCodingStandard\\Blink\\BlinkSupportResolver' => __DIR__ . '/../..' . '/src/Blink/BlinkSupportResolver.php',
         'Symplify\\EasyCodingStandard\\Blink\\EcsGoBinaryLocator' => __DIR__ . '/../..' . '/src/Blink/EcsGoBinaryLocator.php',
         'Symplify\\EasyCodingStandard\\Blink\\Exception\\EcsGoBinaryNotFoundException' => __DIR__ . '/../..' . '/src/Blink/Exception/EcsGoBinaryNotFoundException.php',
         'Symplify\\EasyCodingStandard\\Caching\\Cache' => __DIR__ . '/../..' . '/src/Caching/Cache.php',
