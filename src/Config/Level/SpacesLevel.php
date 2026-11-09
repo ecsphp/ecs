@@ -3,9 +3,6 @@
 declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Config\Level;
 
-use PHP_CodeSniffer\Sniffs\Sniff;
-use PHP_CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\LanguageConstructSpacingSniff;
-use PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\SuperfluousWhitespaceSniff;
 use PhpCsFixer\Fixer\CastNotation\CastSpacesFixer;
 use PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoBlankLinesAfterClassOpeningFixer;
@@ -13,6 +10,7 @@ use PhpCsFixer\Fixer\ClassNotation\SingleTraitInsertPerStatementFixer;
 use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer;
 use PhpCsFixer\Fixer\FunctionNotation\ReturnTypeDeclarationFixer;
+use PhpCsFixer\Fixer\LanguageConstruct\SingleSpaceAroundConstructFixer;
 use PhpCsFixer\Fixer\NamespaceNotation\NoLeadingNamespaceWhitespaceFixer;
 use PhpCsFixer\Fixer\Operator\BinaryOperatorSpacesFixer;
 use PhpCsFixer\Fixer\Operator\ConcatSpaceFixer;
@@ -47,7 +45,7 @@ use Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer;
 final class SpacesLevel
 {
     /**
-     * @var array<class-string<Sniff|FixerInterface>>
+     * @var array<class-string<FixerInterface>>
      */
     public const RULES = [
         // easy picks - pure whitespace cleanup with no formatting opinion
@@ -60,7 +58,7 @@ final class SpacesLevel
         BlankLineAfterOpeningTagFixer::class,
         SingleTraitInsertPerStatementFixer::class,
         PhpdocSingleLineVarSpacingFixer::class,
-        LanguageConstructSpacingSniff::class,
+        SingleSpaceAroundConstructFixer::class,
         NoBlankLineBetweenImportsFixer::class,
         // operator and type spacing
         CastSpacesFixer::class,
@@ -82,7 +80,7 @@ final class SpacesLevel
      * Configurations matching the spaces set, applied when a configurable rule
      * is enabled via withSpacesLevel(). Rules absent from this map use defaults.
      *
-     * @var array<class-string<Sniff|FixerInterface>, mixed[]>
+     * @var array<class-string<FixerInterface>, mixed[]>
      */
-    public const RULE_CONFIGURATIONS = [ClassAttributesSeparationFixer::class => ['elements' => ['const' => 'one', 'property' => 'one', 'method' => 'one']], NoExtraBlankLinesFixer::class => ['tokens' => ['extra', 'throw', 'use']], ConcatSpaceFixer::class => ['spacing' => 'one'], SuperfluousWhitespaceSniff::class => ['ignoreBlankLines' => \false], BinaryOperatorSpacesFixer::class => ['operators' => ['=>' => 'single_space', '=' => 'single_space']]];
+    public const RULE_CONFIGURATIONS = [ClassAttributesSeparationFixer::class => ['elements' => ['const' => 'one', 'property' => 'one', 'method' => 'one']], NoExtraBlankLinesFixer::class => ['tokens' => ['extra', 'throw', 'use']], ConcatSpaceFixer::class => ['spacing' => 'one'], BinaryOperatorSpacesFixer::class => ['operators' => ['=>' => 'single_space', '=' => 'single_space']]];
 }
