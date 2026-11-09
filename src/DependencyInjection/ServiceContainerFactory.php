@@ -26,6 +26,10 @@ final class ServiceContainerFactory
         \Symplify\EasyCodingStandard\DependencyInjection\SimpleParameterProvider::reset();
         $this->loadPHPCodeSnifferConstants();
         $ecsConfig = new ECSConfig();
+        // config
+        $ecsConfig->service(ECSConfig::class, static function () use ($ecsConfig): ECSConfig {
+            return $ecsConfig;
+        });
         // console
         $ecsConfig->service(EasyCodingStandardStyle::class, static function (Container $container): EasyCodingStandardStyle {
             /** @var EasyCodingStandardStyleFactory $easyCodingStandardStyleFactory */

@@ -7,6 +7,7 @@ use PhpCsFixer\Fixer\ConfigurableFixerInterface;
 use PhpCsFixer\Fixer\FixerInterface;
 use ReflectionProperty;
 use stdClass;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\FixerRunner\Application\FixerFileProcessor;
 use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver;
 use Symplify\EasyCodingStandard\SniffRunner\Application\SniffFileProcessor;
@@ -32,11 +33,17 @@ final class BlinkConfigDumper
      * @var \Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver
      */
     private $skippedCriteriaResolver;
-    public function __construct(SniffFileProcessor $sniffFileProcessor, FixerFileProcessor $fixerFileProcessor, SkippedCriteriaResolver $skippedCriteriaResolver)
+    /**
+     * @readonly
+     * @var \Symplify\EasyCodingStandard\Config\ECSConfig
+     */
+    private $ecsConfig;
+    public function __construct(SniffFileProcessor $sniffFileProcessor, FixerFileProcessor $fixerFileProcessor, SkippedCriteriaResolver $skippedCriteriaResolver, ECSConfig $ecsConfig)
     {
         $this->sniffFileProcessor = $sniffFileProcessor;
         $this->fixerFileProcessor = $fixerFileProcessor;
         $this->skippedCriteriaResolver = $skippedCriteriaResolver;
+        $this->ecsConfig = $ecsConfig;
     }
     /**
      * @param string[] $paths
@@ -119,7 +126,8 @@ final class BlinkConfigDumper
             return new stdClass();
         }
         if (!property_exists($fixer, 'configuration')) {
-            return new stdClass();
+            $configuration = $this->ecsConfig->getCheckerConfiguration()[get_class($fixer)] ?? [];
+            return $configuration === [] ? new stdClass() : $configuration;
         }
         $reflectionProperty = new ReflectionProperty($fixer, 'configuration');
         if (\PHP_VERSION_ID < 80100) {
