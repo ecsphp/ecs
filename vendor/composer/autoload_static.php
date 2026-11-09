@@ -1151,7 +1151,6 @@ class ComposerStaticInit739d3c93a22a0301d00831cb9c963967
         'Symplify\\CodingStandard\\Fixer\\Commenting\\FixParamNameTypoFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/FixParamNameTypoFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\FixTagTypoFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/FixTagTypoFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\MergeDocBlockStartFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/MergeDocBlockStartFixer.php',
-        'Symplify\\CodingStandard\\Fixer\\Commenting\\ParamReturnAndVarTagMalformsFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/ParamReturnAndVarTagMalformsFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveDeadParamFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveDeadParamFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveDeadVarThisFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveDeadVarThisFixer.php',
         'Symplify\\CodingStandard\\Fixer\\Commenting\\RemoveParamDescriptionDuplicateNameFixer' => __DIR__ . '/../..' . '/packages/coding-standard/src/Fixer/Commenting/RemoveParamDescriptionDuplicateNameFixer.php',
