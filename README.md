@@ -1,4 +1,4 @@
-# The Easiest way to use Coding Standard
+# The Easiest and Fastest Coding Standard
 
 [![Downloads total](https://img.shields.io/packagist/dt/symplify/easy-coding-standard.svg?style=flat-square)](https://packagist.org/packages/symplify/easy-coding-standard/stats)
 
@@ -6,11 +6,11 @@ Easy Coding Standard (ECS) is a single tool that runs [PHP_CodeSniffer](https://
 
 **Fixes all of Symfony in 3 seconds. php-cs-fixer and PHP_CodeSniffer take over 2 minutes.**
 
-| `--fix` on a fresh clone | Symfony `src` (13,091 files) | Laravel `src` (1,749 files) |
+| `--fix` on a fresh clone | Symfony `src` (13,103 files) | Laravel `src` (1,749 files) |
 | --- | ---: | ---: |
-| **ECS `--blink`** | **3.1 s** | **1.1 s** |
-| php-cs-fixer | 132 s - 42x slower | 25 s - 23x slower |
-| PHP_CodeSniffer | 132 s - 42x slower | 25 s - 23x slower |
+| **ECS `--blink`** | **2.9 s** | **1.0 s** |
+| php-cs-fixer | 141.6 s | 25.8 s |
+| PHP_CodeSniffer | 133.7 s | 26.7 s |
 
 See [full benchmark](#blazing-fast-with---blink).
 
@@ -18,7 +18,7 @@ See [full benchmark](#blazing-fast-with---blink).
 
 ## Killer Features
 
-- Blazing fast - fixes all **13,091 files of Symfony in 3.1 s** with the bundled Go engine via [`--blink`](#blazing-fast-with---blink), 100x faster than the PHP engine (315 s) and 42x faster than php-cs-fixer (132 s)
+- Blazing fast - fixes all **13,103 files of Symfony in 2.9 s** with the bundled Go engine via [`--blink`](#blazing-fast-with---blink), 100x faster than the PHP engine (315 s) and 49x faster than php-cs-fixer (141.6 s)
 - Install on **any PHP 7.2-PHP 8.5** project with any dependencies
 - Use [PHP_CodeSniffer or PHP-CS-Fixer](https://tomasvotruba.com/blog/2017/05/03/combine-power-of-php-code-sniffer-and-php-cs-fixer-in-3-lines/) - anything you like
 - Use [**14 prepared sets**](#prepared-sets) to save time
@@ -68,12 +68,12 @@ When every rule in your `ecs.php` is covered by the Go engine, a plain `vendor/b
 
 Wall-clock `--fix` over a fresh clone, each tool with a representative rule set (ECS, `--blink` and `phpcbf` run across all cores; php-cs-fixer and Pint run sequentially, as shipped):
 
-| engine | symfony `src` (13,091 files) | laravel `src` (1,749 files) |
+| engine | symfony `src` (13,103 files) | laravel `src` (1,749 files) |
 | --- | ---: | ---: |
-| **ECS `--blink`** (Go) | **3.1 s** | **1.1 s** |
+| **ECS `--blink`** (Go) | **2.9 s** | **1.0 s** |
 | ECS (PHP) | 315 s | 42 s |
-| php-cs-fixer (`@PER-CS`, `@Symfony`) | 132 s | 25 s |
-| PHP_CodeSniffer (`phpcbf`, PSR-12) | 132 s | 25 s |
+| php-cs-fixer (`@PER-CS`, `@Symfony`) | 141.6 s | 25.8 s |
+| PHP_CodeSniffer (`phpcbf`, PSR-12) | 133.7 s | 26.7 s |
 | Laravel Pint (`laravel` preset) | 1,543 s | 199 s |
 
 Different tools apply different rules, so this compares each at a representative job, not rule for rule. Numbers vary with hardware. The Go engine ships prebuilt for Linux, macOS and Windows, so no Go toolchain is needed.
