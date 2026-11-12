@@ -71,12 +71,10 @@ final class RemoveMethodNameDuplicateDescriptionFixer extends AbstractSymplifyFi
             foreach ($docblockLines as $key => $docblockLine) {
                 // drop articles, so "Get the API helper" still duplicates getApiHelper()
                 $docblockLine = Regex::replace($docblockLine, '#\b(?:a|an|the)\b#i', '');
-                // drop 3rd person verb "s", so "Contacts a user" still duplicates contactUser()
-                $docblockLine = Regex::replace($docblockLine, '#^([\s*]*\w+?)s\b#', '$1');
-                $spacelessDocblockLine = Regex::replace($docblockLine, '#[\s\n]+#', '');
-                // ignore trailing sentence punctuation, e.g. "Set name." duplicates setName()
-                $spacelessDocblockLine = rtrim($spacelessDocblockLine, '.!');
-                if (!$this->isDuplicateDescription($spacelessDocblockLine, $methodName)) {
+                // drop 3rd person verb "s", so "Contacts a user" still duplicates contactUser(),
+                // but keep the original too, so "has" still duplicates has()
+                $thirdPersonlessDocblockLine = Regex::replace($docblockLine, '#^([\s*]*\w+?)s\b#', '$1');
+                if (!$this->isDuplicateLine($docblockLine, $methodName) && !$this->isDuplicateLine($thirdPersonlessDocblockLine, $methodName)) {
                     continue;
                 }
                 $hasChanged = \true;
@@ -87,6 +85,13 @@ final class RemoveMethodNameDuplicateDescriptionFixer extends AbstractSymplifyFi
             }
             $tokens[$index] = new Token([\T_DOC_COMMENT, implode("\n", $docblockLines)]);
         }
+    }
+    private function isDuplicateLine(string $docblockLine, string $methodName): bool
+    {
+        $spacelessDocblockLine = Regex::replace($docblockLine, '#[\s\n]+#', '');
+        // ignore trailing sentence punctuation, e.g. "Set name." duplicates setName()
+        $spacelessDocblockLine = rtrim($spacelessDocblockLine, '.!');
+        return $this->isDuplicateDescription($spacelessDocblockLine, $methodName);
     }
     private function isDuplicateDescription(string $spacelessDocblockLine, string $methodName): bool
     {
