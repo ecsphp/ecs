@@ -1,4 +1,4 @@
-# The Fastest CS for PHP
+# The Fastest Coding Standard for PHP
 
 [![Downloads total](https://img.shields.io/packagist/dt/symplify/easy-coding-standard.svg?style=flat-square)](https://packagist.org/packages/symplify/easy-coding-standard/stats)
 
@@ -20,8 +20,8 @@ See [full benchmark](#blazing-fast-with---blink).
 
 - Blazing fast - fixes all **13,103 files of Symfony in 2.9 s**, 49x faster than php-cs-fixer (141.6 s)
 - Install on **any PHP 7.2-PHP 8.5** project with any dependencies
-- Use [PHP_CodeSniffer or PHP-CS-Fixer](https://tomasvotruba.com/blog/2017/05/03/combine-power-of-php-code-sniffer-and-php-cs-fixer-in-3-lines/) - anything you like
-- Use [**14 prepared sets**](#prepared-sets) to save time
+- Use [**13 prepared sets**](#prepared-sets) to save time
+- Use [PHP-CS-Fixer or PHP_CodeSniffer](https://tomasvotruba.com/blog/2017/05/03/combine-power-of-php-code-sniffer-and-php-cs-fixer-in-3-lines/) - anything you like
 
 <br>
 
@@ -74,9 +74,7 @@ Wall-clock `--fix` over a fresh clone, each tool with a representative rule set 
 | php-cs-fixer (`@PER-CS`, `@Symfony`) | 141.6 s | 25.8 s |
 | PHP_CodeSniffer (`phpcbf`, PSR-12) | 133.7 s | 26.7 s |
 
-Different tools apply different rules, so this compares each at a representative job, not rule for rule. Numbers vary with hardware. The Go engine ships prebuilt for Linux, macOS and Windows, so no Go toolchain is needed.
-
-On `symfony/symfony` `src`, php-cs-fixer also needs the rules its `@php-cs-fixer-ignore` annotations reference (`--allow-risky`) enabled, or it aborts before running.
+Different tools apply different rules, so this compares each at a representative job, not rule for rule. Numbers vary with hardware.
 
 <br>
 
@@ -105,6 +103,25 @@ return ECSConfig::configure()
     );
 ```
 
+Standalone sets, not part of `common`:
+
+| Set | What it covers |
+| --- | --- |
+| `psr12` | the [PSR-12](https://www.php-fig.org/psr/psr-12/) coding style |
+| `perCs` | the [PER Coding Style](https://www.php-fig.org/per/coding-style/) (PHP-CS-Fixer's `@PER-CS`) |
+| `standaloneLine` | each constructor param on its own line |
+| `laravel` | the [Laravel Pint](https://github.com/laravel/pint/blob/main/resources/presets/laravel.php) ruleset |
+
+```php
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+
+return ECSConfig::configure()
+    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
+    ->withPreparedSets(laravel: true);
+```
+
+`common: true` enables all of these at once:
+
 | Set | What it covers |
 | --- | --- |
 | `arrays` | array syntax, spacing, trailing commas, indentation |
@@ -115,18 +132,7 @@ return ECSConfig::configure()
 | `comments` | comment style, spacing, empty-comment cleanup |
 | `casing` | native function/type, magic method, literal casing |
 | `cleanup` | dead statements, useless returns/casts, unused closure imports |
-
-Or enable everything at once with `->withPreparedSets(common: true)`.
-
-Standalone presets are also available: `psr12: true`, `perCs: true`, `cleanCode: true` (dead code, unused imports, redundant syntax), `standaloneLine: true` (each constructor param on its own line), and `laravel: true` (the [Laravel Pint](https://github.com/laravel/pint/blob/main/resources/presets/laravel.php) ruleset):
-
-```php
-use Symplify\EasyCodingStandard\Config\ECSConfig;
-
-return ECSConfig::configure()
-    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
-    ->withPreparedSets(laravel: true);
-```
+| `cleanCode` | dead code, unused imports, redundant syntax |
 
 <br>
 
@@ -280,14 +286,4 @@ vendor/bin/ecs list-checkers --output-format json
 
 <br>
 
-## How to Migrate from another coding standard tool?
-
-Do you use another tool and want to migrate? It's pretty straightforward - here is "how to":
-
-* for [PHP_CodeSniffer](https://tomasvotruba.com/blog/2018/06/04/how-to-migrate-from-php-code-sniffer-to-easy-coding-standard)
-* and [PHP CS Fixer](https://tomasvotruba.com/blog/2018/06/07/how-to-migrate-from-php-cs-fixer-to-easy-coding-standard).
-
-<br>
-
-> [!NOTE]
-> This is the **deployed** package. Development happens in the [ecs-src](https://github.com/easy-coding-standard/ecs-src) repository - report issues and send pull requests there.
+<sub>This is the deployed package. Development happens in the [ecs-src](https://github.com/easy-coding-standard/ecs-src) repository - report issues and send pull requests there.</sub>
