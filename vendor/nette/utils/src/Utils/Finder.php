@@ -439,7 +439,7 @@ class Finder implements \IteratorAggregate
             }
             foreach ($splits as [$base, $rest, $recursive]) {
                 $base = $base === '' ? '.' : $base;
-                $dirs = $dirCache[$base] = $dirCache[$base] ?? strpbrk($base, '*?[') ? glob($base, GLOB_NOSORT | GLOB_ONLYDIR | GLOB_NOESCAPE) : [strtr($base, ['[[]' => '[', '[]]' => ']'])];
+                $dirs = $dirCache[$base] = $dirCache[$base] ?? (strpbrk($base, '*?[') ? glob($base, GLOB_NOSORT | GLOB_ONLYDIR | GLOB_NOESCAPE) : [strtr($base, ['[[]' => '[', '[]]' => ']'])]);
                 // unescape [ and ]
                 if (!$dirs) {
                     throw new Nette\InvalidStateException(sprintf("Directory '%s' does not exist.", rtrim($base, '/\\')));

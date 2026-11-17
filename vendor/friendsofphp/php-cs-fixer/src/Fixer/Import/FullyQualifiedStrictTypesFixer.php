@@ -549,7 +549,7 @@ PHP
         $phpDoc = $tokens[$index];
         $phpDocContent = $phpDoc->getContent();
         $phpDocContentNew = Preg::replaceCallback('/([*{]\h*@)(\S+)(\h+)(' . TypeExpression::REGEX_TYPES . ')(?!(?!\})\S)/', function ($matches) use ($allowedTags, $uses, $namespaceName) {
-            if (!\in_array($matches[2], $allowedTags, \true)) {
+            if (!\in_array($matches[2], $allowedTags, \true) || 'see' === $matches[2] && substr_compare($matches[4], '()', -strlen('()')) === 0) {
                 return $matches[0];
             }
             return $matches[1] . $matches[2] . $matches[3] . $this->fixPhpDocType($matches[4], $uses, $namespaceName);

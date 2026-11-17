@@ -26,11 +26,16 @@ final class Option
      */
     private $defaultValue;
     /**
+     * @var string|null
+     */
+    private $shortName;
+    /**
      * @param string|bool|int|null $defaultValue
      */
-    public function __construct(string $name, string $type, ?string $description = null, bool $acceptsMultipleValues = \false, $defaultValue = null)
+    public function __construct(string $name, string $type, ?string $description = null, bool $acceptsMultipleValues = \false, $defaultValue = null, ?string $shortName = null)
     {
         $this->type = $type;
+        $this->shortName = $shortName;
         $this->description = $description;
         $this->acceptsMultipleValues = $acceptsMultipleValues;
         $this->defaultValue = $defaultValue;
@@ -59,5 +64,9 @@ final class Option
     public function getType(): string
     {
         return $this->type;
+    }
+    public function getShortName(): ?string
+    {
+        return $this->shortName;
     }
 }

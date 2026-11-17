@@ -301,17 +301,17 @@
         },
         {
             "name": "entropy\/entropy",
-            "version": "0.4.36",
-            "version_normalized": "0.4.36.0",
+            "version": "0.4.37",
+            "version_normalized": "0.4.37.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/TomasVotruba\/entropy.git",
-                "reference": "9f08272a96275d22a9d9808a32581392920626db"
+                "reference": "57bd06e1652f3c38148944b4880ee3b6e6284da3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/TomasVotruba\/entropy\/zipball\/9f08272a96275d22a9d9808a32581392920626db",
-                "reference": "9f08272a96275d22a9d9808a32581392920626db",
+                "url": "https:\/\/api.github.com\/repos\/TomasVotruba\/entropy\/zipball\/57bd06e1652f3c38148944b4880ee3b6e6284da3",
+                "reference": "57bd06e1652f3c38148944b4880ee3b6e6284da3",
                 "shasum": ""
             },
             "require": {
@@ -334,8 +334,8 @@
                 "tomasvotruba\/type-coverage": "^2.2",
                 "tracy\/tracy": "^2.12"
             },
-            "time": "2026-10-26T16:46:17+00:00",
-            "published-time": "2026-10-26T16:46:43+00:00",
+            "time": "2026-11-14T16:57:42+00:00",
+            "published-time": "2026-11-14T16:57:58+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -350,7 +350,7 @@
             "description": "Entropy framework",
             "support": {
                 "issues": "https:\/\/github.com\/TomasVotruba\/entropy\/issues",
-                "source": "https:\/\/github.com\/TomasVotruba\/entropy\/tree\/0.4.36"
+                "source": "https:\/\/github.com\/TomasVotruba\/entropy\/tree\/0.4.37"
             },
             "install-path": "..\/entropy\/entropy"
         },
@@ -546,17 +546,17 @@
         },
         {
             "name": "friendsofphp\/php-cs-fixer",
-            "version": "v3.95.30",
-            "version_normalized": "3.95.30.0",
+            "version": "v3.95.31",
+            "version_normalized": "3.95.31.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/PHP-CS-Fixer\/PHP-CS-Fixer.git",
-                "reference": "e85cafc4d861c122839d5409eda3325ac0ec0300"
+                "reference": "285aade9728f04ea24ac15efb6a76d91c0c81b63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/PHP-CS-Fixer\/PHP-CS-Fixer\/zipball\/e85cafc4d861c122839d5409eda3325ac0ec0300",
-                "reference": "e85cafc4d861c122839d5409eda3325ac0ec0300",
+                "url": "https:\/\/api.github.com\/repos\/PHP-CS-Fixer\/PHP-CS-Fixer\/zipball\/285aade9728f04ea24ac15efb6a76d91c0c81b63",
+                "reference": "285aade9728f04ea24ac15efb6a76d91c0c81b63",
                 "shasum": ""
             },
             "require": {
@@ -604,8 +604,8 @@
                 "ext-dom": "For handling output formats in XML",
                 "ext-mbstring": "For handling non-UTF8 characters."
             },
-            "time": "2026-11-09T14:32:19+00:00",
-            "published-time": "2026-11-09T14:32:30+00:00",
+            "time": "2026-11-16T21:05:19+00:00",
+            "published-time": "2026-11-16T21:05:29+00:00",
             "bin": [
                 "php-cs-fixer"
             ],
@@ -642,7 +642,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/PHP-CS-Fixer\/PHP-CS-Fixer\/issues",
-                "source": "https:\/\/github.com\/PHP-CS-Fixer\/PHP-CS-Fixer\/tree\/v3.95.30"
+                "source": "https:\/\/github.com\/PHP-CS-Fixer\/PHP-CS-Fixer\/tree\/v3.95.31"
             },
             "funding": [
                 {
@@ -2326,17 +2326,17 @@
         },
         {
             "name": "webmozart\/assert",
-            "version": "2.5.0",
-            "version_normalized": "2.5.0.0",
+            "version": "2.5.1",
+            "version_normalized": "2.5.1.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/webmozarts\/assert.git",
-                "reference": "8a163706bbcac613733dba03f51e13b5eb1bb819"
+                "reference": "e578132c01bd0c64108386ab20d8217cd175ddec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/webmozarts\/assert\/zipball\/8a163706bbcac613733dba03f51e13b5eb1bb819",
-                "reference": "8a163706bbcac613733dba03f51e13b5eb1bb819",
+                "url": "https:\/\/api.github.com\/repos\/webmozarts\/assert\/zipball\/e578132c01bd0c64108386ab20d8217cd175ddec",
+                "reference": "e578132c01bd0c64108386ab20d8217cd175ddec",
                 "shasum": ""
             },
             "require": {
@@ -2350,8 +2350,8 @@
                 "ext-simplexml": "",
                 "ext-spl": ""
             },
-            "time": "2026-10-05T23:14:19+00:00",
-            "published-time": "2026-10-05T23:14:25+00:00",
+            "time": "2026-11-15T13:41:13+00:00",
+            "published-time": "2026-11-15T13:41:42+00:00",
             "type": "library",
             "extra": {
                 "psalm": {
@@ -2390,7 +2390,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/webmozarts\/assert\/issues",
-                "source": "https:\/\/github.com\/webmozarts\/assert\/tree\/2.5.0"
+                "source": "https:\/\/github.com\/webmozarts\/assert\/tree\/2.5.1"
             },
             "install-path": "..\/webmozart\/assert"
         }

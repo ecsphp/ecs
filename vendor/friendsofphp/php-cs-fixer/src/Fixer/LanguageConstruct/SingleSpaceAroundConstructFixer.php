@@ -205,6 +205,9 @@ PHP
             if ($token->isGivenKind(\T_CLASS) && $tokens[$tokens->getNextMeaningfulToken($index)]->equals('(')) {
                 continue;
             }
+            if ($token->isGivenKind(\T_CLONE) && $tokens[$whitespaceTokenIndex]->equals('(')) {
+                continue;
+            }
             if ($token->isGivenKind([\T_EXTENDS, \T_IMPLEMENTS]) && $this->isMultilineExtendsOrImplementsWithMoreThanOneAncestor($tokens, $index)) {
                 continue;
             }
