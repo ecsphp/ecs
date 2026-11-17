@@ -4,13 +4,12 @@ declare (strict_types=1);
 namespace Symplify\EasyCodingStandard\Blink;
 
 use Symplify\EasyCodingStandard\Blink\Exception\EcsGoBinaryNotFoundException;
-use Symplify\EasyCodingStandard\FixerRunner\ValueObject\Spacing;
 use Symplify\EasyCodingStandard\FixerRunner\WhitespacesFixerConfigFactory;
 /**
  * Decides whether blink can fully handle a resolved ECS config: every configured
  * rule must map to a blink fixer. A custom sniff/fixer, any not-yet-ported rule
- * or a non-default indentation/line ending (blink only knows 4 spaces and "\n")
- * makes it unsupported, so the caller falls back to the PHP engine.
+ * or a non-default line ending (blink only knows "\n") makes it unsupported, so
+ * the caller falls back to the PHP engine.
  *
  * @see \Symplify\EasyCodingStandard\Tests\Blink\BlinkSupportResolverTest
  */
@@ -40,7 +39,7 @@ final class BlinkSupportResolver
         if ($ruleClasses === []) {
             return \false;
         }
-        if (!$this->hasDefaultWhitespaces()) {
+        if (!$this->hasDefaultLineEnding()) {
             return \false;
         }
         $supportedCheckerClasses = $this->resolveSupportedCheckerClasses();
@@ -49,13 +48,9 @@ final class BlinkSupportResolver
         }
         return array_diff($ruleClasses, $supportedCheckerClasses) === [];
     }
-    private function hasDefaultWhitespaces(): bool
+    private function hasDefaultLineEnding(): bool
     {
-        $whitespacesFixerConfig = $this->whitespacesFixerConfigFactory->create();
-        if ($whitespacesFixerConfig->getIndent() !== Spacing::FOUR_SPACES) {
-            return \false;
-        }
-        return $whitespacesFixerConfig->getLineEnding() === "\n";
+        return $this->whitespacesFixerConfigFactory->create()->getLineEnding() === "\n";
     }
     /**
      * @return string[]

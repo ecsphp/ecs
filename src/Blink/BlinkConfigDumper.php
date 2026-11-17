@@ -9,11 +9,12 @@ use ReflectionProperty;
 use stdClass;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\FixerRunner\Application\FixerFileProcessor;
+use Symplify\EasyCodingStandard\FixerRunner\WhitespacesFixerConfigFactory;
 use Symplify\EasyCodingStandard\Skipper\SkipCriteriaResolver\SkippedCriteriaResolver;
 use Symplify\EasyCodingStandard\SniffRunner\Application\SniffFileProcessor;
 /**
  * Turns the resolved ecs.php configuration into the JSON shape the ecs-go blink
- * runner consumes: paths, rules (each a class and its config) and skips. See
+ * runner consumes: paths, indent, rules (each a class and its config) and skips. See
  * docs/blink.md for the schema.
  */
 final class BlinkConfigDumper
@@ -38,20 +39,26 @@ final class BlinkConfigDumper
      * @var \Symplify\EasyCodingStandard\Config\ECSConfig
      */
     private $ecsConfig;
-    public function __construct(SniffFileProcessor $sniffFileProcessor, FixerFileProcessor $fixerFileProcessor, SkippedCriteriaResolver $skippedCriteriaResolver, ECSConfig $ecsConfig)
+    /**
+     * @readonly
+     * @var \Symplify\EasyCodingStandard\FixerRunner\WhitespacesFixerConfigFactory
+     */
+    private $whitespacesFixerConfigFactory;
+    public function __construct(SniffFileProcessor $sniffFileProcessor, FixerFileProcessor $fixerFileProcessor, SkippedCriteriaResolver $skippedCriteriaResolver, ECSConfig $ecsConfig, WhitespacesFixerConfigFactory $whitespacesFixerConfigFactory)
     {
         $this->sniffFileProcessor = $sniffFileProcessor;
         $this->fixerFileProcessor = $fixerFileProcessor;
         $this->skippedCriteriaResolver = $skippedCriteriaResolver;
         $this->ecsConfig = $ecsConfig;
+        $this->whitespacesFixerConfigFactory = $whitespacesFixerConfigFactory;
     }
     /**
      * @param string[] $paths
-     * @return array{paths: string[], rules: array<array{class: string, config: object|array<string, mixed>}>, skips: array<array{path?: string, class?: string, paths?: string[]}>}
+     * @return array{paths: string[], indent: string, rules: array<array{class: string, config: object|array<string, mixed>}>, skips: array<array{path?: string, class?: string, paths?: string[]}>}
      */
     public function dump(array $paths): array
     {
-        return ['paths' => array_values($paths), 'rules' => $this->dumpRules(), 'skips' => $this->dumpSkips()];
+        return ['paths' => array_values($paths), 'indent' => $this->whitespacesFixerConfigFactory->create()->getIndent(), 'rules' => $this->dumpRules(), 'skips' => $this->dumpSkips()];
     }
     /**
      * @return array<array{class: string, config: object|array<string, mixed>}>

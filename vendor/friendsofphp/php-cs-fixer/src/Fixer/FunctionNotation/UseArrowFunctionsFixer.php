@@ -17,6 +17,7 @@ use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\CT;
+use PhpCsFixer\Tokenizer\FCT;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 use PhpCsFixer\Tokenizer\TokensAnalyzer;
@@ -120,6 +121,11 @@ SAMPLE
             if (!$tokens[$braceClose]->equals('}')) {
                 continue;
             }
+            // Abort if closure is an operand of the pipe operator. An arrow function would swallow the rest of
+            // the chain on the left-hand side, and it must be parenthesized on the right-hand side.
+            if ($this->isPipeOperand($tokens, $index, $braceClose)) {
+                continue;
+            }
             // Abort if closure has `use()` clause and return statement includes external files.
             // Converting such closures to arrow functions changes behaviour as the used variables
             // are no longer exposed to the included file.
@@ -145,6 +151,24 @@ SAMPLE
             $tokens->clearRange($useStart, $useEnd);
         }
         $tokens[$index] = new Token([\T_FN, 'fn']);
+    }
+    private function isPipeOperand(Tokens $tokens, int $functionIndex, int $braceClose): bool
+    {
+        $nextIndex = $tokens->getNextMeaningfulToken($braceClose);
+        if (null !== $nextIndex && $tokens[$nextIndex]->isGivenKind(FCT::T_PIPE)) {
+            return \true;
+        }
+        $prevIndex = $tokens->getPrevMeaningfulToken($functionIndex);
+        while (null !== $prevIndex) {
+            if ($tokens[$prevIndex]->isGivenKind(\T_STATIC)) {
+                $prevIndex = $tokens->getPrevMeaningfulToken($prevIndex);
+            } elseif ($tokens[$prevIndex]->isGivenKind(CT::T_ATTRIBUTE_CLOSE)) {
+                $prevIndex = $tokens->getPrevMeaningfulToken($tokens->findBlockStart(Tokens::BLOCK_TYPE_ATTRIBUTE, $prevIndex));
+            } else {
+                break;
+            }
+        }
+        return null !== $prevIndex && $tokens[$prevIndex]->isGivenKind(FCT::T_PIPE);
     }
     /**
      * Check if the return statement contains include/include_once/require/require_once.
