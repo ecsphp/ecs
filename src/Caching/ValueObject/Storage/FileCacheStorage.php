@@ -65,9 +65,21 @@ final class FileCacheStorage
         $cacheFilePaths = $this->getCacheFilePaths($cacheKey);
         UtilsFileSystem::delete($cacheFilePaths->getFilePath());
     }
+    /**
+     * Deletes the contents only: the directory may be a mount point, which cannot be removed
+     */
     public function clear(): void
     {
-        UtilsFileSystem::delete($this->directory);
+        if (!is_dir($this->directory)) {
+            return;
+        }
+        $fileNames = scandir($this->directory);
+        if ($fileNames === \false) {
+            return;
+        }
+        foreach (array_diff($fileNames, ['.', '..']) as $fileName) {
+            UtilsFileSystem::delete($this->directory . '/' . $fileName);
+        }
     }
     private function getCacheFilePaths(string $key): CacheFilePaths
     {
