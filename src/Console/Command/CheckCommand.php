@@ -135,15 +135,15 @@ final class CheckCommand implements CommandInterface, DefaultCommandInterface
             if ($commit) {
                 return $this->blinkCommitRunner->run($configData);
             }
-            $blinkExitCode = $this->blinkRunner->run($configData, $fix, $configuration->shouldShowDiffs());
+            $blinkExitCode = $this->blinkRunner->run($configData, $fix, $configuration->shouldShowDiffs(), $configuration->getOutputFormat());
             return $blinkExitCode === ExitCode::SUCCESS ? ExitCode::SUCCESS : ExitCode::CHANGED_CODE_OR_FOUND_ERRORS;
         }
         // auto-blink: hand the run to ecs-go when it covers every configured rule,
         // else fall back to the PHP engine silently
-        if (!$noBlink) {
+        if (!$noBlink && $this->blinkRunner->supportsOutputFormat($configuration->getOutputFormat())) {
             $configData = $this->blinkConfigDumper->dump($configuration->getSources());
             if ($this->blinkSupportResolver->isFullySupported($configData)) {
-                $blinkExitCode = $this->blinkRunner->run($configData, $fix, $configuration->shouldShowDiffs());
+                $blinkExitCode = $this->blinkRunner->run($configData, $fix, $configuration->shouldShowDiffs(), $configuration->getOutputFormat());
                 return $blinkExitCode === ExitCode::SUCCESS ? ExitCode::SUCCESS : ExitCode::CHANGED_CODE_OR_FOUND_ERRORS;
             }
         }
