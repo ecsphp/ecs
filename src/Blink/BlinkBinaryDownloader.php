@@ -19,7 +19,7 @@ final class BlinkBinaryDownloader
     /**
      * @var int
      */
-    private const TIMEOUT_SECONDS = 30;
+    private const TIMEOUT_SECONDS = 5;
     public function __construct(string $releaseBaseUrl = 'https://github.com/ecsphp/ecs-src/releases/download')
     {
         $this->releaseBaseUrl = $releaseBaseUrl;
