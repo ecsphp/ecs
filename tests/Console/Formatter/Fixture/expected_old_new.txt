@@ -1,4 +1,0 @@
-<comment>    ---------- begin diff ----------</comment>
-<fg=red>-old</fg=red>
-<fg=green>+new</fg=green>
-<comment>    ----------- end diff -----------</comment>

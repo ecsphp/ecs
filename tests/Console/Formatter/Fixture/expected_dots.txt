@@ -1,3 +1,0 @@
-<comment>    ---------- begin diff ----------</comment>
-...
-<comment>    ----------- end diff -----------</comment>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<checkstyle>
-  <file name="tests/Console/Output/Source/RandomFile.php">
-    <error severity="warning" source="EasyCodingStandard.Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer" message="Found violation(s) of type: Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer"/>
-  </file>
-  <file name="tests/Console/Output/Source/RandomFile.php">
-    <error severity="warning" source="EasyCodingStandard.Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer" message="Found violation(s) of type: Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer"/>
-  </file>
-</checkstyle>
