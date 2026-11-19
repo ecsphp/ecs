@@ -13,17 +13,23 @@ final class EcsGoBinaryLocator
 {
     /**
      * @readonly
+     * @var \Symplify\EasyCodingStandard\Blink\BlinkBinaryDownloader
+     */
+    private $blinkBinaryDownloader;
+    /**
+     * @readonly
      * @var string
      */
-    private $bundledDirectory = __DIR__ . '/../../bin';
+    private $binDirectory = __DIR__ . '/../../bin';
     /**
      * @var string
      */
     private const ENV_OVERRIDE = 'ECS_BLINK_BIN';
-    public function __construct(string $bundledDirectory = __DIR__ . '/../../bin')
+    public function __construct(\Symplify\EasyCodingStandard\Blink\BlinkBinaryDownloader $blinkBinaryDownloader, string $binDirectory = __DIR__ . '/../../bin')
     {
-        // filled with per-platform blink binaries by the release build, see .github/workflows/buid_release.yaml
-        $this->bundledDirectory = $bundledDirectory;
+        $this->blinkBinaryDownloader = $blinkBinaryDownloader;
+        // the release build writes the blink release tag to "blink.version", see .github/workflows/buid_release.yaml
+        $this->binDirectory = $binDirectory;
     }
     public function locate(): string
     {
@@ -31,19 +37,30 @@ final class EcsGoBinaryLocator
         if (is_string($envBinary) && $envBinary !== '' && is_file($envBinary)) {
             return $envBinary;
         }
-        $bundledBinary = $this->bundledDirectory . '/blink-' . $this->resolvePlatform();
-        if (is_file($bundledBinary)) {
-            // archive extraction can drop the executable bit
-            if (!is_executable($bundledBinary)) {
-                chmod($bundledBinary, 0755);
-            }
-            return $bundledBinary;
+        $releaseBinary = $this->resolveReleaseBinary();
+        if ($releaseBinary !== null) {
+            return $releaseBinary;
         }
         $pathBinary = $this->findOnPath('blink');
         if ($pathBinary !== null) {
             return $pathBinary;
         }
         throw new EcsGoBinaryNotFoundException(sprintf('The blink binary for --blink was not found in "%s" env or on PATH. Build it with "go build" in the blink/ directory and point "%s" to it.', self::ENV_OVERRIDE, self::ENV_OVERRIDE));
+    }
+    private function resolveReleaseBinary(): ?string
+    {
+        $versionFile = $this->binDirectory . '/blink.version';
+        if (!is_file($versionFile)) {
+            return null;
+        }
+        $releaseTag = trim((string) file_get_contents($versionFile));
+        $platform = $this->resolvePlatform();
+        // e.g. "bin/blink-0123456789ab-linux-amd64", versioned so an update never runs a stale binary
+        $releaseBinary = $this->binDirectory . '/' . $releaseTag . '-' . $platform;
+        if (!is_file($releaseBinary)) {
+            $this->blinkBinaryDownloader->download($releaseTag, 'blink-' . $platform, $releaseBinary);
+        }
+        return $releaseBinary;
     }
     private function resolvePlatform(): string
     {
