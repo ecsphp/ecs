@@ -17,7 +17,7 @@
         "security": "https:\/\/github.com\/ergebnis\/agent-detector\/blob\/main\/.github\/SECURITY.md"
     },
     "require": {
-        "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0"
+        "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0 || ~8.7.0"
     },
     "require-dev": {
         "ergebnis\/composer-normalize": "^2.56.1",
@@ -64,7 +64,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "2.1-dev"
+            "dev-main": "2.2-dev"
         },
         "composer-normalize": {
             "indent-size": 2,
